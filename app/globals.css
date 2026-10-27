@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ECE7DF;
+  --foreground: #27272A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Outer Container Frame like reference design */
+.editorial-wrapper {
+  background-color: #F6F3EE;
+  box-shadow: 0 12px 48px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Rotating Circular Badge Keyframe */
+@keyframes rotateBadge {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.rotating-badge {
+  animation: rotateBadge 20s linear infinite;
+}
+
+/* Floating Arrow Keyframe */
+@keyframes floatDoodle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
+}
+.floating-doodle {
+  animation: floatDoodle 3.5s ease-in-out infinite;
+}
+
+/* Arch Cutout for Hero Portrait */
+.arch-portrait {
+  border-radius: 180px 180px 24px 24px;
+  background: linear-gradient(180deg, #E8AF73 0%, #D89855 100%);
+}
+
+/* Soft pill button hover states */
+.btn-caramel {
+  background-color: #E5A869;
+  color: #18181A;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-caramel:hover {
+  background-color: #D89855;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229, 168, 105, 0.35);
+}
+.btn-caramel:active {
+  transform: scale(0.97);
+}
+
+.btn-dark {
+  background-color: #18181A;
+  color: #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-dark:hover {
+  background-color: #27272A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.btn-dark:active {
+  transform: scale(0.97);
+}

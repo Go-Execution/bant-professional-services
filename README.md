@@ -9,44 +9,48 @@
 
 BNT Professional Services is an executive tax advisory, bookkeeping, and certified notary firm led by a Principal Consultant with a Master of Accountancy (MAcc) from UTSA, an MBA, and prior experience at a private New York tax firm and JPMorgan Chase.
 
-### Core Capabilities
-* **For Individuals & Families:** The BNT Refund Checkup (flat-fee diagnostic review with written estimate and missing items audit) and W-2 / personal tax preparation.
-* **For Businesses:** Account reconciliations (bank & credit card to general ledger matching), financial record cleanup, and small business tax filings.
-* **Notary Services:** Official Texas notarization for deeds, powers of attorney, business agreements, and affidavits.
-* **Key Operating Pillars:** 100% upfront flat-rate pricing, zero percentage commissions taken from refunds, and private 256-bit encrypted client portal.
-
 ---
 
 ## 🗺️ Project Roadmap
 
 - [x] **Phase 1: Design & UI/UX Finalization**
   - High-impact editorial landing page with asymmetric financial ledger layout.
-  - Bespoke color calibration (Institutional midnight slate, warm amber accent, crisp white).
-  - Anti-AI slop typography pairing (Plus Jakarta Sans + Space Grotesk).
+  - Bespoke color calibration (Warm linen canvas, warm caramel pill accents, deep charcoal).
+  - Anti-AI slop typography pairing (DM Serif Display + Plus Jakarta Sans).
   - Interactive tabbed services switcher & Refund Checkup diagnostic inspector.
   - Consultation booking & secure client portal modal workflows.
-- [ ] **Phase 2: Inner Pages & Next.js Transition**
-  - Dedicated service pages, detailed About page, and interactive booking calendar.
-  - Next.js 15 App Router architecture with modular components.
-  - Local SEO enhancements for East Texas.
+
+- [x] **Phase 2: Next.js App Router & Full Functionality**
+  - Next.js 14 App Router architecture with modular TypeScript components.
+  - **Homepage (`/`)**: Arched portrait with rotating badge, floating doodle, metrics bar, and interactive contact form.
+  - **About Us (`/about`)**: Full consultant credentials, UTSA Macy & MBA background, Wall St/NY tax firm experience, faith & gratitude values.
+  - **All Services (`/services`)**: Tabbed breakdown of Refund Checkup, W-2 filers, account reconciliations, bookkeeping cleanup, and Texas certified notary.
+  - **The BNT Refund Checkup (`/refund-checkup`)**: Real-time interactive diagnostic scope inspector with custom document checklist.
+  - **Consultation Scheduler (`/booking`)**: 3-step scheduling flow with format selection (In-Person Jacksonville TX, Phone, Remote Video), slot picking, and instant booking confirmation.
+  - **Secure Client Portal Gateway (`/portal`)**: 256-bit SSL encrypted vault interface with simulated drag-and-drop file upload and status tracker.
+  - **Client Knowledge & News (`/insights`)**: Plain-language guides on refund percentages, account reconciliation, and email security risks.
+
 - [ ] **Phase 3: Database, Authentication & Client Portal**
-  - User authentication and role-based permissions.
-  - 256-bit encrypted document upload vault.
+  - Persistent user accounts & authentication.
+  - Encrypted document storage backend (Supabase / PostgreSQL / S3).
   - Admin management dashboard.
 
 ---
 
-## 🚀 Running the Prototype
+## 🚀 Getting Started
 
-1. Open `index.html` directly in any modern web browser:
-   ```bash
-   # Windows (via browser)
-   start index.html
-   ```
-2. Or serve locally with any static HTTP server:
-   ```bash
-   npx serve .
-   ```
+### Development Server
+```bash
+npm install
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Production Build
+```bash
+npm run build
+npm start
+```
 
 ---
 
