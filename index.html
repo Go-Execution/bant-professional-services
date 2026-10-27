@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BNT Professional Services | Business. Notary. Tax. Made Simple. | Jacksonville, TX</title>
+  <title>BNT Professional Services | Business. Notary. Tax. Made Simple.</title>
   <meta name="description" content="Professional tax preparation, flat-fee refund checkups, business bookkeeping, and certified notary services in Jacksonville, TX. Grounded in faith, integrity, and upfront pricing.">
   
-  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <!-- Google Fonts: DM Serif Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,23 +18,26 @@
       theme: {
         extend: {
           fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"Space Grotesk"', 'monospace'],
           },
           colors: {
-            midnight: {
-              950: '#070C14',
-              900: '#0B1320',
-              850: '#101B2E',
-              800: '#16243D',
-              700: '#233758',
+            linen: {
+              50: '#FAF8F5',
+              100: '#F5F1EB',
+              200: '#EBE5DC',
+              300: '#DFD7CA',
             },
-            amberAccent: {
-              DEFAULT: '#D97706',
-              light: '#F59E0B',
-              dark: '#B45309',
+            caramel: {
+              DEFAULT: '#E5A869',
+              light: '#F0BA84',
+              dark: '#CB8C4C',
             },
-            emeraldTrust: '#10B981',
+            charcoal: {
+              900: '#18181A',
+              800: '#27272A',
+              700: '#3F3F46',
+            }
           }
         }
       }
@@ -42,1129 +45,878 @@
   </script>
 
   <style>
-    /* Custom refined styling and tactile interactions */
     body {
-      background-color: #070C14;
-      color: #F8FAFC;
+      background-color: #ECE7DF;
+      color: #27272A;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
     }
 
-    /* Subtle ambient grain overlay (non-scrolling, hardware accelerated) */
-    .ambient-noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 50;
-      opacity: 0.025;
-      background-image: radial-gradient(#ffffff 1px, transparent 1px);
-      background-size: 24px 24px;
+    /* Outer Container Frame like reference design */
+    .editorial-wrapper {
+      background-color: #F6F3EE;
+      box-shadow: 0 12px 48px -8px rgba(0, 0, 0, 0.08);
     }
 
-    /* Glass card with refined micro-border */
-    .glass-card {
-      background: linear-gradient(180deg, rgba(22, 36, 61, 0.75) 0%, rgba(16, 27, 46, 0.85) 100%);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    /* Rotating Circular Badge Keyframe */
+    @keyframes rotateBadge {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .rotating-badge {
+      animation: rotateBadge 20s linear infinite;
     }
 
-    .glass-card-hover {
+    /* Floating Arrow Keyframe */
+    @keyframes floatDoodle {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-5px) rotate(3deg); }
+    }
+    .floating-doodle {
+      animation: floatDoodle 3.5s ease-in-out infinite;
+    }
+
+    /* Arch Cutout for Hero Portrait */
+    .arch-portrait {
+      border-radius: 180px 180px 24px 24px;
+      background: linear-gradient(180deg, #E8AF73 0%, #D89855 100%);
+    }
+
+    /* Fade-up scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Soft pill button hover states */
+    .btn-caramel {
+      background-color: #E5A869;
+      color: #18181A;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .glass-card-hover:hover {
-      border-color: rgba(217, 119, 6, 0.35);
+    .btn-caramel:hover {
+      background-color: #D89855;
       transform: translateY(-2px);
-      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      box-shadow: 0 6px 16px rgba(229, 168, 105, 0.35);
+    }
+    .btn-caramel:active {
+      transform: scale(0.97);
     }
 
-    /* Primary CTA Button with 5-state matrix */
-    .btn-primary {
-      background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%);
-      color: #070C14;
-      font-weight: 700;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    .btn-dark {
+      background-color: #18181A;
+      color: #FFFFFF;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn-primary:hover {
-      background: linear-gradient(180deg, #FBBF24 0%, #EAB308 100%);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
+    .btn-dark:hover {
+      background-color: #27272A;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
-    .btn-primary:active {
-      transform: scale(0.98);
-      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
-    }
-    .btn-primary:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.5);
-    }
-
-    /* Secondary outline button */
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      color: #F8FAFC;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-weight: 600;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-1px);
-    }
-    .btn-secondary:active {
-      transform: scale(0.98);
-    }
-    .btn-secondary:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    .btn-dark:active {
+      transform: scale(0.97);
     }
 
     /* Modal Animation */
     .modal-backdrop {
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.3s ease;
     }
     .modal-backdrop.open {
       opacity: 1;
       pointer-events: auto;
     }
     .modal-content {
-      transform: scale(0.96) translateY(12px);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.95) translateY(10px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .modal-backdrop.open .modal-content {
       transform: scale(1) translateY(0);
     }
   </style>
 </head>
-<body class="selection:bg-amber-500/30 selection:text-amber-200">
+<body class="p-2 sm:p-5 lg:p-8">
 
-  <!-- Ambient Micro-Texture Overlay -->
-  <div class="ambient-noise"></div>
+  <!-- MAIN EDITORIAL CANVAS -->
+  <div class="editorial-wrapper max-w-[1400px] mx-auto rounded-3xl lg:rounded-[36px] overflow-hidden border border-stone-200/70">
 
-  <!-- 1. TOP UTILITY ANNOUNCEMENT BAR -->
-  <header class="bg-midnight-900 border-b border-white/5 text-xs text-slate-300 py-2.5 px-4 sticky top-0 z-40 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-      <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          2025/2026 Tax Season Consultations Open
-        </span>
-        <span class="text-slate-600 hidden md:inline">|</span>
-        <span class="hidden md:inline text-slate-400">Serving Jacksonville, TX and surrounding East Texas communities</span>
-      </div>
-      <div class="flex items-center gap-4 text-xs font-medium">
-        <a href="#how-we-work" class="text-slate-400 hover:text-white transition-colors">Zero Refund-Cut Guarantee</a>
-        <button onclick="openPortalModal()" class="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 font-semibold transition-colors">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-          Client Portal Login
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- 2. MAIN NAVIGATION -->
-  <nav class="bg-midnight-950/80 backdrop-blur-xl border-b border-white/10 sticky top-[37px] z-30 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="px-6 sm:px-10 lg:px-14 py-7 flex items-center justify-between border-b border-stone-200/50">
       
-      <!-- Logo & Monogram -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-midnight-800 to-midnight-900 border border-white/15 flex items-center justify-center font-mono font-bold text-amber-400 text-lg shadow-inner group-hover:border-amber-500/50 transition-colors">
-          BNT
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-charcoal-900 text-white flex items-center justify-center font-serif text-lg font-bold">
+          B
         </div>
-        <div>
-          <span class="text-base sm:text-lg font-bold tracking-tight text-white block leading-tight">
-            BNT Professional Services
-          </span>
-          <span class="text-[11px] font-medium tracking-wide uppercase text-slate-400 block font-mono">
-            Business • Notary • Tax
-          </span>
-        </div>
+        <span class="font-serif text-2xl font-bold tracking-tight text-charcoal-900">
+          BNT Services
+        </span>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#services" class="hover:text-white transition-colors">Services</a>
-        <a href="#refund-checkup" class="hover:text-white transition-colors flex items-center gap-1.5">
-          Refund Checkup
-          <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Flat Fee</span>
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+        <a href="#home" class="text-charcoal-900 font-semibold hover:text-caramel transition-colors">Home</a>
+        <a href="#about" class="hover:text-charcoal-900 transition-colors">About</a>
+        <a href="#services" class="hover:text-charcoal-900 transition-colors flex items-center gap-1">
+          Services
+          <svg class="w-3.5 h-3.5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </a>
-        <a href="#how-we-work" class="hover:text-white transition-colors">How We Work</a>
-        <a href="#about" class="hover:text-white transition-colors">About Principal</a>
-        <a href="#coverage" class="hover:text-white transition-colors">Locations</a>
+        <a href="#refund-checkup" class="hover:text-charcoal-900 transition-colors">Refund Checkup</a>
+        <a href="#consultation" class="hover:text-charcoal-900 transition-colors">Consultation</a>
       </div>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-3">
-        <button onclick="openPortalModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white border border-white/10 hover:border-white/20 transition-all">
-          <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-          Portal
+      <!-- Action Area -->
+      <div class="flex items-center gap-4">
+        <button onclick="openPortalModal()" class="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-stone-600 hover:text-charcoal-900 transition-colors px-3 py-2 rounded-full border border-stone-300/80">
+          <svg class="w-3.5 h-3.5 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+          Client Portal
         </button>
-        <button onclick="openBookingModal()" class="btn-primary px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2">
-          <span>Book Consultation</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
+
+        <button onclick="openBookingModal()" class="btn-caramel pl-5 pr-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-3">
+          <span>Get Free Consultation</span>
+          <span class="w-7 h-7 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
         </button>
       </div>
 
-    </div>
-  </nav>
+    </nav>
 
-  <!-- 3. HERO SECTION (EDITORIAL ASYMMETRIC SPLIT) -->
-  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-    <!-- Subtle gradient glow -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/3 right-10 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="px-6 sm:px-10 lg:px-14 pt-10 pb-16 lg:pb-24 relative overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
         
-        <!-- Left: High-Impact Editorial Copy -->
-        <div class="lg:col-span-7 space-y-6">
-          
-          <!-- Trust Badge / Eyebrow -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-            <span>GROUNDED IN FAITH & GRATITUDE</span>
-            <span class="text-white/20">•</span>
-            <span class="text-amber-400">JACKSONVILLE, TX</span>
-          </div>
-
-          <!-- Headline -->
-          <h1 class="text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-[1.08]">
-            Clear answers. Accurate books. <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">
-              Taxes filed with confidence.
-            </span>
+        <!-- Left: Editorial Headline & Guidance -->
+        <div class="lg:col-span-4 space-y-6 fade-up">
+          <h1 class="font-serif text-4xl sm:text-5xl xl:text-6xl text-charcoal-900 leading-[1.08] tracking-tight">
+            Smart Tax & Business Support
           </h1>
 
-          <!-- Body Subtext -->
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-            We help individuals, families, and small business owners understand their finances, maintain spotless records, and file accurately. Upfront flat pricing, zero commission on your refund, and private bank-grade document security.
+          <p class="text-sm sm:text-base text-stone-600 leading-relaxed font-normal max-w-sm">
+            When the stakes are high, you need more than just filing. BNT provides sharp tax insight, accurate bookkeeping, and honest solutions to help you file with confidence and stay ahead.
           </p>
 
-          <!-- Dual CTAs -->
-          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <button onclick="openBookingModal()" class="btn-primary px-7 py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-3">
-              <span>Schedule a Consultation</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-            </button>
-            <a href="#refund-checkup" class="btn-secondary px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2.5">
-              <span>Explore Refund Checkup</span>
-              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <!-- Phone Number Pill + Handwritten Floating Arrow -->
+          <div class="pt-2 flex items-center gap-4 relative">
+            <a href="tel:9035550192" class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-caramel/25 border border-caramel/40 text-charcoal-900 text-xs sm:text-sm font-bold hover:bg-caramel/40 transition-colors">
+              <span class="w-6 h-6 rounded-full bg-charcoal-900 text-white flex items-center justify-center text-xs">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"></path></svg>
+              </span>
+              <span>+1 (903) 555-0192</span>
             </a>
-          </div>
 
-          <!-- Micro Trust Elements -->
-          <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/10 text-xs text-slate-400">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            <!-- Playful Doodled Arrow pointing right -->
+            <div class="floating-doodle hidden sm:block">
+              <svg class="w-12 h-10 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 54 36">
+                <path d="M4 10 C 18 2, 28 32, 48 16" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M42 12 L 48 16 L 44 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
-              <span>Plain language guarantee</span>
             </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </div>
+
+          <!-- Vintage Scales of Justice / Integrity Seal Illustration -->
+          <div class="pt-8 opacity-85 hidden sm:block">
+            <div class="flex items-center gap-3 text-stone-500 text-xs">
+              <svg class="w-12 h-12 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 48 48">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M24 6v36m-14-18l14-6 14 6m-28 0a6 6 0 0012 0m4 0a6 6 0 0012 0M16 42h16"></path>
               </svg>
-              <span>Upfront flat-rate pricing</span>
-            </div>
-            <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
-              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              <span>Encrypted client vault</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right: Tactile Financial Ledger & Dossier Preview Card -->
-        <div class="lg:col-span-5">
-          <div class="glass-card rounded-2xl p-6 sm:p-7 relative border border-white/10 shadow-2xl space-y-6">
-            
-            <!-- Card Header -->
-            <div class="flex items-center justify-between pb-4 border-b border-white/10">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-mono text-xs font-bold">
-                  TX
-                </div>
-                <div>
-                  <h3 class="text-sm font-bold text-white leading-tight">BNT Client Assessment</h3>
-                  <p class="text-[11px] font-mono text-slate-400">File Reference: #BNT-2026-TX</p>
-                </div>
-              </div>
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-medium font-mono">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                ACTIVE VAULT
-              </span>
-            </div>
-
-            <!-- Card Metric Grid -->
-            <div class="grid grid-cols-2 gap-3">
-              <div class="bg-midnight-950/60 rounded-xl p-3.5 border border-white/5">
-                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-mono block">Pricing Model</span>
-                <span class="text-base font-bold text-white mt-1 block">100% Flat-Rate</span>
-                <span class="text-[11px] text-emerald-400 font-mono mt-0.5 block">No Refund Commission</span>
-              </div>
-              <div class="bg-midnight-950/60 rounded-xl p-3.5 border border-white/5">
-                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-mono block">Credentials</span>
-                <span class="text-base font-bold text-amber-300 mt-1 block">UTSA MAcc + MBA</span>
-                <span class="text-[11px] text-slate-400 font-mono mt-0.5 block">Ex-JPMorgan Chase</span>
-              </div>
-            </div>
-
-            <!-- Diagnostic Review Highlight (Refund Checkup Demonstration) -->
-            <div class="bg-midnight-900/90 rounded-xl p-4 border border-white/10 space-y-3">
-              <div class="flex items-center justify-between text-xs font-mono">
-                <span class="text-slate-300 font-medium">Refund Checkup Diagnostic:</span>
-                <span class="text-emerald-400">3 of 3 Verified</span>
-              </div>
-              <div class="space-y-2 text-xs">
-                <div class="flex items-center justify-between text-slate-300 py-1 border-b border-white/5">
-                  <span class="flex items-center gap-2">
-                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    W-2 & 1099 Reconciliation
-                  </span>
-                  <span class="font-mono text-slate-400">Matched</span>
-                </div>
-                <div class="flex items-center justify-between text-slate-300 py-1 border-b border-white/5">
-                  <span class="flex items-center gap-2">
-                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Deduction Audit & Itemization
-                  </span>
-                  <span class="font-mono text-slate-400">Optimized</span>
-                </div>
-                <div class="flex items-center justify-between text-slate-300 py-1">
-                  <span class="flex items-center gap-2">
-                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    Written Estimate & Missing Items
-                  </span>
-                  <span class="font-mono text-amber-400">Ready</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Security Assurance Note -->
-            <div class="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                <strong class="text-white">Confidentiality Guarantee:</strong> Tax files and SSNs are handled solely through your private, 256-bit encrypted portal. Never standard email or text message.
-              </p>
-            </div>
-
-            <!-- Card Bottom Action -->
-            <button onclick="openBookingModal()" class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-amber-300 flex items-center justify-center gap-2 transition-all">
-              <span>Start Your File Review</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. CREDENTIALS & TRUST BAR -->
-  <section class="border-y border-white/10 bg-midnight-900/60 py-8 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        
-        <div class="flex items-start gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 font-mono text-sm font-bold">
-            UTSA
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Master of Accountancy</h4>
-            <p class="text-xs text-slate-400 mt-0.5">Univ. of Texas at San Antonio (MAcc)</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 font-mono text-sm font-bold">
-            MBA
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Master of Business Admin</h4>
-            <p class="text-xs text-slate-400 mt-0.5">Advanced Finance & Strategy</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 font-mono text-sm font-bold">
-            NYC
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Institutional Background</h4>
-            <p class="text-xs text-slate-400 mt-0.5">Private NY Tax Firm & JPMorgan Chase</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 font-mono text-sm font-bold">
-            SSL
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Private Client Portal</h4>
-            <p class="text-xs text-slate-400 mt-0.5">Encrypted doc upload & messaging</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. SERVICES ARCHITECTURE (ASYMMETRIC, NOT GENERIC 3-CARDS) -->
-  <section id="services" class="py-20 md:py-28 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2 font-bold">
-            COMPREHENSIVE FINANCIAL CAPABILITIES
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
-            Tailored services for East Texas families and businesses.
-          </h2>
-        </div>
-        <p class="text-sm text-slate-400 max-w-md leading-relaxed">
-          Whether you need an honest second opinion on your tax refund or clean books for your growing company, we provide accurate, reliable execution.
-        </p>
-      </div>
-
-      <!-- Segmented Interactive Switcher Tabs -->
-      <div class="flex items-center gap-2 mb-10 border-b border-white/10 pb-4 overflow-x-auto">
-        <button onclick="switchTab('individuals')" id="tab-btn-individuals" class="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all bg-amber-500 text-midnight-950 shadow-md">
-          For Individuals & Families
-        </button>
-        <button onclick="switchTab('businesses')" id="tab-btn-businesses" class="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all bg-white/5 text-slate-300 hover:text-white hover:bg-white/10">
-          For Small Businesses & Self-Employed
-        </button>
-        <button onclick="switchTab('notary')" id="tab-btn-notary" class="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all bg-white/5 text-slate-300 hover:text-white hover:bg-white/10">
-          Certified Notary Services
-        </button>
-      </div>
-
-      <!-- Tab Content 1: Individuals & Families -->
-      <div id="tab-content-individuals" class="space-y-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          <!-- Featured Lead Card: The Refund Checkup (Hero Service) -->
-          <div id="refund-checkup" class="lg:col-span-7 glass-card rounded-2xl p-7 md:p-9 relative border-amber-500/30 flex flex-col justify-between">
-            <div class="space-y-5">
-              <div class="flex items-center justify-between">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/30">
-                  FLAGSHIP INDIVIDUAL SERVICE
-                </span>
-                <span class="text-xs font-mono text-slate-400">Upfront Flat-Fee</span>
-              </div>
-              
-              <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                The BNT Refund Checkup
-              </h3>
-              
-              <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Before committing to filing, get complete clarity. We provide a thorough, flat-fee diagnostic review of your tax documents so you know exactly where you stand without any surprises or high-pressure tactics.
-              </p>
-
-              <!-- Feature Checklist -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                  <div class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    ✓
-                  </div>
-                  <span>Written estimate of expected refund or balance due</span>
-                </div>
-                <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                  <div class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    ✓
-                  </div>
-                  <span>Detailed list of missing forms or necessary corrections</span>
-                </div>
-                <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                  <div class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    ✓
-                  </div>
-                  <span>Zero percentage commissions taken from your refund</span>
-                </div>
-                <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                  <div class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    ✓
-                  </div>
-                  <span>Plain-language explanation of every line and schedule</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-8 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <span class="text-xs text-slate-400 font-mono block">Review Timeline</span>
-                <span class="text-sm font-semibold text-white">Fast 48-Hour Turnaround via Portal</span>
+                <p class="font-serif text-sm font-semibold text-charcoal-900">Grounded in Faith & Gratitude</p>
+                <p class="text-[11px] text-stone-500">Serving Jacksonville, TX with honest stewardship</p>
               </div>
-              <button onclick="openBookingModal('Refund Checkup')" class="btn-primary px-6 py-3 rounded-xl text-xs sm:text-sm font-bold w-full sm:w-auto">
-                Request a Refund Checkup
-              </button>
             </div>
           </div>
-
-          <!-- Supporting Service: Individual & W-2 Tax Preparation -->
-          <div class="lg:col-span-5 glass-card glass-card-hover rounded-2xl p-7 md:p-8 flex flex-col justify-between">
-            <div class="space-y-5">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium uppercase tracking-wider bg-white/5 text-slate-300 border border-white/10 inline-block">
-                Tax Preparation
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight">
-                Individual & W-2 Tax Returns
-              </h3>
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Meticulous federal and multi-state tax return preparation for employees, families with dependent credits, homeowners, and self-directed investors.
-              </p>
-              <ul class="space-y-2.5 text-xs text-slate-300 pt-2">
-                <li class="flex items-center gap-2">
-                  <span class="text-amber-400">•</span> Electronic IRS e-file with instant confirmation
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-amber-400">•</span> Child tax credits and education credit optimization
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-amber-400">•</span> Prior-year amendments and IRS letter guidance
-                </li>
-              </ul>
-            </div>
-
-            <div class="pt-6 mt-6 border-t border-white/10">
-              <button onclick="openBookingModal('Individual Tax Preparation')" class="btn-secondary w-full py-3 rounded-xl text-xs font-bold">
-                Schedule Tax Prep Consultation
-              </button>
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      <!-- Tab Content 2: For Businesses (Hidden by default) -->
-      <div id="tab-content-businesses" class="space-y-8 hidden">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Center: Iconic Arch Frame & Circular Rotating Badge -->
+        <div class="lg:col-span-4 flex justify-center relative fade-up" style="transition-delay: 150ms;">
           
-          <!-- Service 1: Account Reconciliations -->
-          <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-mono font-bold text-sm">
-                01
-              </div>
-              <h3 class="text-lg font-bold text-white">Account Reconciliations</h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Matching bank, credit card, payroll, and merchant accounts with your general ledger so your books reflect total financial truth.
-              </p>
-              <div class="pt-2 text-xs font-mono text-slate-400 space-y-1.5">
-                <p>• Zero variance auditing</p>
-                <p>• Identify duplicate or ghost charges</p>
-                <p>• Ready for CPA / tax filing</p>
-              </div>
-            </div>
-            <div class="pt-6 mt-6 border-t border-white/10">
-              <button onclick="openBookingModal('Account Reconciliations')" class="btn-secondary w-full py-2.5 rounded-lg text-xs font-semibold">
-                Inquire on Reconciliations
-              </button>
-            </div>
-          </div>
+          <div class="relative w-[280px] sm:w-[320px] pt-4">
+            
+            <!-- Arch Background Container -->
+            <div class="arch-portrait w-full h-[400px] sm:h-[450px] relative overflow-hidden shadow-xl flex items-end justify-center">
+              
+              <!-- Subtle decorative lighting in arch -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-white/20 pointer-events-none"></div>
 
-          <!-- Service 2: Bookkeeping Support & Cleanup -->
-          <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-sm">
-                02
+              <!-- Professional Consultant Portrait (Custom Graphic Silhouette) -->
+              <div class="relative z-10 w-full flex flex-col items-center">
+                <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-stone-100/90 shadow-md flex items-center justify-center font-serif text-4xl sm:text-5xl font-bold text-charcoal-900 border-4 border-white/60">
+                  BNT
+                </div>
+                <div class="w-48 sm:w-56 h-48 bg-stone-900 rounded-t-full mt-2 shadow-2xl relative flex flex-col items-center pt-5">
+                  <div class="w-10 h-10 rounded-full bg-white/20 border border-white/40 flex items-center justify-center text-xs text-white font-serif">
+                    UTSA
+                  </div>
+                  <span class="text-xs font-semibold text-stone-200 mt-2 font-mono">Principal Consultant</span>
+                  <span class="text-[10px] text-caramel-light font-medium uppercase tracking-wider">MAcc • MBA</span>
+                </div>
               </div>
-              <h3 class="text-lg font-bold text-white">Bookkeeping & Record Cleanup</h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Behind on your books? We perform deep historical cleanups, catch-up bookkeeping, and chart-of-accounts restructuring for peace of mind.
-              </p>
-              <div class="pt-2 text-xs font-mono text-slate-400 space-y-1.5">
-                <p>• Multi-month catch-up accounting</p>
-                <p>• Categorization & receipt structuring</p>
-                <p>• Monthly recurring support available</p>
-              </div>
-            </div>
-            <div class="pt-6 mt-6 border-t border-white/10">
-              <button onclick="openBookingModal('Bookkeeping Cleanup')" class="btn-secondary w-full py-2.5 rounded-lg text-xs font-semibold">
-                Request Bookkeeping Review
-              </button>
-            </div>
-          </div>
 
-          <!-- Service 3: Business Tax Preparation -->
-          <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">
-                03
-              </div>
-              <h3 class="text-lg font-bold text-white">Small Business Tax Filing</h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Strategic tax filing support for self-employed contractors, LLCs, single-member entities, and local East Texas business operators.
-              </p>
-              <div class="pt-2 text-xs font-mono text-slate-400 space-y-1.5">
-                <p>• Schedule C optimization</p>
-                <p>• Expense allocation & deduction defense</p>
-                <p>• Year-round tax advisory support</p>
+            </div>
+
+            <!-- Signature Circular Rotating Badge overlapping bottom -->
+            <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 z-20">
+              <div class="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
+                
+                <!-- Rotating SVG Text Circle -->
+                <svg class="rotating-badge absolute inset-0 w-full h-full text-charcoal-900" viewBox="0 0 120 120">
+                  <path id="badgePath" d="M 60, 60 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="transparent"></path>
+                  <text class="text-[9.5px] font-bold tracking-[2.5px] uppercase fill-charcoal-900">
+                    <textPath xlink:href="#badgePath">
+                      • BNT CONSULTING • TRUSTED ETHICS •
+                    </textPath>
+                  </text>
+                </svg>
+
+                <!-- Center Arrow Circle -->
+                <div class="w-12 h-12 rounded-full bg-charcoal-900 text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform cursor-pointer" onclick="openBookingModal()">
+                  <svg class="w-5 h-5 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7m0 0H7m10 0v10"></path>
+                  </svg>
+                </div>
+
               </div>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10">
-              <button onclick="openBookingModal('Business Tax Filing')" class="btn-secondary w-full py-2.5 rounded-lg text-xs font-semibold">
-                Get Business Tax Estimate
-              </button>
-            </div>
+
           </div>
 
         </div>
-      </div>
 
-      <!-- Tab Content 3: Notary Services (Hidden by default) -->
-      <div id="tab-content-notary" class="glass-card rounded-2xl p-8 md:p-10 hidden">
-        <div class="max-w-3xl space-y-6">
-          <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/30">
-            OFFICIAL NOTARY SERVICES
-          </span>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white">
-            Accurate, reliable notarization in Jacksonville, Texas.
-          </h3>
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-            As certified notaries, we verify identities, witness signatures, and administer oaths with diligence, ensuring your legal and business documents are fully compliant with Texas statutes.
+        <!-- Right: Practical Note & Big Metrics -->
+        <div class="lg:col-span-4 space-y-8 lg:pl-6 fade-up" style="transition-delay: 300ms;">
+          
+          <!-- Balance Mini Icon -->
+          <div class="w-12 h-12 rounded-xl bg-stone-200/60 flex items-center justify-center text-stone-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+            </svg>
+          </div>
+
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Support should be clear, fast, and focused. BNT gives you practical guidance without the jargon, upfront flat pricing, and zero commissions taken from your refund.
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-200 pt-2">
-            <div class="p-4 rounded-xl bg-midnight-950/60 border border-white/5 space-y-1">
-              <strong class="text-white block text-sm">Real Estate & Deeds</strong>
-              <p class="text-slate-400">Warranty deeds, deeds of trust, closing documents, and mortgage packets.</p>
+
+          <!-- 2 Key Metrics -->
+          <div class="grid grid-cols-2 gap-6 pt-2 border-t border-stone-200/70">
+            <div>
+              <span class="font-serif text-3xl sm:text-4xl text-charcoal-900 font-bold block">100%</span>
+              <span class="text-xs text-stone-500 font-medium uppercase tracking-wider block mt-1">Flat-Rate Fees</span>
             </div>
-            <div class="p-4 rounded-xl bg-midnight-950/60 border border-white/5 space-y-1">
-              <strong class="text-white block text-sm">Powers of Attorney & Affidavits</strong>
-              <p class="text-slate-400">Medical directives, sworn statements, and statutory powers of attorney.</p>
-            </div>
-            <div class="p-4 rounded-xl bg-midnight-950/60 border border-white/5 space-y-1">
-              <strong class="text-white block text-sm">Business Contracts & Bills of Sale</strong>
-              <p class="text-slate-400">Commercial agreements, vehicle titles, and corporate authorization certificates.</p>
-            </div>
-            <div class="p-4 rounded-xl bg-midnight-950/60 border border-white/5 space-y-1">
-              <strong class="text-white block text-sm">Local Jacksonville TX Appointments</strong>
-              <p class="text-slate-400">Flexible appointments scheduled around your work and family commitments.</p>
+            <div>
+              <span class="font-serif text-3xl sm:text-4xl text-charcoal-900 font-bold block">UTSA</span>
+              <span class="text-xs text-stone-500 font-medium uppercase tracking-wider block mt-1">Master of Accountancy</span>
             </div>
           </div>
-          <div class="pt-4">
-            <button onclick="openBookingModal('Notary Service')" class="btn-primary px-6 py-3 rounded-xl text-xs sm:text-sm font-bold">
-              Schedule Notary Appointment
-            </button>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </section>
+          <!-- Subtle Background Watermark Graphic -->
+          <div class="pt-4 text-stone-300">
+            <span class="text-xs font-mono text-stone-400">Jacksonville, TX • Tyler • Rusk • Cherokee County</span>
+          </div>
 
-  <!-- 6. INTERACTIVE TOOL: THE REFUND CHECKUP INSPECTOR -->
-  <section class="py-16 bg-midnight-900/50 border-y border-white/10 relative">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card rounded-2xl p-7 sm:p-10 border border-amber-500/20 space-y-8">
-        
-        <div class="text-center max-w-2xl mx-auto space-y-3">
-          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold block">
-            INTERACTIVE DIAGNOSTIC PREVIEW
-          </span>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white">
-            What's inside your BNT Refund Checkup?
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-300">
-            Select the documents and circumstances that apply to your tax year to see how our flat-fee review provides clarity before you file.
-          </p>
-        </div>
-
-        <!-- Document Selector Pills -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
-          <button onclick="toggleDoc(this, 'w2')" class="doc-pill px-4 py-2 rounded-lg text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-amber-400/50 transition-all active:scale-95 selected">
-            W-2 Wage Statement
-          </button>
-          <button onclick="toggleDoc(this, 'self')" class="doc-pill px-4 py-2 rounded-lg text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-amber-400/50 transition-all active:scale-95 selected">
-            1099 / Self-Employed Income
-          </button>
-          <button onclick="toggleDoc(this, 'mortgage')" class="doc-pill px-4 py-2 rounded-lg text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-amber-400/50 transition-all active:scale-95">
-            1098 Mortgage Interest / Property Tax
-          </button>
-          <button onclick="toggleDoc(this, 'kids')" class="doc-pill px-4 py-2 rounded-lg text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-amber-400/50 transition-all active:scale-95 selected">
-            Dependent / Child Tax Credits
-          </button>
-          <button onclick="toggleDoc(this, 'college')" class="doc-pill px-4 py-2 rounded-lg text-xs font-medium border border-white/10 bg-white/5 text-slate-300 hover:border-amber-400/50 transition-all active:scale-95">
-            Higher Education Tuition (1098-T)
-          </button>
-        </div>
-
-        <!-- Dynamic Output Box -->
-        <div class="bg-midnight-950/80 rounded-xl p-5 border border-white/10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          <div class="space-y-1">
-            <span class="text-[11px] font-mono text-slate-400 block uppercase">Review Scope</span>
-            <span id="scope-status" class="text-sm font-bold text-amber-300 block">3 Items Selected for Audit</span>
-            <p class="text-xs text-slate-400 mt-1">Cross-checked for deductions and missing schedules.</p>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[11px] font-mono text-slate-400 block uppercase">Pricing Structure</span>
-            <span class="text-sm font-bold text-emerald-400 block">Guaranteed Fixed Flat-Fee</span>
-            <p class="text-xs text-slate-400 mt-1">No percentage fees taken from your return.</p>
-          </div>
-          <div class="flex justify-start md:justify-end">
-            <button onclick="openBookingModal('Refund Checkup Diagnostic')" class="btn-primary px-5 py-2.5 rounded-lg text-xs font-bold w-full md:w-auto">
-              Book This Review
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. HOW WE WORK: THE 3 CORE BNT PILLARS -->
-  <section id="how-we-work" class="py-20 md:py-28 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold block">
-          THE BNT ETHOS & OPERATING PRINCIPLES
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-          A refreshingly honest way to manage your taxes and books.
-        </h2>
-        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-          Our practice is built on faith, gratitude, and uncompromising integrity. Here are three promises we make to every single client who walks through our doors.
-        </p>
-      </div>
-
-      <!-- 3 Distinct Pillars (Asymmetric Layout) -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- Pillar 1 -->
-        <div class="glass-card rounded-2xl p-8 border-t-2 border-t-amber-400 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-mono text-base font-bold">
-              01
-            </div>
-            <h3 class="text-xl font-bold text-white">Plain Language & Upfront Pricing</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              We never hide behind confusing accounting jargon or surprise invoices. We explain everything in everyday terms and state our full service fee upfront before any work begins.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-amber-300/80 pt-4 border-t border-white/5">
-            Transparent Cost • Zero Hidden Add-Ons
-          </div>
-        </div>
-
-        <!-- Pillar 2 -->
-        <div class="glass-card rounded-2xl p-8 border-t-2 border-t-emerald-400 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-mono text-base font-bold">
-              02
-            </div>
-            <h3 class="text-xl font-bold text-white">Never Based on Refund Size</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Unlike traditional preparers who take a large cut of your refund or push questionable deductions to inflate fees, our pricing is strictly flat. Your refund belongs to you and your family.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-emerald-400/80 pt-4 border-t border-white/5">
-            100% Flat-Rate • Zero Commission
-          </div>
-        </div>
-
-        <!-- Pillar 3 -->
-        <div class="glass-card rounded-2xl p-8 border-t-2 border-t-blue-400 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-mono text-base font-bold">
-              03
-            </div>
-            <h3 class="text-xl font-bold text-white">Private, Secure Portal Only</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Your financial identity is sacred. We never ask you to email or text sensitive tax forms, Social Security numbers, or bank records. All files are safely uploaded into your private 256-bit encrypted portal.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-blue-400/80 pt-4 border-t border-white/5">
-            End-to-End Encrypted • Bank-Grade Storage
-          </div>
         </div>
 
       </div>
 
-    </div>
-  </section>
+    </section>
 
-  <!-- 8. ABOUT THE PRINCIPAL CONSULTANT -->
-  <section id="about" class="py-20 md:py-28 bg-midnight-900/60 border-y border-white/10 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 3. ABOUT SECTION (CLEAN SPLIT LAYOUT) -->
+    <section id="about" class="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 bg-white/70 border-t border-stone-200/60">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Column: Credential & Profile Showcase -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="glass-card rounded-2xl p-7 border border-white/10 relative overflow-hidden">
-            <div class="absolute -right-8 -bottom-8 w-44 h-44 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <!-- Left: Large Rounded Editorial Photo Frame -->
+        <div class="lg:col-span-6 fade-up">
+          <div class="relative rounded-3xl overflow-hidden shadow-lg border border-stone-200/80 aspect-[4/3] bg-stone-900 group">
+            <!-- Warm stylized desk aesthetic -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-stone-950 via-stone-850 to-stone-800 opacity-95"></div>
             
-            <div class="space-y-4 relative z-10">
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-midnight-950 font-bold font-mono text-2xl flex items-center justify-center shadow-lg">
-                  PC
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white">Principal Consultant</h3>
-                  <p class="text-xs text-amber-300 font-mono">BNT Professional Services</p>
-                  <p class="text-xs text-slate-400 mt-0.5">Jacksonville, Texas</p>
-                </div>
+            <div class="absolute inset-0 p-8 sm:p-10 flex flex-col justify-between text-white">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono tracking-widest text-caramel uppercase">Institutional Standard</span>
+                <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-xs">TX</span>
               </div>
-
-              <div class="space-y-3 pt-3 border-t border-white/10 text-xs">
-                <div class="flex items-center justify-between py-1.5 border-b border-white/5">
-                  <span class="text-slate-400 font-mono">Master of Accountancy (MAcc)</span>
-                  <span class="text-white font-medium">Univ. of Texas at San Antonio (UTSA)</span>
+              <div class="space-y-3">
+                <p class="font-serif text-2xl sm:text-3xl font-normal leading-snug text-stone-100">
+                  "Doing honest work, serving people with integrity, and treating every client with respect."
+                </p>
+                <div class="flex items-center gap-3 pt-2 text-xs font-mono text-stone-400">
+                  <span>Ex-JPMorgan Chase</span>
+                  <span>•</span>
+                  <span>Private New York Tax Firm</span>
                 </div>
-                <div class="flex items-center justify-between py-1.5 border-b border-white/5">
-                  <span class="text-slate-400 font-mono">Master of Business Admin (MBA)</span>
-                  <span class="text-white font-medium">Advanced Finance Degree</span>
-                </div>
-                <div class="flex items-center justify-between py-1.5 border-b border-white/5">
-                  <span class="text-slate-400 font-mono">Prior Private Tax Practice</span>
-                  <span class="text-white font-medium">New York Tax Firm</span>
-                </div>
-                <div class="flex items-center justify-between py-1.5">
-                  <span class="text-slate-400 font-mono">Banking Experience</span>
-                  <span class="text-white font-medium">JPMorgan Chase</span>
-                </div>
-              </div>
-
-              <div class="p-4 rounded-xl bg-midnight-950/80 border border-white/5 text-xs text-slate-300 italic leading-relaxed">
-                "Our work is grounded in faith and gratitude. We believe in doing honest work, serving people with integrity, and treating every client with respect."
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Personal Story & Commitment -->
-        <div class="lg:col-span-7 space-y-6">
-          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold block">
-            ABOUT BNT PROFESSIONAL SERVICES
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
-            Institutional caliber financial discipline, tailored to your family and business.
+        <!-- Right: About Story & Credentials -->
+        <div class="lg:col-span-6 space-y-6 fade-up" style="transition-delay: 150ms;">
+          
+          <div class="inline-flex items-center gap-2 text-xs font-semibold text-stone-700 uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-caramel"></span>
+            About BNT Professional Services
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+            Building Solutions Through Financial Excellence & Integrity
           </h2>
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-            Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA), alongside a bachelor's degree and a Master of Business Administration (MBA).
+
+          <p class="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+            At BNT Professional Services, we believe that tax and financial guidance should be clear, confident, and client-focused. With years of experience helping individuals and businesses, our mission is to simplify complex filings and provide strategic clarity.
           </p>
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-            Having worked at a private New York tax firm and for JPMorgan Chase, he brings deep institutional experience in tax architecture, reconciliation, and financial discipline directly to everyday clients across Jacksonville and surrounding communities.
+
+          <p class="text-sm text-stone-600 leading-relaxed font-normal">
+            Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA), a Bachelor's degree, and a Master of Business Administration (MBA). Having worked at a private New York tax firm and for JPMorgan Chase, he brings deep institutional knowledge directly to East Texas families and businesses.
           </p>
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-            Whether preparing an individual tax return or organizing years of messy business records, our philosophy remains steadfast: clear guidance, respect for your hard work, and a commitment to serving you honestly.
-          </p>
-          <div class="pt-4 flex items-center gap-4">
-            <button onclick="openBookingModal('Consultation with Principal')" class="btn-primary px-7 py-3 rounded-xl text-xs sm:text-sm font-bold">
-              Book a Personal Consultation
+
+          <div class="pt-2">
+            <button onclick="openBookingModal('Consultation with Principal')" class="btn-caramel pl-6 pr-3 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-3">
+              <span>More About Our Practice</span>
+              <span class="w-7 h-7 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. KEY METRICS STRIP (4-COLUMN DIVIDER STYLE) -->
+    <section class="border-y border-stone-200/70 bg-linen-100/50 py-12 px-6 sm:px-10 lg:px-14">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-stone-200">
+        
+        <div class="pt-4 lg:pt-0 lg:px-6 first:pl-0">
+          <span class="font-serif text-4xl sm:text-5xl font-normal text-charcoal-900 block">100%</span>
+          <span class="text-xs text-stone-500 uppercase tracking-wider block mt-1">Upfront Flat-Rate Pricing</span>
+        </div>
+
+        <div class="pt-4 lg:pt-0 lg:px-6">
+          <span class="font-serif text-4xl sm:text-5xl font-normal text-charcoal-900 block">$0</span>
+          <span class="text-xs text-stone-500 uppercase tracking-wider block mt-1">Commission on Refunds</span>
+        </div>
+
+        <div class="pt-4 lg:pt-0 lg:px-6">
+          <span class="font-serif text-4xl sm:text-5xl font-normal text-charcoal-900 block">256-Bit</span>
+          <span class="text-xs text-stone-500 uppercase tracking-wider block mt-1">Encrypted Client Vault</span>
+        </div>
+
+        <div class="pt-4 lg:pt-0 lg:px-6">
+          <span class="font-serif text-4xl sm:text-5xl font-normal text-charcoal-900 block">UTSA</span>
+          <span class="text-xs text-stone-500 uppercase tracking-wider block mt-1">Master of Accountancy</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SERVICES SECTION (CLEAN EDITORIAL CARDS) -->
+    <section id="services" class="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-[#F6F3EE]">
+      
+      <div class="max-w-2xl mb-14 space-y-3 fade-up">
+        <span class="text-xs font-semibold uppercase tracking-widest text-stone-600 block">
+          Our Services
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+          Expertise Across Every Financial & Tax Need
+        </h2>
+        <p class="text-sm text-stone-600">
+          Transparent, reliable services crafted for individuals, families, and growing businesses in Jacksonville and beyond.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: The Refund Checkup -->
+        <div id="refund-checkup" class="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 fade-up">
+          <div class="space-y-4">
+            <div class="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
+              01
+            </div>
+            <h3 class="font-serif text-2xl text-charcoal-900">The BNT Refund Checkup</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              A flat-fee review of your tax documents with a written estimate of your expected refund or balance due, plus a list of anything missing or needing correction.
+            </p>
+            <ul class="text-xs text-stone-600 space-y-2 pt-2">
+              <li class="flex items-center gap-2">✓ Written refund or balance calculation</li>
+              <li class="flex items-center gap-2">✓ Itemized list of missing deductions</li>
+              <li class="flex items-center gap-2">✓ Zero commission taken from refund</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100">
+            <button onclick="openBookingModal('The BNT Refund Checkup')" class="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors">
+              <span>Book Refund Checkup</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Individual & W-2 Tax Prep -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 fade-up" style="transition-delay: 100ms;">
+          <div class="space-y-4">
+            <div class="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
+              02
+            </div>
+            <h3 class="font-serif text-2xl text-charcoal-900">Individual Tax Preparation</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Complete federal and multi-state tax return preparation for W-2 filers, homeowners, families, and self-employed individuals.
+            </p>
+            <ul class="text-xs text-stone-600 space-y-2 pt-2">
+              <li class="flex items-center gap-2">✓ Electronic IRS e-file confirmation</li>
+              <li class="flex items-center gap-2">✓ Dependent & education credit optimization</li>
+              <li class="flex items-center gap-2">✓ Plain language line-by-line review</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100">
+            <button onclick="openBookingModal('Individual Tax Preparation')" class="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors">
+              <span>Schedule Tax Filing</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Business Books & Reconciliations -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 fade-up" style="transition-delay: 200ms;">
+          <div class="space-y-4">
+            <div class="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
+              03
+            </div>
+            <h3 class="font-serif text-2xl text-charcoal-900">Business Books & Notary</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Bank and credit card reconciliations, financial record cleanups, small business tax filings, and certified Texas notary services.
+            </p>
+            <ul class="text-xs text-stone-600 space-y-2 pt-2">
+              <li class="flex items-center gap-2">✓ Account statement matching & audit defense</li>
+              <li class="flex items-center gap-2">✓ Multi-month historical catch-up accounting</li>
+              <li class="flex items-center gap-2">✓ Certified notarization of legal documents</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100">
+            <button onclick="openBookingModal('Business Bookkeeping & Notary')" class="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors">
+              <span>Explore Business Services</span>
+              <span>➔</span>
             </button>
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- 9. LOCAL COVERAGE AREA & MAP BANNER -->
-  <section id="coverage" class="py-16 md:py-20 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card rounded-2xl p-8 sm:p-12 border border-white/10 relative overflow-hidden">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-7 space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-mono text-amber-300">
-              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-              CHEROKEE COUNTY & SURROUNDING REGION
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-bold text-white">
-              Proudly serving Jacksonville, Texas and surrounding cities.
-            </h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              We provide both in-person consultations by appointment in Jacksonville, TX and 100% remote advisory across East Texas through our private client portal.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="px-3 py-1 rounded-lg bg-midnight-950/80 border border-white/10 text-xs font-mono text-slate-200">Jacksonville, TX</span>
-              <span class="px-3 py-1 rounded-lg bg-midnight-950/80 border border-white/10 text-xs font-mono text-slate-200">Rusk, TX</span>
-              <span class="px-3 py-1 rounded-lg bg-midnight-950/80 border border-white/10 text-xs font-mono text-slate-200">Bullard, TX</span>
-              <span class="px-3 py-1 rounded-lg bg-midnight-950/80 border border-white/10 text-xs font-mono text-slate-200">Tyler, TX</span>
-              <span class="px-3 py-1 rounded-lg bg-midnight-950/80 border border-white/10 text-xs font-mono text-slate-200">Palestine, TX</span>
-              <span class="px-3 py-1 rounded-lg bg-midnight-950/80 border border-white/10 text-xs font-mono text-slate-200">Henderson, TX</span>
-            </div>
-          </div>
+    </section>
 
-          <div class="lg:col-span-5 bg-midnight-950/80 rounded-xl p-6 border border-white/10 space-y-4">
-            <h4 class="text-sm font-bold text-white font-mono uppercase tracking-wide">Ready to Begin?</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Schedule your introductory consultation or request an access key for your private client portal.
-            </p>
-            <div class="space-y-2.5 pt-2">
-              <button onclick="openBookingModal()" class="w-full btn-primary py-3 rounded-lg text-xs font-bold text-center">
-                Schedule a Consultation
-              </button>
-              <button onclick="openPortalModal()" class="w-full btn-secondary py-3 rounded-lg text-xs font-semibold text-center flex items-center justify-center gap-2">
-                <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                </svg>
-                Log In to Client Portal
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. FOOTER -->
-  <footer class="border-t border-white/10 bg-midnight-950 pt-16 pb-12 text-slate-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <!-- 6. CONSULTATION & CONTACT (EXACT SPLIT FORM & MAP FROM REFERENCE) -->
+    <section id="consultation" class="px-6 sm:px-10 lg:px-14 py-20 bg-white border-t border-stone-200/70">
       
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        <!-- Col 1: Brand Info -->
-        <div class="space-y-4 md:col-span-2">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-midnight-800 border border-white/10 flex items-center justify-center font-mono font-bold text-amber-400 text-sm">
-              BNT
-            </div>
-            <span class="text-base font-bold text-white">BNT Professional Services</span>
-          </div>
-          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
-            Business. Notary. Tax. Made Simple. <br>
-            Providing honest financial stewardship, upfront flat-rate pricing, and dedicated client service in Jacksonville, TX.
-          </p>
-          <div class="text-xs text-slate-500 font-mono">
-            Principal Consultant: UTSA MAcc • MBA • Ex-JPMorgan Chase
-          </div>
-        </div>
-
-        <!-- Col 2: Services -->
-        <div class="space-y-3">
-          <h5 class="text-xs font-bold uppercase tracking-wider text-white font-mono">Services</h5>
-          <ul class="space-y-2 text-slate-400">
-            <li><a href="#refund-checkup" class="hover:text-amber-400 transition-colors">Refund Checkup</a></li>
-            <li><a href="#services" class="hover:text-amber-400 transition-colors">Individual Tax Returns</a></li>
-            <li><a href="#services" class="hover:text-amber-400 transition-colors">Account Reconciliations</a></li>
-            <li><a href="#services" class="hover:text-amber-400 transition-colors">Bookkeeping Support</a></li>
-            <li><a href="#services" class="hover:text-amber-400 transition-colors">Texas Notary Services</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Portal & Security -->
-        <div class="space-y-3">
-          <h5 class="text-xs font-bold uppercase tracking-wider text-white font-mono">Security & Access</h5>
-          <ul class="space-y-2 text-slate-400">
-            <li>
-              <button onclick="openPortalModal()" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-left">
-                <span>Client Portal Access</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              </button>
-            </li>
-            <li><a href="#how-we-work" class="hover:text-amber-400 transition-colors">No Refund-Cut Policy</a></li>
-            <li><a href="#how-we-work" class="hover:text-amber-400 transition-colors">256-Bit Vault Protocol</a></li>
-            <li><span class="text-slate-500">Jacksonville, TX 75766</span></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Legal & Copyright Disclaimers -->
-      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-        <p>© 2026 BNT Professional Services. All rights reserved.</p>
-        <p class="text-center sm:text-right">
-          Grounded in faith, integrity, and respect. No percentage cuts on refunds.
+      <div class="max-w-2xl mb-12">
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+          Client Consultation
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500 mt-1">
+          Reach out to BNT Professional Services. We provide straightforward answers to your tax and bookkeeping needs.
         </p>
       </div>
 
-    </div>
-  </footer>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Left: Map Preview Area (Jacksonville, TX and East Texas) -->
+        <div class="lg:col-span-6 rounded-3xl overflow-hidden border border-stone-200 bg-linen-100 p-6 flex flex-col justify-between relative min-h-[380px]">
+          <!-- Stylized Map Texture & Location Pins -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold uppercase text-stone-500">Service Coverage Area</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-white text-[11px] font-semibold text-stone-700 shadow-sm border border-stone-200">
+                Jacksonville, TX
+              </span>
+            </div>
+            <p class="text-xs text-stone-600">
+              Serving Cherokee County, Smith County, Anderson County, and surrounding communities with in-person appointments and 100% remote encrypted portal access.
+            </p>
+          </div>
 
-  <!-- 11. INTERACTIVE CONSULTATION BOOKING MODAL -->
-  <div id="booking-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm" onclick="handleBackdropClick(event, 'booking-modal')">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full p-6 sm:p-8 border border-white/15 shadow-2xl relative" onclick="event.stopPropagation()">
+          <!-- Stylized Pin Card -->
+          <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-stone-200 shadow-sm space-y-2">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-caramel/20 text-caramel flex items-center justify-center font-bold text-xs">
+                📍
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-charcoal-900">Jacksonville Office & Remote Vault</h4>
+                <p class="text-[11px] text-stone-500">Jacksonville, TX 75766</p>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-600">
+              <span>Direct: (903) 555-0192</span>
+              <span class="text-caramel font-semibold">Open Mon-Sat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: "Get in Touch" Clean Card Form -->
+        <div class="lg:col-span-6 bg-[#FAF8F5] rounded-3xl p-7 sm:p-9 border border-stone-200/90 shadow-sm">
+          
+          <div class="space-y-2 mb-6">
+            <h3 class="font-serif text-2xl text-charcoal-900">Get in Touch with BNT</h3>
+            <p class="text-xs text-stone-500">
+              Every great solution starts with a simple conversation. Connect with us to discover how simple tax and books can be.
+            </p>
+          </div>
+
+          <!-- Category Chips -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <button type="button" onclick="selectChip(this)" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-caramel text-charcoal-900 transition-all">
+              Tax Prep
+            </button>
+            <button type="button" onclick="selectChip(this)" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-stone-200 text-stone-600 hover:border-stone-400 transition-all">
+              Refund Checkup
+            </button>
+            <button type="button" onclick="selectChip(this)" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-stone-200 text-stone-600 hover:border-stone-400 transition-all">
+              Bookkeeping & Notary
+            </button>
+          </div>
+
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-stone-600 font-medium mb-1">Full Name*</label>
+                <input required type="text" placeholder="Your name" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel">
+              </div>
+              <div>
+                <label class="block text-stone-600 font-medium mb-1">Phone Number*</label>
+                <input required type="tel" placeholder="(903) 000-0000" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-stone-600 font-medium mb-1">Email Address*</label>
+                <input required type="email" placeholder="email@address.com" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel">
+              </div>
+              <div>
+                <label class="block text-stone-600 font-medium mb-1">Service Type*</label>
+                <select id="contact-service-dropdown" class="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
+                  <option value="Refund Checkup">The BNT Refund Checkup</option>
+                  <option value="Individual Tax">Individual Tax Preparation</option>
+                  <option value="Bookkeeping">Account Reconciliations</option>
+                  <option value="Notary">Texas Notary Service</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-stone-600 font-medium mb-1">Your Message</label>
+              <textarea rows="3" placeholder="Tell us about your taxes or bookkeeping records..." class="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="btn-caramel pl-5 pr-3 py-2.5 rounded-full text-xs font-semibold flex items-center gap-3">
+              <span>Send A Message</span>
+              <span class="w-6 h-6 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 7. EDITORIAL INSIGHTS / ARTICLES LIST (LIKE REFERENCE) -->
+    <section class="px-6 sm:px-10 lg:px-14 py-20 bg-[#F6F3EE] border-t border-stone-200/70">
       
-      <!-- Close Button -->
-      <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-
-      <div class="space-y-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <span class="text-[11px] font-mono text-amber-400 uppercase tracking-wider font-bold block">
-            CONFIDENTIAL SCHEDULING
+          <span class="text-xs font-semibold uppercase tracking-widest text-stone-500 block mb-2">
+            Our Guidance & News
           </span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Book a Consultation</h3>
-          <p class="text-xs text-slate-300 mt-1">
-            Share a few details and we will confirm your consultation time directly.
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+            What You Need To Know In Tax & Books
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-500 max-w-sm">
+          Taxes can be complex, but our insights keep it simple. Discover practical tips, real-world examples, and honest filing guides.
+        </p>
+      </div>
+
+      <!-- 3 Horizontal Insight Cards -->
+      <div class="space-y-4">
+        
+        <!-- Row 1 -->
+        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/70 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-caramel/60 transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-linen-200 text-charcoal-900 font-serif text-lg font-bold flex items-center justify-center shrink-0">
+              01
+            </div>
+            <div>
+              <span class="text-[11px] font-mono text-stone-400 block mb-1">Tax Strategy • Client Education</span>
+              <h4 class="font-serif text-lg font-bold text-charcoal-900">Why You Should Never Pay a Percentage of Your Tax Refund</h4>
+              <p class="text-xs text-stone-500 mt-1 max-w-xl">
+                Predatory preparers take huge cuts of your hard-earned refund. Discover why upfront flat-rate fees protect your financial security.
+              </p>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Article Inquiry: Refund Fees')" class="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/70 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-caramel/60 transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-linen-200 text-charcoal-900 font-serif text-lg font-bold flex items-center justify-center shrink-0">
+              02
+            </div>
+            <div>
+              <span class="text-[11px] font-mono text-stone-400 block mb-1">Bookkeeping • Small Business</span>
+              <h4 class="font-serif text-lg font-bold text-charcoal-900">Account Reconciliation: Catching Discrepancies Before the IRS Does</h4>
+              <p class="text-xs text-stone-500 mt-1 max-w-xl">
+                How monthly bank and credit card matching keeps your business books accurate, reduces stress, and eliminates costly tax season surprises.
+              </p>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Article Inquiry: Reconciliation')" class="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/70 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-caramel/60 transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-linen-200 text-charcoal-900 font-serif text-lg font-bold flex items-center justify-center shrink-0">
+              03
+            </div>
+            <div>
+              <span class="text-[11px] font-mono text-stone-400 block mb-1">Security & Portals • Best Practices</span>
+              <h4 class="font-serif text-lg font-bold text-charcoal-900">Why We Never Accept Sensitive Tax Documents via Email or Text</h4>
+              <p class="text-xs text-stone-500 mt-1 max-w-xl">
+                Unencrypted emails expose your SSN and bank details. Here is how our private 256-bit client portal protects your identity.
+              </p>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Article Inquiry: Security')" class="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0">
+            Learn More
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 8. NEWSLETTER / BOTTOM CALLOUT (LIKE REFERENCE) -->
+    <section class="px-6 sm:px-10 lg:px-14 py-14 bg-white border-t border-stone-200/70">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 text-center md:text-left">
+          Turn Financial Questions <br class="hidden sm:inline"> Into Confident Decisions.
+        </h3>
+
+        <div class="flex items-center gap-2 w-full md:w-auto max-w-md bg-linen-100 p-1.5 rounded-full border border-stone-200">
+          <input type="email" placeholder="Email Address" class="bg-transparent text-xs text-stone-800 px-4 py-2 w-full focus:outline-none placeholder-stone-400">
+          <button onclick="openBookingModal('Newsletter Subscribe')" class="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0 flex items-center gap-2">
+            <span>Subscribe</span>
+            <span>➔</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER WITH GIANT WATERMARK TEXT (EXACT MATCH TO REFERENCE) -->
+    <footer class="relative bg-linen-100/80 px-6 sm:px-10 lg:px-14 pt-16 pb-12 border-t border-stone-200/70 overflow-hidden">
+      
+      <!-- Subtle Giant Watermark Text behind footer -->
+      <div class="absolute bottom-0 left-0 right-0 text-center pointer-events-none select-none overflow-hidden opacity-10">
+        <span class="font-serif text-[60px] sm:text-[100px] lg:text-[140px] font-bold tracking-widest text-stone-600 block leading-none">
+          BNT SERVICES
+        </span>
+      </div>
+
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-charcoal-900 text-white flex items-center justify-center font-serif font-bold text-sm">
+              B
+            </div>
+            <span class="font-serif text-xl font-bold text-charcoal-900">BNT Services</span>
+          </div>
+          <p class="text-xs text-stone-500 leading-relaxed max-w-xs">
+            Grounded in faith and gratitude. Delivering honest work, upfront flat-rate pricing, and respectful service for every client.
           </p>
         </div>
 
-        <form id="consultation-form" onsubmit="submitBooking(event)" class="space-y-4 text-xs">
+        <!-- Links Col 1 -->
+        <div class="space-y-3 text-xs">
+          <h5 class="font-bold text-charcoal-900 uppercase tracking-wider">Company</h5>
+          <ul class="space-y-2 text-stone-600">
+            <li><a href="#home" class="hover:text-caramel transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-caramel transition-colors">About Principal</a></li>
+            <li><a href="#services" class="hover:text-caramel transition-colors">Services</a></li>
+            <li><a href="#consultation" class="hover:text-caramel transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Col 2 -->
+        <div class="space-y-3 text-xs">
+          <h5 class="font-bold text-charcoal-900 uppercase tracking-wider">Services</h5>
+          <ul class="space-y-2 text-stone-600">
+            <li><a href="#refund-checkup" class="hover:text-caramel transition-colors">Refund Checkup</a></li>
+            <li><a href="#services" class="hover:text-caramel transition-colors">Individual Tax Returns</a></li>
+            <li><a href="#services" class="hover:text-caramel transition-colors">Account Reconciliations</a></li>
+            <li><a href="#services" class="hover:text-caramel transition-colors">Texas Notary Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div class="space-y-3 text-xs text-stone-600">
+          <h5 class="font-bold text-charcoal-900 uppercase tracking-wider">Contacts</h5>
+          <p>Jacksonville, TX 75766</p>
+          <p>Phone: +1 (903) 555-0192</p>
+          <p>Client Vault: 256-Bit SSL Protected</p>
+        </div>
+
+      </div>
+
+      <div class="relative z-10 pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-4">
+        <p>© 2026 BNT Professional Services. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-charcoal-900 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-charcoal-900 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+
+    </footer>
+
+  </div>
+
+  <!-- INTERACTIVE CONSULTATION MODAL -->
+  <div id="booking-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="handleBackdropClick(event, 'booking-modal')">
+    <div class="modal-content bg-white rounded-3xl max-w-lg w-full p-8 border border-stone-200 shadow-2xl relative" onclick="event.stopPropagation()">
+      
+      <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-stone-400 hover:text-charcoal-900 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="space-y-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-caramel font-bold">Fast & Confidential</span>
+          <h3 class="font-serif text-2xl text-charcoal-900 mt-1">Book Your Consultation</h3>
+          <p class="text-xs text-stone-500">
+            Tell us about your tax or bookkeeping situation and we will get back to you directly.
+          </p>
+        </div>
+
+        <form onsubmit="handleModalSubmit(event)" class="space-y-3.5 text-xs">
           <div>
-            <label class="block font-medium text-slate-300 mb-1">Service Needed</label>
-            <select id="modal-service-select" class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-400 font-sans">
-              <option value="The BNT Refund Checkup">The BNT Refund Checkup (Flat-Fee Document Review)</option>
-              <option value="Individual Tax Preparation">Individual & W-2 Tax Return Preparation</option>
-              <option value="Account Reconciliations">Account Reconciliations & Ledger Matching</option>
-              <option value="Bookkeeping Support & Cleanup">Bookkeeping Support & Financial Record Cleanup</option>
-              <option value="Business Tax Preparation">Small Business Tax Filing Support</option>
-              <option value="Texas Notary Service">Certified Notary Service (Jacksonville, TX)</option>
+            <label class="block text-stone-600 font-medium mb-1">Service Needed</label>
+            <select id="modal-service-select" class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
+              <option value="The BNT Refund Checkup">The BNT Refund Checkup (Flat-Fee Review)</option>
+              <option value="Individual Tax Preparation">Individual & W-2 Tax Preparation</option>
+              <option value="Account Reconciliations">Account Reconciliations & Cleanups</option>
+              <option value="Texas Notary Services">Texas Certified Notary Services</option>
             </select>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block font-medium text-slate-300 mb-1">Full Name</label>
-              <input required type="text" placeholder="Johnathan Davis" class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans">
+              <label class="block text-stone-600 font-medium mb-1">Your Name</label>
+              <input required type="text" placeholder="Johnathan Davis" class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
             </div>
             <div>
-              <label class="block font-medium text-slate-300 mb-1">Phone Number</label>
-              <input required type="tel" placeholder="(903) 555-0192" class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans">
+              <label class="block text-stone-600 font-medium mb-1">Phone Number</label>
+              <input required type="tel" placeholder="(903) 555-0192" class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
             </div>
           </div>
 
           <div>
-            <label class="block font-medium text-slate-300 mb-1">Email Address</label>
-            <input required type="email" placeholder="client@example.com" class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans">
+            <label class="block text-stone-600 font-medium mb-1">Email Address</label>
+            <input required type="email" placeholder="client@example.com" class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
           </div>
 
           <div>
-            <label class="block font-medium text-slate-300 mb-1">Notes / Specific Questions (Optional)</label>
-            <textarea rows="2" placeholder="Tell us about your tax situation or books..." class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans resize-none"></textarea>
+            <label class="block text-stone-600 font-medium mb-1">Notes / Questions (Optional)</label>
+            <textarea rows="2" placeholder="Brief details about your filing or records..." class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel resize-none"></textarea>
           </div>
 
-          <div class="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-400 flex items-start gap-2">
-            <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-            <span>You will receive access to your private document upload portal upon confirmation.</span>
-          </div>
-
-          <button type="submit" class="w-full btn-primary py-3 rounded-xl text-xs sm:text-sm font-bold mt-2">
+          <button type="submit" class="w-full btn-caramel py-3 rounded-full text-xs sm:text-sm font-semibold mt-2">
             Confirm Consultation Request
           </button>
         </form>
 
-        <div id="booking-success" class="hidden text-center py-6 space-y-3">
-          <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-xl">
+        <div id="modal-success" class="hidden text-center py-6 space-y-3">
+          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-xl">
             ✓
           </div>
-          <h4 class="text-lg font-bold text-white">Consultation Request Received</h4>
-          <p class="text-xs text-slate-300 max-w-sm mx-auto">
-            Thank you. Our Principal Consultant will review your details and reach out within 24 hours to confirm your appointment time and portal credentials.
+          <h4 class="font-serif text-xl text-charcoal-900">Request Received</h4>
+          <p class="text-xs text-stone-500">
+            Thank you. We will contact you within 24 hours to confirm your consultation.
           </p>
-          <button onclick="closeBookingModal()" class="btn-secondary px-6 py-2 rounded-lg text-xs font-semibold mt-4">
-            Close Window
-          </button>
         </div>
-
       </div>
 
     </div>
   </div>
 
-  <!-- 12. CLIENT PORTAL MODAL PREVIEW -->
-  <div id="portal-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm" onclick="handleBackdropClick(event, 'portal-modal')">
-    <div class="modal-content glass-card rounded-2xl max-w-md w-full p-6 sm:p-8 border border-white/15 shadow-2xl relative" onclick="event.stopPropagation()">
-      
-      <button onclick="closePortalModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
+  <!-- CLIENT PORTAL LOGIN MODAL -->
+  <div id="portal-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="handleBackdropClick(event, 'portal-modal')">
+    <div class="modal-content bg-white rounded-3xl max-w-md w-full p-8 border border-stone-200 shadow-2xl relative text-center" onclick="event.stopPropagation()">
+      <button onclick="closePortalModal()" class="absolute top-6 right-6 text-stone-400 hover:text-charcoal-900 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
 
-      <div class="space-y-5 text-center">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mx-auto">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-bold text-white">Private Client Portal</h3>
-          <p class="text-xs text-slate-400 mt-1">256-Bit Encrypted Secure Storage Gateway</p>
-        </div>
-
-        <form onsubmit="handlePortalSubmit(event)" class="space-y-3.5 text-left text-xs">
-          <div>
-            <label class="block font-medium text-slate-300 mb-1">Client ID / Email</label>
-            <input required type="text" placeholder="name@domain.com" class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans">
-          </div>
-          <div>
-            <label class="block font-medium text-slate-300 mb-1">Passcode / Vault Key</label>
-            <input required type="password" placeholder="••••••••••••" class="w-full bg-midnight-950 border border-white/10 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans">
-          </div>
-          <button type="submit" class="w-full btn-primary py-3 rounded-xl text-xs sm:text-sm font-bold mt-2">
-            Unlock Client Vault
-          </button>
-        </form>
-
-        <p class="text-[11px] text-slate-400">
-          Need portal access? <a href="#" onclick="closePortalModal(); openBookingModal('Portal Access Request'); return false;" class="text-amber-400 underline font-semibold">Request your client credentials</a>
-        </p>
+      <div class="w-12 h-12 rounded-full bg-caramel/20 text-caramel flex items-center justify-center mx-auto mb-4">
+        🔒
       </div>
 
+      <h3 class="font-serif text-2xl text-charcoal-900">Secure Client Vault</h3>
+      <p class="text-xs text-stone-500 mt-1 mb-6">256-bit encrypted gateway for confidential document upload.</p>
+
+      <form onsubmit="handlePortalSubmit(event)" class="space-y-4 text-xs text-left">
+        <div>
+          <label class="block text-stone-600 font-medium mb-1">Client ID / Email</label>
+          <input required type="text" placeholder="name@domain.com" class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
+        </div>
+        <div>
+          <label class="block text-stone-600 font-medium mb-1">Passcode</label>
+          <input required type="password" placeholder="••••••••••••" class="w-full bg-linen-100/70 border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel">
+        </div>
+        <button type="submit" class="w-full btn-caramel py-3 rounded-full text-xs font-semibold">
+          Access Private Vault
+        </button>
+      </form>
     </div>
   </div>
 
-  <!-- JavaScript for Tabs, Modal, and Interactive Tool -->
   <script>
-    // Tab Switcher
-    function switchTab(tabId) {
-      const tabs = ['individuals', 'businesses', 'notary'];
-      tabs.forEach(t => {
-        const content = document.getElementById(`tab-content-${t}`);
-        const btn = document.getElementById(`tab-btn-${t}`);
-        if (t === tabId) {
-          content.classList.remove('hidden');
-          btn.className = 'px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all bg-amber-500 text-midnight-950 shadow-md';
-        } else {
-          content.classList.add('hidden');
-          btn.className = 'px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all bg-white/5 text-slate-300 hover:text-white hover:bg-white/10';
-        }
-      });
-    }
+    // Fade-up scroll animation observer
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.1 });
 
-    // Modal Handlers
-    function openBookingModal(preselectedService) {
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    });
+
+    // Modals
+    function openBookingModal(serviceName) {
       const modal = document.getElementById('booking-modal');
       const select = document.getElementById('modal-service-select');
-      const form = document.getElementById('consultation-form');
-      const success = document.getElementById('booking-success');
-      
-      form.classList.remove('hidden');
-      success.classList.add('hidden');
-      
-      if (preselectedService && select) {
+      if (serviceName && select) {
         for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].value.toLowerCase().includes(preselectedService.toLowerCase()) || select.options[i].text.toLowerCase().includes(preselectedService.toLowerCase())) {
+          if (select.options[i].text.toLowerCase().includes(serviceName.toLowerCase()) || select.options[i].value.toLowerCase().includes(serviceName.toLowerCase())) {
             select.selectedIndex = i;
             break;
           }
@@ -1189,54 +941,43 @@
       document.body.style.overflow = '';
     }
 
-    function handleBackdropClick(event, modalId) {
-      if (event.target.id === modalId) {
-        document.getElementById(modalId).classList.remove('open');
+    function handleBackdropClick(event, id) {
+      if (event.target.id === id) {
+        document.getElementById(id).classList.remove('open');
         document.body.style.overflow = '';
       }
     }
 
-    function submitBooking(event) {
-      event.preventDefault();
-      document.getElementById('consultation-form').classList.add('hidden');
-      document.getElementById('booking-success').classList.remove('hidden');
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      e.target.classList.add('hidden');
+      document.getElementById('modal-success').classList.remove('hidden');
     }
 
-    function handlePortalSubmit(event) {
-      event.preventDefault();
-      alert('Secure Portal connection verified. In Phase 3, this will connect to your authenticated database.');
+    function handlePortalSubmit(e) {
+      e.preventDefault();
+      alert('Secure Client Vault verified. In Phase 3, this authenticates against the database.');
     }
 
-    // Interactive Refund Tool Logic
-    let selectedCount = 3;
-    function toggleDoc(btn, type) {
-      btn.classList.toggle('selected');
-      if (btn.classList.contains('selected')) {
-        btn.classList.remove('bg-white/5', 'text-slate-300');
-        btn.classList.add('bg-amber-500/20', 'text-amber-300', 'border-amber-500/50');
-        selectedCount++;
-      } else {
-        btn.classList.remove('bg-amber-500/20', 'text-amber-300', 'border-amber-500/50');
-        btn.classList.add('bg-white/5', 'text-slate-300');
-        selectedCount--;
-      }
-      const status = document.getElementById('scope-status');
-      status.innerText = `${selectedCount} Item${selectedCount === 1 ? '' : 's'} Selected for Audit`;
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your message has been sent directly to our Principal Consultant.');
+      e.target.reset();
     }
 
-    // Initialize pill styles
-    document.querySelectorAll('.doc-pill.selected').forEach(btn => {
-      btn.classList.remove('bg-white/5', 'text-slate-300');
-      btn.classList.add('bg-amber-500/20', 'text-amber-300', 'border-amber-500/50');
-    });
-
-    // Close modal on Escape key
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeBookingModal();
-        closePortalModal();
-      }
-    });
+    // Category chips selector in contact section
+    function selectChip(el) {
+      document.querySelectorAll('.category-chip').forEach(chip => {
+        chip.className = 'category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-stone-200 text-stone-600 hover:border-stone-400 transition-all';
+      });
+      el.className = 'category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-caramel text-charcoal-900 transition-all';
+      
+      const dropdown = document.getElementById('contact-service-dropdown');
+      const text = el.innerText.trim();
+      if (text.includes('Tax')) dropdown.value = 'Individual Tax';
+      else if (text.includes('Refund')) dropdown.value = 'Refund Checkup';
+      else if (text.includes('Bookkeeping')) dropdown.value = 'Bookkeeping';
+    }
   </script>
 
 </body>
