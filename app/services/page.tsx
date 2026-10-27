@@ -141,10 +141,10 @@ export default function ServicesPage() {
       
       {/* Header */}
       <section className="max-w-3xl space-y-4">
-        <span className="text-xs font-semibold uppercase tracking-widest text-stone-500 block">
+        <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
           Comprehensive Services
         </span>
-        <h1 className="font-serif text-4xl sm:text-5xl text-charcoal-900 leading-tight">
+        <h1 className="font-serif text-5xl sm:text-6xl text-charcoal-900 leading-tight">
           Clear answers. Accurate books. Taxes filed with confidence.
         </h1>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">

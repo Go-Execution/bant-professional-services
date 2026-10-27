@@ -4,7 +4,7 @@
 
 :root {
   --background: #ECE7DF;
-  --foreground: #27272A;
+  --foreground: #0B1B36;
 }
 
 body {
@@ -14,10 +14,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Outer Container Frame like reference design */
+/* Outer Container Frame */
 .editorial-wrapper {
   background-color: #F6F3EE;
-  box-shadow: 0 12px 48px -8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 48px -8px rgba(11, 27, 54, 0.08);
 }
 
 /* Rotating Circular Badge Keyframe */
@@ -38,36 +38,38 @@ body {
   animation: floatDoodle 3.5s ease-in-out infinite;
 }
 
-/* Arch Cutout for Hero Portrait */
+/* Arch Cutout for Hero Portrait in Metallic Gold */
 .arch-portrait {
   border-radius: 180px 180px 24px 24px;
-  background: linear-gradient(180deg, #E8AF73 0%, #D89855 100%);
+  background: linear-gradient(180deg, #DEAA55 0%, #C9933B 50%, #AB7724 100%);
 }
 
-/* Soft pill button hover states */
+/* Soft pill button with logo gold */
 .btn-caramel {
-  background-color: #E5A869;
-  color: #18181A;
+  background: linear-gradient(180deg, #D9A048 0%, #C9933B 100%);
+  color: #070F1E;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(201, 147, 59, 0.25);
 }
 .btn-caramel:hover {
-  background-color: #D89855;
+  background: linear-gradient(180deg, #E2AA54 0%, #D49A3E 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(229, 168, 105, 0.35);
+  box-shadow: 0 6px 18px rgba(201, 147, 59, 0.35);
 }
 .btn-caramel:active {
   transform: scale(0.97);
 }
 
+/* Sovereign Navy Button */
 .btn-dark {
-  background-color: #18181A;
+  background-color: #0B1B36;
   color: #FFFFFF;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-dark:hover {
-  background-color: #27272A;
+  background-color: #0F264C;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(11, 27, 54, 0.25);
 }
 .btn-dark:active {
   transform: scale(0.97);

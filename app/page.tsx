@@ -78,7 +78,7 @@ export default function HomePage() {
           
           {/* Left Column: Editorial Headline & Guidance */}
           <div className="lg:col-span-4 space-y-6">
-            <h1 className="font-serif text-4xl sm:text-5xl xl:text-6xl text-charcoal-900 leading-[1.08] tracking-tight">
+            <h1 className="font-serif text-5xl sm:text-6xl xl:text-7xl text-charcoal-900 leading-[1.05] tracking-tight">
               Smart Tax & Business Support
             </h1>
 
@@ -153,7 +153,7 @@ export default function HomePage() {
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
                   <svg className="rotating-badge absolute inset-0 w-full h-full text-charcoal-900" viewBox="0 0 120 120">
                     <path id="badgePath" d="M 60, 60 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="transparent"></path>
-                    <text className="text-[9.5px] font-bold tracking-[2.5px] uppercase fill-charcoal-900">
+                    <text className="text-[9.5px] font-cinzel font-bold tracking-[2.8px] uppercase fill-charcoal-900">
                       <textPath xlinkHref="#badgePath">
                         • BNT CONSULTING • TRUSTED ETHICS •
                       </textPath>
@@ -237,12 +237,12 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-stone-700 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 text-xs font-cinzel font-bold text-stone-700 uppercase tracking-[0.2em]">
               <span className="w-2 h-2 rounded-full bg-caramel"></span>
               About BNT Professional Services
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl text-charcoal-900 leading-tight">
               Building Solutions Through Financial Excellence & Integrity
             </h2>
 
@@ -298,10 +298,10 @@ export default function HomePage() {
       {/* 4. SERVICES SECTION */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-[#F6F3EE]">
         <div className="max-w-2xl mb-14 space-y-3">
-          <span className="text-xs font-semibold uppercase tracking-widest text-stone-600 block">
+          <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
             Our Services
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+          <h2 className="font-serif text-4xl sm:text-5xl text-charcoal-900 leading-tight">
             Expertise Across Every Financial & Tax Need
           </h2>
           <p className="text-sm text-stone-600">

@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const dmSerif = DM_Serif_Display({
-  weight: ["400"],
+// Authoritative high-contrast serif matching "B" and "T" in logo
+const cormorant = Cormorant_Garamond({
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-dm-serif",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
+// Roman monumental serif matching "PROFESSIONAL SERVICES" in logo
+const cinzel = Cinzel({
+  weight: ["400", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  display: "swap",
+});
+
+// Modern geometric sans matching "Business. Notary. Tax. Made Simple." in logo
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -34,8 +45,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${plusJakarta.variable} scroll-smooth`}>
-      <body className="p-2 sm:p-5 lg:p-8 antialiased selection:bg-amber-200 selection:text-amber-900">
+    <html 
+      lang="en" 
+      className={`${cormorant.variable} ${cinzel.variable} ${plusJakarta.variable} scroll-smooth`}
+    >
+      <body className="p-2 sm:p-5 lg:p-8 antialiased selection:bg-amber-200 selection:text-amber-950 font-sans">
         <div className="editorial-wrapper max-w-[1400px] mx-auto rounded-3xl lg:rounded-[36px] overflow-hidden border border-stone-200/70 min-h-screen flex flex-col justify-between">
           <Navbar />
           <main className="flex-1">

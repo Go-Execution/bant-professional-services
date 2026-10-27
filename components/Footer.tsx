@@ -8,7 +8,7 @@ export default function Footer() {
       
       {/* Subtle Giant Watermark Text behind footer */}
       <div className="absolute bottom-0 left-0 right-0 text-center pointer-events-none select-none overflow-hidden opacity-10">
-        <span className="font-serif text-[60px] sm:text-[100px] lg:text-[140px] font-bold tracking-widest text-stone-600 block leading-none">
+        <span className="font-cinzel text-[45px] sm:text-[80px] lg:text-[120px] font-bold tracking-[0.25em] text-stone-600 block leading-none">
           BNT SERVICES
         </span>
       </div>

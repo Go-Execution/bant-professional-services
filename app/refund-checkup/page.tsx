@@ -79,10 +79,10 @@ export default function RefundCheckupPage() {
       
       {/* Header */}
       <section className="max-w-3xl space-y-4">
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-caramel block">
+        <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
           Flagship Diagnostic Service
         </span>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight">
+        <h1 className="font-serif text-5xl sm:text-6xl text-charcoal-900 leading-tight">
           The BNT Refund Checkup
         </h1>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">

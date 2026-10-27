@@ -61,10 +61,10 @@ export default function PortalPage() {
         <div className="w-12 h-12 rounded-2xl bg-caramel/20 text-caramel-dark flex items-center justify-center mx-auto mb-2">
           <Lock className="w-6 h-6" />
         </div>
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-caramel block">
+        <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
           256-Bit SSL Encrypted Vault
         </span>
-        <h1 className="font-serif text-3xl sm:text-5xl text-charcoal-900 leading-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl text-charcoal-900 leading-tight">
           Private Client Portal
         </h1>
         <p className="text-xs sm:text-sm text-stone-500 max-w-md mx-auto">

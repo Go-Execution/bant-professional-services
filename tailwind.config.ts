@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["var(--font-dm-serif)", "serif"],
+        serif: ["var(--font-cormorant)", "serif"],
+        cinzel: ["var(--font-cinzel)", "serif"],
         sans: ["var(--font-plus-jakarta)", "sans-serif"],
       },
       colors: {
@@ -19,15 +20,29 @@ const config: Config = {
           200: '#EBE5DC',
           300: '#DFD7CA',
         },
+        // Rich Gold extracted directly from the script "N" in logo
         caramel: {
-          DEFAULT: '#E5A869',
-          light: '#F0BA84',
-          dark: '#CB8C4C',
+          DEFAULT: '#C9933B',
+          light: '#DEAA55',
+          dark: '#AB7724',
         },
+        gold: {
+          DEFAULT: '#C9933B',
+          light: '#DEAA55',
+          dark: '#AB7724',
+        },
+        // Deep Sovereign Navy extracted directly from "B", "T" and "PROFESSIONAL SERVICES"
         charcoal: {
-          900: '#18181A',
-          800: '#27272A',
-          700: '#3F3F46',
+          900: '#0B1B36',
+          800: '#0F264C',
+          700: '#173668',
+        },
+        navy: {
+          950: '#070F1E',
+          900: '#0B1B36',
+          850: '#0D2142',
+          800: '#0F264C',
+          700: '#173668',
         }
       }
     },

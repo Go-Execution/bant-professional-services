@@ -59,10 +59,10 @@ export default function BookingPage() {
       
       {/* Header */}
       <div className="text-center space-y-3">
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-caramel block">
+        <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
           Direct Scheduling
         </span>
-        <h1 className="font-serif text-4xl sm:text-5xl text-charcoal-900 leading-tight">
+        <h1 className="font-serif text-5xl sm:text-6xl text-charcoal-900 leading-tight">
           Book Your Consultation
         </h1>
         <p className="text-xs sm:text-sm text-stone-500 max-w-lg mx-auto">

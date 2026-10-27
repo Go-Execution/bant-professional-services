@@ -59,12 +59,12 @@ export default function AboutPage() {
       
       {/* 1. Header & Lead Story */}
       <section className="max-w-4xl space-y-6">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-stone-700 uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 text-xs font-cinzel font-bold text-stone-700 uppercase tracking-[0.2em]">
           <span className="w-2 h-2 rounded-full bg-caramel"></span>
           Our Background & Philosophy
         </div>
 
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-[1.08] tracking-tight">
+        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-charcoal-900 leading-[1.05] tracking-tight">
           Institutional caliber financial discipline, dedicated to East Texas.
         </h1>
 
