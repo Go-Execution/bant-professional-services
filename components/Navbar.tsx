@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight, Menu, X, ChevronDown, Lock } from "lucide-react";
@@ -28,21 +29,18 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="relative px-6 sm:px-10 lg:px-14 py-6 flex items-center justify-between border-b border-stone-200/50 bg-[#F6F3EE] z-30">
+    <nav className="relative px-6 sm:px-10 lg:px-14 py-5 flex items-center justify-between border-b border-stone-200/50 bg-[#F6F3EE] z-30">
       
-      {/* Brand Logo */}
-      <Link href="/" className="flex items-center gap-2.5 group">
-        <div className="w-10 h-10 rounded-xl bg-charcoal-900 text-white flex items-center justify-center font-serif text-xl font-bold shadow-sm group-hover:bg-charcoal-800 transition-colors">
-          B
-        </div>
-        <div>
-          <span className="font-serif text-2xl font-bold tracking-tight text-charcoal-900 block leading-tight">
-            BNT Services
-          </span>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500 block">
-            Business • Notary • Tax
-          </span>
-        </div>
+      {/* Official Brand Logo */}
+      <Link href="/" className="flex items-center group">
+        <Image
+          src="/logo.png"
+          alt="BNT Professional Services - Business. Notary. Tax. Made Simple."
+          width={1794}
+          height={877}
+          priority
+          className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+        />
       </Link>
 
       {/* Desktop Links */}

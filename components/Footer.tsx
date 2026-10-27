@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Shield, Phone, MapPin, Mail, Lock } from "lucide-react";
 
 export default function Footer() {
@@ -14,14 +15,17 @@ export default function Footer() {
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
         
-        {/* Brand Info */}
+        {/* Brand Info with Official Logo */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-charcoal-900 text-white flex items-center justify-center font-serif font-bold text-sm">
-              B
-            </div>
-            <span className="font-serif text-xl font-bold text-charcoal-900">BNT Services</span>
-          </div>
+          <Link href="/" className="inline-block">
+            <Image
+              src="/logo.png"
+              alt="BNT Professional Services - Business. Notary. Tax. Made Simple."
+              width={1794}
+              height={877}
+              className="h-14 sm:h-16 w-auto object-contain"
+            />
+          </Link>
           <p className="text-xs text-stone-500 leading-relaxed max-w-xs">
             Grounded in faith and gratitude. Delivering honest work, upfront flat-rate pricing, and respectful financial stewardship for every client.
           </p>

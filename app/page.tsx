@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { 
   ArrowRight, 
@@ -128,8 +129,14 @@ export default function HomePage() {
 
                 {/* Professional Silhouette Graphic */}
                 <div className="relative z-10 w-full flex flex-col items-center">
-                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-stone-100/90 shadow-md flex items-center justify-center font-serif text-4xl sm:text-5xl font-bold text-charcoal-900 border-4 border-white/60">
-                    BNT
+                  <div className="w-40 h-24 sm:w-44 sm:h-26 rounded-2xl bg-white/95 shadow-md flex items-center justify-center p-2.5 border-4 border-white/80">
+                    <Image
+                      src="/logo.png"
+                      alt="BNT Professional Services Official Logo"
+                      width={1794}
+                      height={877}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                   <div className="w-48 sm:w-56 h-48 bg-stone-900 rounded-t-full mt-2 shadow-2xl relative flex flex-col items-center pt-5">
                     <div className="w-10 h-10 rounded-full bg-white/20 border border-white/40 flex items-center justify-center text-xs text-white font-serif">

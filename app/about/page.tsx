@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Scale, Shield, Award, GraduationCap, Building2, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
@@ -78,8 +79,14 @@ export default function AboutPage() {
         <div className="lg:col-span-5 flex justify-center">
           <div className="arch-portrait w-64 sm:w-72 h-80 sm:h-96 relative overflow-hidden shadow-md flex items-end justify-center">
             <div className="relative z-10 w-full flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-stone-100 shadow-md flex items-center justify-center font-serif text-3xl font-bold text-charcoal-900 border-4 border-white/60">
-                BNT
+              <div className="w-40 h-24 rounded-2xl bg-white/95 shadow-md flex items-center justify-center p-2.5 border-4 border-white/80">
+                <Image
+                  src="/logo.png"
+                  alt="BNT Professional Services Official Logo"
+                  width={1794}
+                  height={877}
+                  className="w-full h-auto object-contain"
+                />
               </div>
               <div className="w-48 h-36 bg-stone-900 rounded-t-full mt-2 shadow-2xl relative flex flex-col items-center pt-4">
                 <span className="text-xs font-semibold text-stone-200 font-mono">Principal Consultant</span>

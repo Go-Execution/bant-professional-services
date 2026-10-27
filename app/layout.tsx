@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   title: "BNT Professional Services | Business. Notary. Tax. Made Simple.",
   description: "Executive tax preparation, flat-fee refund checkups, business bookkeeping, and certified notary services in Jacksonville, TX. Grounded in faith, integrity, and upfront pricing.",
   keywords: ["Tax Preparation Jacksonville TX", "BNT Professional Services", "Refund Checkup", "Bookkeeping East Texas", "Notary Public Jacksonville TX", "UTSA Master of Accountancy"],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
