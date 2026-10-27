@@ -13,7 +13,10 @@ import {
   BookOpen, 
   Calculator,
   Lock,
-  ChevronRight
+  ChevronRight,
+  Plus,
+  Minus,
+  HelpCircle
 } from "lucide-react";
 
 export default function HomePage() {
@@ -29,6 +32,31 @@ export default function HomePage() {
 
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      q: "How does the BNT Refund Checkup work?",
+      a: "The Refund Checkup is a flat-fee review of your tax documents before you file. We calculate a written estimate of your expected refund or balance due, cross-check for deductions you may have overlooked, and provide a clear checklist of any missing forms.",
+    },
+    {
+      q: "Why do you never charge a percentage of my refund?",
+      a: "Because your refund is your hard-earned money. High-volume tax storefronts often take 10% to 25% of refunds or push questionable deductions to inflate their fees. Our fee is strictly flat and quoted upfront, ensuring objective, honest tax preparation.",
+    },
+    {
+      q: "How does the private client portal protect my personal information?",
+      a: "We never ask you to email or text sensitive documents like W-2s, 1099s, or Social Security numbers. Everything is uploaded directly into your private 256-bit encrypted client vault, which is protected by bank-grade security protocols.",
+    },
+    {
+      q: "What bookkeeping and reconciliation services do you provide for businesses?",
+      a: "We match your bank, credit card, and merchant statements directly to your general ledger to eliminate discrepancies. We also provide multi-month catch-up bookkeeping and prepare clean financial statements so your business is audit-ready.",
+    },
+    {
+      q: "Where do you offer Texas certified notary appointments?",
+      a: "We provide in-person notary appointments throughout Jacksonville, TX and surrounding East Texas communities for warranty deeds, powers of attorney, medical directives, and commercial contracts.",
+    },
+  ];
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -216,7 +244,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-sm text-stone-600 leading-relaxed font-normal">
-              Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA), a Bachelor's degree, and a Master of Business Administration (MBA). Having worked at a private New York tax firm and for JPMorgan Chase, he brings deep institutional knowledge directly to East Texas families and businesses.
+              Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA), a Bachelor&apos;s degree, and a Master of Business Administration (MBA). Having worked at a private New York tax firm and for JPMorgan Chase, he brings deep institutional knowledge directly to East Texas families and businesses.
             </p>
 
             <div className="pt-2">
@@ -560,78 +588,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. GUIDANCE & INSIGHTS LIST */}
+      {/* 6. CLIENT FAQ SECTION (IN PLACE OF INSIGHTS) */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 bg-[#F6F3EE] border-t border-stone-200/70">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-stone-500 block mb-2">
-              Our Guidance & News
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
-              What You Need To Know In Tax & Books
-            </h2>
-          </div>
-          <p className="text-xs sm:text-sm text-stone-500 max-w-sm">
-            Taxes can be complex, but our insights keep it simple. Discover practical tips, real-world examples, and honest filing guides.
+        <div className="max-w-2xl mb-12 space-y-3">
+          <span className="text-xs font-semibold uppercase tracking-widest text-stone-500 block">
+            Clear Answers
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xs sm:text-sm text-stone-500">
+            We believe in complete transparency. Here is everything you need to know about our flat-fee structure, security, and process.
           </p>
         </div>
 
-        <div className="space-y-4">
-          
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/70 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-caramel/60 transition-all">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="w-16 h-16 rounded-xl bg-linen-200 text-charcoal-900 font-serif text-lg font-bold flex items-center justify-center shrink-0">
-                01
-              </div>
-              <div>
-                <span className="text-[11px] font-mono text-stone-400 block mb-1">Tax Strategy • Client Education</span>
-                <h4 className="font-serif text-lg font-bold text-charcoal-900">Why You Should Never Pay a Percentage of Your Tax Refund</h4>
-                <p className="text-xs text-stone-500 mt-1 max-w-xl">
-                  Predatory preparers take huge cuts of your hard-earned refund. Discover why upfront flat-rate fees protect your financial security.
-                </p>
-              </div>
-            </div>
-            <Link href="/insights#refund-cut" className="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0">
-              Learn More
-            </Link>
-          </div>
+        <div className="space-y-4 max-w-4xl">
+          {faqs.map((faq, index) => {
+            const isOpen = openFaq === index;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl border border-stone-200/80 shadow-sm overflow-hidden transition-all"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(isOpen ? null : index)}
+                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-lg font-bold text-charcoal-900 hover:text-caramel transition-colors"
+                >
+                  <span>{faq.q}</span>
+                  <span className="w-8 h-8 rounded-full bg-linen-100 flex items-center justify-center shrink-0 text-charcoal-900">
+                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  </span>
+                </button>
 
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/70 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-caramel/60 transition-all">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="w-16 h-16 rounded-xl bg-linen-200 text-charcoal-900 font-serif text-lg font-bold flex items-center justify-center shrink-0">
-                02
+                {isOpen && (
+                  <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100">
+                    {faq.a}
+                  </div>
+                )}
               </div>
-              <div>
-                <span className="text-[11px] font-mono text-stone-400 block mb-1">Bookkeeping • Small Business</span>
-                <h4 className="font-serif text-lg font-bold text-charcoal-900">Account Reconciliation: Catching Discrepancies Before the IRS Does</h4>
-                <p className="text-xs text-stone-500 mt-1 max-w-xl">
-                  How monthly bank and credit card matching keeps your business books accurate, reduces stress, and eliminates costly tax season surprises.
-                </p>
-              </div>
-            </div>
-            <Link href="/insights#reconciliation" className="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0">
-              Learn More
-            </Link>
-          </div>
+            );
+          })}
+        </div>
 
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-stone-200/70 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-caramel/60 transition-all">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="w-16 h-16 rounded-xl bg-linen-200 text-charcoal-900 font-serif text-lg font-bold flex items-center justify-center shrink-0">
-                03
-              </div>
-              <div>
-                <span className="text-[11px] font-mono text-stone-400 block mb-1">Security & Portals • Best Practices</span>
-                <h4 className="font-serif text-lg font-bold text-charcoal-900">Why We Never Accept Sensitive Tax Documents via Email or Text</h4>
-                <p className="text-xs text-stone-500 mt-1 max-w-xl">
-                  Unencrypted emails expose your SSN and bank details. Here is how our private 256-bit client portal protects your identity.
-                </p>
-              </div>
-            </div>
-            <Link href="/insights#security" className="btn-caramel px-5 py-2 rounded-full text-xs font-semibold shrink-0">
-              Learn More
-            </Link>
-          </div>
-
+        <div className="pt-8 flex items-center gap-4">
+          <Link
+            href="/booking"
+            className="btn-caramel px-6 py-3 rounded-full text-xs sm:text-sm font-semibold inline-flex items-center gap-2"
+          >
+            <span>Ask a Question in a Consultation</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </section>
 

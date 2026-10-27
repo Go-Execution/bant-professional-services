@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ShieldCheck, ArrowRight, Menu, X, ChevronDown, Lock } from "lucide-react";
+import { ArrowRight, Menu, X, ChevronDown, Lock } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,7 +15,6 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services", hasDropdown: true },
     { name: "Refund Checkup", href: "/refund-checkup", badge: "Flat Fee" },
-    { name: "Insights", href: "/insights" },
     { name: "Consultation", href: "/booking" },
   ];
 
@@ -47,7 +46,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Links */}
-      <div className="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-600">
+      <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-600">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
 

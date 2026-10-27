@@ -38,7 +38,7 @@ export default function Footer() {
             <li><Link href="/" className="hover:text-caramel transition-colors">Home</Link></li>
             <li><Link href="/about" className="hover:text-caramel transition-colors">About Principal Consultant</Link></li>
             <li><Link href="/services" className="hover:text-caramel transition-colors">All Services</Link></li>
-            <li><Link href="/insights" className="hover:text-caramel transition-colors">Knowledge & News</Link></li>
+            <li><Link href="/refund-checkup" className="hover:text-caramel transition-colors">The Refund Checkup</Link></li>
             <li><Link href="/booking" className="hover:text-caramel transition-colors">Book Consultation</Link></li>
           </ul>
         </div>

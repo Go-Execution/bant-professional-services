@@ -22,13 +22,12 @@ BNT Professional Services is an executive tax advisory, bookkeeping, and certifi
 
 - [x] **Phase 2: Next.js App Router & Full Functionality**
   - Next.js 14 App Router architecture with modular TypeScript components.
-  - **Homepage (`/`)**: Arched portrait with rotating badge, floating doodle, metrics bar, and interactive contact form.
+  - **Homepage (`/`)**: Arched portrait with rotating badge, floating doodle, metrics bar, interactive contact form, and client FAQ accordion.
   - **About Us (`/about`)**: Full consultant credentials, UTSA Macy & MBA background, Wall St/NY tax firm experience, faith & gratitude values.
-  - **All Services (`/services`)**: Tabbed breakdown of Refund Checkup, W-2 filers, account reconciliations, bookkeeping cleanup, and Texas certified notary.
-  - **The BNT Refund Checkup (`/refund-checkup`)**: Real-time interactive diagnostic scope inspector with custom document checklist.
+  - **All Services (`/services`)**: Tabbed breakdown of Refund Checkup, W-2 filers, account reconciliations, bookkeeping cleanup, Texas certified notary, and 4-step client process.
+  - **The BNT Refund Checkup (`/refund-checkup`)**: Real-time interactive diagnostic scope inspector with custom document checklist and instant quote request.
   - **Consultation Scheduler (`/booking`)**: 3-step scheduling flow with format selection (In-Person Jacksonville TX, Phone, Remote Video), slot picking, and instant booking confirmation.
   - **Secure Client Portal Gateway (`/portal`)**: 256-bit SSL encrypted vault interface with simulated drag-and-drop file upload and status tracker.
-  - **Client Knowledge & News (`/insights`)**: Plain-language guides on refund percentages, account reconciliation, and email security risks.
 
 - [ ] **Phase 3: Database, Authentication & Client Portal**
   - Persistent user accounts & authentication.

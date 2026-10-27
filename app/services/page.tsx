@@ -11,7 +11,10 @@ import {
   ShieldCheck, 
   Stamp, 
   Receipt,
-  Scale
+  Scale,
+  Clock,
+  Lock,
+  Sparkles
 } from "lucide-react";
 
 export default function ServicesPage() {
@@ -25,9 +28,9 @@ export default function ServicesPage() {
       description: "A flat-fee diagnostic review of your tax documents with a written estimate of your expected refund or balance due, plus a comprehensive list of anything missing or needing correction.",
       points: [
         "Fixed flat fee: We never charge a percentage of your refund.",
-        "Written calculation of expected refund or balance due.",
-        "Detailed review of missing deductions, credits, and schedules.",
-        "Delivered securely through your private client portal.",
+        "Written calculation of expected refund or balance due before filing.",
+        "Detailed review of missing deductions, credits, and necessary forms.",
+        "Delivered securely through your private 256-bit client portal.",
       ],
       ctaText: "Explore Refund Checkup Tool",
       ctaLink: "/refund-checkup",
@@ -71,7 +74,7 @@ export default function ServicesPage() {
       points: [
         "Historical catch-up accounting for businesses months or years behind.",
         "Standardized chart of accounts tailored to your industry.",
-        "Clean profit & loss statements ready for lenders and investors.",
+        "Clean profit and loss statements ready for lenders and investors.",
         "Friendly, patient guidance without judgment or scolding.",
       ],
       ctaText: "Request Bookkeeping Review",
@@ -84,7 +87,7 @@ export default function ServicesPage() {
       description: "Strategic tax preparation for sole proprietors, LLCs, freelancers, and small business owners in East Texas.",
       points: [
         "Schedule C deduction optimization and expense categorization.",
-        "Self-employment tax reduction strategies and estimated quarterly tax planning.",
+        "Self-employment tax reduction strategies and quarterly planning.",
         "Depreciation calculations for equipment, vehicles, and assets.",
         "Representation guidance on past-due filings and IRS notices.",
       ],
@@ -110,8 +113,31 @@ export default function ServicesPage() {
     },
   ];
 
+  const processSteps = [
+    {
+      step: "01",
+      title: "Initial Consultation",
+      desc: "We discuss your tax or bookkeeping situation in plain language and provide an upfront flat-rate quote before any work starts.",
+    },
+    {
+      step: "02",
+      title: "Secure Vault Upload",
+      desc: "You receive your private portal key to upload W-2s, 1099s, or statements safely. No unencrypted emails or text messages.",
+    },
+    {
+      step: "03",
+      title: "Principal Review",
+      desc: "Our Principal Consultant (UTSA MAcc, MBA, Ex-JPMorgan Chase) personally diagnoses, reconciles, and optimizes your file.",
+    },
+    {
+      step: "04",
+      title: "Written Review & Filing",
+      desc: "You receive a clear breakdown of your refund or books, review every number, and authorize instant electronic filing.",
+    },
+  ];
+
   return (
-    <div className="py-12 sm:py-16 px-6 sm:px-10 lg:px-14 space-y-14">
+    <div className="py-12 sm:py-16 px-6 sm:px-10 lg:px-14 space-y-16">
       
       {/* Header */}
       <section className="max-w-3xl space-y-4">
@@ -150,13 +176,13 @@ export default function ServicesPage() {
 
       {/* 1. Individual Services */}
       {(activeTab === "all" || activeTab === "individual") && (
-        <section className="space-y-6">
+        <section id="individual" className="space-y-6">
           <div className="border-b border-stone-200 pb-3">
             <h2 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
               For Individuals & Families
             </h2>
             <p className="text-xs sm:text-sm text-stone-500">
-              Personalized tax services with clear flat-rate pricing.
+              Personalized tax services with clear flat-rate pricing and zero commissions on your refund.
             </p>
           </div>
 
@@ -197,7 +223,7 @@ export default function ServicesPage() {
 
       {/* 2. Business Services */}
       {(activeTab === "all" || activeTab === "business") && (
-        <section className="space-y-6">
+        <section id="reconciliation" className="space-y-6">
           <div className="border-b border-stone-200 pb-3">
             <h2 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
               For Small Businesses & Self-Employed
@@ -242,7 +268,7 @@ export default function ServicesPage() {
 
       {/* 3. Notary Services */}
       {(activeTab === "all" || activeTab === "notary") && (
-        <section className="space-y-6">
+        <section id="notary" className="space-y-6">
           <div className="border-b border-stone-200 pb-3">
             <h2 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
               Texas Certified Notary Services
@@ -293,6 +319,49 @@ export default function ServicesPage() {
           </div>
         </section>
       )}
+
+      {/* 4. The 4-Step Working Process Walkthrough */}
+      <section className="bg-linen-100 rounded-3xl p-8 sm:p-12 border border-stone-200 space-y-8">
+        <div className="max-w-2xl space-y-2">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-caramel-dark block">
+            The Client Experience
+          </span>
+          <h3 className="font-serif text-3xl text-charcoal-900">
+            How We Work With You
+          </h3>
+          <p className="text-xs sm:text-sm text-stone-600">
+            From first conversation to final filing, here is our simple, transparent four-step process.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {processSteps.map((p) => (
+            <div key={p.step} className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-3">
+              <span className="font-serif text-3xl font-bold text-caramel-dark block">
+                {p.step}
+              </span>
+              <h4 className="font-serif text-lg font-bold text-charcoal-900">{p.title}</h4>
+              <p className="text-xs text-stone-600 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Callout */}
+      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+        <div className="space-y-1 text-center sm:text-left">
+          <h3 className="font-serif text-2xl text-charcoal-900">Ready to get started?</h3>
+          <p className="text-xs text-stone-500">Book your consultation or upload your files to the client portal.</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <Link href="/booking" className="btn-caramel px-6 py-2.5 rounded-full text-xs font-semibold">
+            Book Consultation
+          </Link>
+          <Link href="/portal" className="px-5 py-2.5 rounded-full text-xs font-semibold border border-stone-300 text-stone-700 hover:bg-stone-100">
+            Client Portal
+          </Link>
+        </div>
+      </section>
 
     </div>
   );
