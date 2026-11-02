@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { 
   Calendar, 
@@ -13,15 +14,20 @@ import {
   Lock, 
   ShieldCheck,
   Building,
-  UserCheck
+  UserCheck,
+  Stethoscope,
+  Globe2
 } from "lucide-react";
 
-export default function BookingPage() {
+function BookingContent() {
+  const searchParams = useSearchParams();
+  const preselectedService = searchParams.get("service") || "Individual Tax Preparation";
+
   const [step, setStep] = useState(1);
   const [booking, setBooking] = useState({
-    service: "The BNT Refund Checkup",
-    format: "In-Person (Jacksonville, TX)",
-    date: "2026-11-02",
+    service: preselectedService,
+    format: "In-Person (133 N Henderson St, Rusk, TX)",
+    date: "2026-11-04",
     timeSlot: "10:00 AM",
     fullName: "",
     phone: "",
@@ -29,24 +35,70 @@ export default function BookingPage() {
     notes: "",
   });
 
+  useEffect(() => {
+    if (preselectedService) {
+      setBooking((prev) => ({ ...prev, service: preselectedService }));
+    }
+  }, [preselectedService]);
+
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
   const services = [
-    { title: "The BNT Refund Checkup", desc: "Flat-fee document audit & written estimate." },
-    { title: "Individual & W-2 Tax Return Prep", desc: "Complete federal and state tax filing." },
-    { title: "Account Reconciliations", desc: "Matching bank and card statements to general ledger." },
-    { title: "Bookkeeping Support & Cleanup", desc: "Catch-up accounting and receipt organization." },
-    { title: "Texas Certified Notary", desc: "In-person notarization of legal documents." },
+    { 
+      title: "Individual Tax Preparation", 
+      desc: "Complete, accurate preparation & state/federal filing for W-2 filers & families.",
+      badge: "Individual Tax"
+    },
+    { 
+      title: "Taxes for Healthcare Workers", 
+      desc: "LVNs, RNs, Physicians & Allied Health. Multi-shift, PRN, scrubs, and CEU optimization.",
+      badge: "Specialized"
+    },
+    { 
+      title: "Business Tax Preparation Support", 
+      desc: "Schedule C, LLCs, independent contractors, and small business tax compliance.",
+      badge: "Business Tax"
+    },
+    { 
+      title: "Account Reconciliations & Cleanup", 
+      desc: "Matching bank and card statements to books so records reflect total truth.",
+      badge: "Financial Records"
+    },
+    { 
+      title: "The BNT Refund Checkup", 
+      desc: "Flat-fee document review with written refund calculation & missing deductions audit.",
+      badge: "Diagnostic"
+    },
+    { 
+      title: "Notary Public (Nationwide or In-Person)", 
+      desc: "Remote Online Notary across all 50 states, or in-person at 133 N Henderson St, Rusk, TX.",
+      badge: "All Over US & TX"
+    },
   ];
 
   const formats = [
-    { id: "In-Person (Jacksonville, TX)", label: "In-Person Office Visit", icon: MapPin, desc: "Meet at our Jacksonville, TX location by appointment." },
-    { id: "Telephone Call", label: "Phone Consultation", icon: Phone, desc: "A focused call directly with our Principal Consultant." },
-    { id: "Secure Video Meeting", label: "Remote Video Screen Share", icon: Video, desc: "Virtual review from anywhere in Texas." },
+    { 
+      id: "In-Person (133 N Henderson St, Rusk, TX)", 
+      label: "In-Person Office Visit", 
+      icon: MapPin, 
+      desc: "133 N Henderson Street, Rusk, TX 75785 (Mon-Fri & Sat-Sun By Appointment)." 
+    },
+    { 
+      id: "Telephone Consultation", 
+      label: "Phone Consultation", 
+      icon: Phone, 
+      desc: "A direct discussion with our Principal Consultant (UTSA MAcc, MBA)." 
+    },
+    { 
+      id: "Remote Portal & Video Meeting", 
+      label: "Remote / Portal Screen Share", 
+      icon: Video, 
+      desc: "Virtual session with secure document sharing through our 256-bit encrypted vault." 
+    },
   ];
 
   const timeSlots = [
-    "09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM", "05:30 PM"
+    "09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM", "05:30 PM (By Appt)"
   ];
 
   const handleFinalSubmit = (e: React.FormEvent) => {
@@ -60,30 +112,30 @@ export default function BookingPage() {
       {/* Header */}
       <div className="text-center space-y-3">
         <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
-          Direct Scheduling
+          Direct Scheduling • Rusk, TX & Nationwide
         </span>
         <h1 className="font-serif text-5xl sm:text-6xl text-charcoal-900 leading-tight">
           Book Your Consultation
         </h1>
         <p className="text-xs sm:text-sm text-stone-500 max-w-lg mx-auto">
-          Schedule your session with our Principal Consultant. Transparent flat fees, honest advice, and complete confidentiality.
+          Schedule your session with our Principal Consultant. Transparent flat fees, honest advice, Saturday & Sunday by appointment, and complete confidentiality.
         </p>
       </div>
 
       {bookingConfirmed ? (
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 text-center space-y-6 shadow-sm">
-          <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl">
+          <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl font-bold">
             ✓
           </div>
           <div className="space-y-2">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-caramel-dark block">
-              Reference #{Math.floor(100000 + Math.random() * 900000)}
+              Confirmation #{Math.floor(100000 + Math.random() * 900000)}
             </span>
             <h2 className="font-serif text-3xl text-charcoal-900">
               Your Consultation is Confirmed
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 max-w-md mx-auto">
-              Thank you, {booking.fullName || "valued client"}. A calendar invitation and confirmation have been reserved for {booking.date} at {booking.timeSlot}.
+              Thank you, {booking.fullName || "valued client"}. A calendar confirmation has been reserved for {booking.date} at {booking.timeSlot}.
             </p>
           </div>
 
@@ -96,9 +148,13 @@ export default function BookingPage() {
               <span className="text-stone-500">Format:</span>
               <strong className="text-charcoal-900">{booking.format}</strong>
             </div>
+            <div className="flex justify-between py-1 border-b border-stone-200">
+              <span className="text-stone-500">Office Location:</span>
+              <strong className="text-charcoal-900">133 N Henderson St, Rusk, TX 75785</strong>
+            </div>
             <div className="flex justify-between py-1">
               <span className="text-stone-500">Vault Access:</span>
-              <strong className="text-emerald-700">Client Portal Key Dispatched</strong>
+              <strong className="text-emerald-700">Encrypted Client Portal Dispatched</strong>
             </div>
           </div>
 
@@ -125,7 +181,7 @@ export default function BookingPage() {
             <div className={`text-center py-2 rounded-xl font-semibold transition-colors ${
               step >= 1 ? "bg-caramel/25 text-charcoal-900 font-bold" : "text-stone-400"
             }`}>
-              1. Service & Format
+              1. What Service
             </div>
             <div className={`text-center py-2 rounded-xl font-semibold transition-colors ${
               step >= 2 ? "bg-caramel/25 text-charcoal-900 font-bold" : "text-stone-400"
@@ -143,8 +199,8 @@ export default function BookingPage() {
           {step === 1 && (
             <div className="space-y-6">
               <div className="space-y-1">
-                <h3 className="font-serif text-2xl text-charcoal-900">Select Service Needed</h3>
-                <p className="text-xs text-stone-500">Choose the primary area you want to discuss.</p>
+                <h3 className="font-serif text-2xl text-charcoal-900">What service are you interested in?</h3>
+                <p className="text-xs text-stone-500">Choose the primary area of assistance you require.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -159,6 +215,11 @@ export default function BookingPage() {
                         : "bg-white border-stone-200 hover:border-stone-400"
                     }`}
                   >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-linen-200 text-charcoal-900 font-semibold">
+                        {s.badge}
+                      </span>
+                    </div>
                     <span className="font-serif text-base text-charcoal-900 font-bold block">{s.title}</span>
                     <span className="text-xs text-stone-500 mt-1 block">{s.desc}</span>
                   </button>
@@ -166,7 +227,10 @@ export default function BookingPage() {
               </div>
 
               <div className="space-y-3 pt-4 border-t border-stone-100">
-                <h4 className="font-serif text-lg text-charcoal-900">Appointment Format</h4>
+                <div className="flex items-center justify-between">
+                  <h4 className="font-serif text-lg text-charcoal-900">Consultation Format</h4>
+                  <span className="text-[11px] font-mono text-stone-500">Weekend hours by appointment</span>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {formats.map((f) => {
                     const Icon = f.icon;
@@ -208,7 +272,9 @@ export default function BookingPage() {
             <div className="space-y-6">
               <div className="space-y-1">
                 <h3 className="font-serif text-2xl text-charcoal-900">Choose Date & Time Slot</h3>
-                <p className="text-xs text-stone-500">Consultations are conducted Monday through Saturday.</p>
+                <p className="text-xs text-stone-500">
+                  Standard business hours Mon-Fri (9:00 AM - 5:00 PM). Saturday & Sunday available By Appointment.
+                </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -221,7 +287,7 @@ export default function BookingPage() {
                     className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-3 text-stone-800 text-xs focus:outline-none focus:border-caramel"
                   />
                   <p className="text-[11px] text-stone-400 mt-2">
-                    East Texas timezone (CST). Same-week availability.
+                    Central Standard Time (CST). Saturday & Sunday slots scheduled by appointment.
                   </p>
                 </div>
 
@@ -250,7 +316,7 @@ export default function BookingPage() {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="px-5 py-2.5 rounded-full text-xs font-semibold border border-stone-300 text-stone-600"
+                  className="px-5 py-2.5 rounded-full text-xs font-semibold border border-stone-300 text-stone-600 hover:bg-stone-50"
                 >
                   Back
                 </button>
@@ -270,24 +336,27 @@ export default function BookingPage() {
           {step === 3 && (
             <form onSubmit={handleFinalSubmit} className="space-y-6">
               <div className="space-y-1">
-                <h3 className="font-serif text-2xl text-charcoal-900">Your Contact Information</h3>
-                <p className="text-xs text-stone-500">We will send confirmation details and portal access keys here.</p>
+                <h3 className="font-serif text-2xl text-charcoal-900">Your Contact Details</h3>
+                <p className="text-xs text-stone-500">
+                  Please provide your contact information to receive your confirmation and secure portal key.
+                </p>
               </div>
 
+              {/* Exact form fields requested: Name, Phone, Email, What service they are interested */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 <div>
-                  <label className="block font-medium text-stone-600 mb-1">Full Name*</label>
+                  <label className="block font-medium text-stone-600 mb-1">Name*</label>
                   <input
                     required
                     type="text"
-                    placeholder="Johnathan Davis"
+                    placeholder="Your Full Name"
                     value={booking.fullName}
                     onChange={(e) => setBooking({ ...booking, fullName: e.target.value })}
                     className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
                   />
                 </div>
                 <div>
-                  <label className="block font-medium text-stone-600 mb-1">Phone Number*</label>
+                  <label className="block font-medium text-stone-600 mb-1">Phone*</label>
                   <input
                     required
                     type="tel"
@@ -300,7 +369,7 @@ export default function BookingPage() {
               </div>
 
               <div className="text-xs">
-                <label className="block font-medium text-stone-600 mb-1">Email Address*</label>
+                <label className="block font-medium text-stone-600 mb-1">Email*</label>
                 <input
                   required
                   type="email"
@@ -312,10 +381,26 @@ export default function BookingPage() {
               </div>
 
               <div className="text-xs">
-                <label className="block font-medium text-stone-600 mb-1">Brief Description of Your Situation (Optional)</label>
+                <label className="block font-medium text-stone-600 mb-1">What service are you interested in?*</label>
+                <select
+                  value={booking.service}
+                  onChange={(e) => setBooking({ ...booking, service: e.target.value })}
+                  className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel text-xs"
+                >
+                  <option value="Individual Tax Preparation">Individual Tax Preparation (W-2, 1099, Families)</option>
+                  <option value="Taxes for Healthcare Workers">Taxes for Healthcare Workers (LVN, RN, Physicians & Allied Health)</option>
+                  <option value="Business Tax Preparation Support">Business Tax Preparation Support (LLC, Schedule C, Partnerships)</option>
+                  <option value="Account Reconciliations & Cleanup">Account Reconciliations & Bookkeeping Cleanup</option>
+                  <option value="The BNT Refund Checkup">The BNT Refund Checkup (Flat-Fee Diagnostic Review)</option>
+                  <option value="Notary Public (Nationwide or In-Person)">Notary Public (Nationwide Online RON or In-Person at Rusk, TX)</option>
+                </select>
+              </div>
+
+              <div className="text-xs">
+                <label className="block font-medium text-stone-600 mb-1">Additional Notes or Schedule Preferences (Optional)</label>
                 <textarea
                   rows={2}
-                  placeholder="e.g., W-2 with college credits, or 6 months of back bookkeeping..."
+                  placeholder="e.g., Night shift LVN needing weekend appointment, or small business with 2 bank accounts..."
                   value={booking.notes}
                   onChange={(e) => setBooking({ ...booking, notes: e.target.value })}
                   className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel resize-none text-xs"
@@ -324,15 +409,19 @@ export default function BookingPage() {
 
               {/* Booking Summary Box */}
               <div className="bg-linen-100 rounded-2xl p-4 border border-stone-200 text-xs text-stone-700 space-y-1">
-                <p><strong>Selected:</strong> {booking.service} ({booking.format})</p>
+                <p><strong>Service:</strong> {booking.service}</p>
+                <p><strong>Format:</strong> {booking.format}</p>
                 <p><strong>Scheduled:</strong> {booking.date} at {booking.timeSlot} CST</p>
+                <p className="text-stone-500 text-[11px] pt-1">
+                  Office: 133 N Henderson Street, Rusk, TX 75785 • Saturday & Sunday By Appointment
+                </p>
               </div>
 
               <div className="pt-4 flex items-center justify-between border-t border-stone-100">
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="px-5 py-2.5 rounded-full text-xs font-semibold border border-stone-300 text-stone-600"
+                  className="px-5 py-2.5 rounded-full text-xs font-semibold border border-stone-300 text-stone-600 hover:bg-stone-50"
                 >
                   Back
                 </button>
@@ -351,5 +440,13 @@ export default function BookingPage() {
       )}
 
     </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={<div className="py-20 text-center text-xs text-stone-400 font-mono">Loading booking system...</div>}>
+      <BookingContent />
+    </Suspense>
   );
 }

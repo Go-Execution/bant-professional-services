@@ -30,9 +30,24 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "BNT Professional Services | Business. Notary. Tax. Made Simple.",
-  description: "Executive tax preparation, flat-fee refund checkups, business bookkeeping, and certified notary services in Jacksonville, TX. Grounded in faith, integrity, and upfront pricing.",
-  keywords: ["Tax Preparation Jacksonville TX", "BNT Professional Services", "Refund Checkup", "Bookkeeping East Texas", "Notary Public Jacksonville TX", "UTSA Master of Accountancy"],
+  title: "BNT Professional Services | Business. Notary. Tax. Made Simple. | Rusk, TX",
+  description: "Professional tax & business services for individuals and businesses. Specialized taxes for Licensed Vocational Nurses (LVN), Registered Nurses (RN), Physicians & Allied Healthcare Workers. Certified Notary all over the US. State-focused taxes. 133 N Henderson Street, Rusk, TX 75785. Saturday & Sunday By Appointment.",
+  keywords: [
+    "BNT Professional Services",
+    "Individual Tax",
+    "Business Tax",
+    "Healthcare Worker Taxes",
+    "Nurse Taxes LVN RN",
+    "Physician Tax Preparation",
+    "Notary all over US",
+    "Remote Online Notary",
+    "Taxes State Focused",
+    "Rusk TX 75785",
+    "133 N Henderson Street",
+    "Jacksonville TX",
+    "Cherokee County East Texas",
+    "Saturday Sunday By Appointment"
+  ],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",

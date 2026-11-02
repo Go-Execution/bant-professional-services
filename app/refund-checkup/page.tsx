@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, ShieldCheck, FileText, AlertCircle, Clock, DollarSign } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, FileText, AlertCircle, Clock, DollarSign, Stethoscope } from "lucide-react";
 
 export default function RefundCheckupPage() {
   const [selectedItems, setSelectedItems] = useState<string[]>([
     "w2",
     "child-credit",
+    "healthcare-deductions",
   ]);
 
   const [requested, setRequested] = useState(false);
@@ -23,6 +24,11 @@ export default function RefundCheckupPage() {
       id: "w2",
       label: "W-2 Wage Statements",
       desc: "Standard employment income from one or multiple employers.",
+    },
+    {
+      id: "healthcare-deductions",
+      label: "Healthcare Worker Expenses (LVN, RN, MD)",
+      desc: "Scrubs, CEU course fees, board licensing, medical equipment, and travel stipends.",
     },
     {
       id: "1099",
@@ -50,11 +56,6 @@ export default function RefundCheckupPage() {
       desc: "College tuition, student loan interest, or educational credits.",
     },
     {
-      id: "investments",
-      label: "1099-B / 1099-DIV Brokerage Statements",
-      desc: "Stock sales, dividends, index funds, or digital asset activity.",
-    },
-    {
       id: "prior-year",
       label: "Prior Year Tax Return Review",
       desc: "Checking last year's filing to see if any deductions were missed.",
@@ -80,13 +81,13 @@ export default function RefundCheckupPage() {
       {/* Header */}
       <section className="max-w-3xl space-y-4">
         <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
-          Flagship Diagnostic Service
+          Flagship Diagnostic Review
         </span>
         <h1 className="font-serif text-5xl sm:text-6xl text-charcoal-900 leading-tight">
           The BNT Refund Checkup
         </h1>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
-          A flat-fee review of your tax documents with a written estimate of your expected refund or balance due, plus a comprehensive list of anything missing or needing correction. Before you file, know exactly where you stand.
+          A flat-fee review of your tax documents with a written estimate of your expected refund or balance due, plus a comprehensive list of anything missing or needing correction. Available in-person at 133 N Henderson St, Rusk, TX 75785 or securely online via our private vault.
         </p>
       </section>
 
@@ -127,7 +128,7 @@ export default function RefundCheckupPage() {
       <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/80 shadow-sm space-y-10">
         
         <div className="space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-stone-500 block">
+          <span className="text-xs font-cinzel font-bold uppercase tracking-widest text-caramel-dark block">
             Step 1: Select Your Tax Profile
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
@@ -176,7 +177,7 @@ export default function RefundCheckupPage() {
         <div className="bg-linen-100 rounded-2xl p-6 sm:p-8 border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-8 space-y-3">
-            <span className="text-xs font-mono font-bold uppercase text-caramel-dark block">
+            <span className="text-xs font-cinzel font-bold uppercase text-caramel-dark block">
               Calculated Review Scope
             </span>
             <h3 className="font-serif text-2xl text-charcoal-900">
@@ -185,11 +186,11 @@ export default function RefundCheckupPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-600 pt-1">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
-                <span>Written refund / balance estimate</span>
+                <span>Written refund or balance estimate</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
-                <span>Deduction omissions check</span>
+                <span>Healthcare & W-2 deduction omissions audit</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
@@ -242,22 +243,22 @@ export default function RefundCheckupPage() {
               <form onSubmit={handleRequestSubmit} className="space-y-4 text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-stone-600 font-medium mb-1">Full Name*</label>
+                    <label className="block text-stone-600 font-medium mb-1">Name*</label>
                     <input
                       required
                       type="text"
-                      placeholder="Your name"
+                      placeholder="Your Full Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
                     />
                   </div>
                   <div>
-                    <label className="block text-stone-600 font-medium mb-1">Phone Number*</label>
+                    <label className="block text-stone-600 font-medium mb-1">Phone*</label>
                     <input
                       required
                       type="tel"
-                      placeholder="(903) 000-0000"
+                      placeholder="(903) 555-0192"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
@@ -266,11 +267,11 @@ export default function RefundCheckupPage() {
                 </div>
 
                 <div>
-                  <label className="block text-stone-600 font-medium mb-1">Email Address*</label>
+                  <label className="block text-stone-600 font-medium mb-1">Email*</label>
                   <input
                     required
                     type="email"
-                    placeholder="email@example.com"
+                    placeholder="client@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
@@ -278,10 +279,10 @@ export default function RefundCheckupPage() {
                 </div>
 
                 <div>
-                  <label className="block text-stone-600 font-medium mb-1">Specific Tax Questions / Notes (Optional)</label>
+                  <label className="block text-stone-600 font-medium mb-1">What service or question are you interested in?</label>
                   <textarea
                     rows={2}
-                    placeholder="Any changes in your household or employment this year?"
+                    placeholder="e.g., LVN travel contract W-2, first-time homebuyer credits, or prior year review..."
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel resize-none"

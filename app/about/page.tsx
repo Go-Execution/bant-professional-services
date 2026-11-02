@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Scale, Shield, Award, GraduationCap, Building2, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Scale, Shield, Award, GraduationCap, Building2, CheckCircle2, MapPin, Globe2, Clock } from "lucide-react";
 
 export const metadata = {
   title: "About Our Practice | BNT Professional Services",
-  description: "Learn about BNT Professional Services, our Principal Consultant with a UTSA MAcc & MBA, Wall St/NY tax firm experience, and our faith-grounded commitment to integrity in Jacksonville, TX.",
+  description: "Learn about BNT Professional Services in Rusk, TX 75785. Grounded in faith and gratitude, led by our Principal Consultant with a UTSA MAcc & MBA, Wall St/NY tax firm background, and JPMorgan Chase experience.",
 };
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
     {
       icon: Building2,
       title: "New York Private Tax Practice",
-      institution: "Wall Street / Manhattan Regional Firm",
+      institution: "New York Regional Tax Practice",
       description: "Hands-on experience preparing complex individual returns, multi-state tax allocations, itemized deductions, and high-stakes reviews.",
     },
     {
@@ -69,7 +69,7 @@ export default function AboutPage() {
         </h1>
 
         <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-          Our work is grounded in faith and gratitude. We believe in doing honest work, serving people with integrity, and treating every client with respect. We help individuals, families, and small businesses understand their finances, keep accurate records, and file with confidence.
+          Our work is grounded in faith and gratitude. We believe in doing honest work, serving people with integrity, and treating every client with respect. We help individuals, families, healthcare professionals, and small businesses understand their finances, keep accurate records, and file with confidence.
         </p>
       </section>
 
@@ -107,9 +107,9 @@ export default function AboutPage() {
             Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA). He also holds a bachelor&apos;s degree and a Master of Business Administration (MBA) degree.
           </p>
           <p className="text-sm text-stone-600 leading-relaxed">
-            He brings invaluable experience having worked at a private New York tax firm and for JPMorgan Chase, delivering high-level financial analysis and tax preparation directly to every client in Jacksonville, Tyler, Rusk, and surrounding communities.
+            He brings invaluable experience having worked at a private New York tax firm and for JPMorgan Chase, delivering high-level financial analysis, business bookkeeping reconciliations, and tax preparation directly to clients in Rusk, Jacksonville, and Cherokee County.
           </p>
-          <div className="pt-2 flex items-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
               href="/booking"
               className="btn-caramel pl-5 pr-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2.5"
@@ -155,7 +155,7 @@ export default function AboutPage() {
       {/* 4. Core Values & Principles */}
       <section className="bg-linen-100 rounded-3xl p-8 sm:p-12 border border-stone-200 space-y-8">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-stone-600 block">
+          <span className="text-xs font-cinzel font-bold uppercase tracking-widest text-caramel-dark block">
             The BNT Standard
           </span>
           <h3 className="font-serif text-3xl text-charcoal-900">
@@ -181,14 +181,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. Callout Banner */}
-      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+      {/* 5. Geographic Scope & Office Card */}
+      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/80 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="space-y-2">
+          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center text-charcoal-900">
+            <MapPin className="w-5 h-5 text-caramel-dark" />
+          </div>
+          <h4 className="font-serif text-xl text-charcoal-900 font-bold">In-Person Office</h4>
+          <p className="text-xs text-stone-600 leading-relaxed">
+            133 N Henderson Street, Rusk, TX 75785. Conveniently located to welcome clients from Rusk, Jacksonville, and Cherokee County.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center text-charcoal-900">
+            <Globe2 className="w-5 h-5 text-caramel-dark" />
+          </div>
+          <h4 className="font-serif text-xl text-charcoal-900 font-bold">Notary All Over US</h4>
+          <p className="text-xs text-stone-600 leading-relaxed">
+            Commissioned for Remote Online Notarization (RON) serving all 50 states, plus in-person notarizations at our Rusk location.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center text-charcoal-900">
+            <Clock className="w-5 h-5 text-caramel-dark" />
+          </div>
+          <h4 className="font-serif text-xl text-charcoal-900 font-bold">Hours & Appointments</h4>
+          <p className="text-xs text-stone-600 leading-relaxed">
+            Monday through Friday 9:00 AM to 5:00 PM. Saturday & Sunday available By Appointment to accommodate your schedule.
+          </p>
+        </div>
+      </section>
+
+      {/* 6. Callout Banner */}
+      <section className="bg-linen-100 rounded-3xl p-8 sm:p-12 border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
         <div className="space-y-2 text-center md:text-left">
           <h3 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
-            Ready to experience an honest tax consultation?
+            Ready to experience an honest consultation?
           </h3>
           <p className="text-xs sm:text-sm text-stone-500">
-            Schedule a conversation in Jacksonville, TX or remotely via our private client portal.
+            Visit us in Rusk, TX or meet remotely via our private 256-bit encrypted client portal.
           </p>
         </div>
         <Link
