@@ -54,8 +54,8 @@ export default function HomePage() {
       a: "We match your bank, credit card, and merchant statements directly to your general ledger to eliminate discrepancies. We also provide multi-month catch-up bookkeeping and prepare clean financial statements so your business is audit-ready.",
     },
     {
-      q: "Where do you offer Texas certified notary appointments?",
-      a: "We provide in-person notary appointments throughout Jacksonville, TX and surrounding East Texas communities for warranty deeds, powers of attorney, medical directives, and commercial contracts.",
+      q: "Where do you offer notary appointments?",
+      a: "We offer certified notary services all over the US via secure Remote Online Notarization (RON), as well as local in-person appointments at our office at 133 N Henderson Street, Rusk, TX 75785 and throughout East Texas. Saturday & Sunday appointments are available by request.",
     },
   ];
 
@@ -78,13 +78,42 @@ export default function HomePage() {
           
           {/* Left Column: Editorial Headline & Guidance */}
           <div className="lg:col-span-4 space-y-6">
+            <div className="inline-flex flex-wrap items-center gap-2">
+              <span className="px-3 py-1 rounded-full bg-caramel/25 border border-caramel/40 text-charcoal-900 text-xs font-bold uppercase tracking-wider">
+                Business • Notary • Tax
+              </span>
+              <span className="px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-bold">
+                Individuals &amp; Businesses
+              </span>
+            </div>
+
             <h1 className="font-serif text-5xl sm:text-6xl xl:text-7xl text-charcoal-900 leading-[1.05] tracking-tight">
-              Smart Tax & Business Support
+              Smart Tax, Business &amp; Notary Support
             </h1>
 
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal max-w-sm">
-              When the stakes are high, you need more than just filing. BNT provides sharp tax insight, accurate bookkeeping, and honest solutions to help you file with confidence and stay ahead.
+              Professional financial solutions for individuals and businesses. Featuring specialized tax preparation for healthcare workers, business bookkeeping, and certified notary services across the US.
             </p>
+
+            {/* Quick Hero Badges */}
+            <div className="grid grid-cols-2 gap-2 text-xs font-medium text-stone-700 pt-1">
+              <div className="p-2.5 rounded-xl bg-white border border-stone-200/80 shadow-2xs">
+                <span className="block font-bold text-charcoal-900">Sat &amp; Sun:</span>
+                <span className="text-[11px] text-stone-600">By Appointment</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-white border border-stone-200/80 shadow-2xs">
+                <span className="block font-bold text-charcoal-900">Notary Service:</span>
+                <span className="text-[11px] text-stone-600">All Over US</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-white border border-stone-200/80 shadow-2xs">
+                <span className="block font-bold text-charcoal-900">Taxes:</span>
+                <span className="text-[11px] text-stone-600">State &amp; Federal Returns</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-white border border-stone-200/80 shadow-2xs">
+                <span className="block font-bold text-charcoal-900">Office Location:</span>
+                <span className="text-[11px] text-stone-600">Rusk, TX 75785</span>
+              </div>
+            </div>
 
             {/* Phone Number Pill + Handwritten Floating Arrow */}
             <div className="pt-2 flex items-center gap-4 relative">
@@ -108,12 +137,12 @@ export default function HomePage() {
             </div>
 
             {/* Vintage Scales of Justice / Integrity Seal */}
-            <div className="pt-8 opacity-85 hidden sm:block">
+            <div className="pt-4 opacity-85 hidden sm:block">
               <div className="flex items-center gap-3 text-stone-500 text-xs">
                 <Scale className="w-10 h-10 text-stone-600 shrink-0 stroke-[1.5]" />
                 <div>
-                  <p className="font-serif text-sm font-semibold text-charcoal-900">Grounded in Faith & Gratitude</p>
-                  <p className="text-[11px] text-stone-500">Serving Jacksonville, TX with honest stewardship</p>
+                  <p className="font-serif text-sm font-semibold text-charcoal-900">Grounded in Faith &amp; Gratitude</p>
+                  <p className="text-[11px] text-stone-500">133 N Henderson St, Rusk, TX 75785 • Serving Nationwide</p>
                 </div>
               </div>
             </div>
@@ -295,128 +324,189 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. SERVICES SECTION */}
+      {/* 4. SPECIALIZED HIGHLIGHT: TAXES FOR HEALTHCARE PROFESSIONALS */}
+      <section className="px-6 sm:px-10 lg:px-14 py-16 bg-[#1E2522] text-white rounded-3xl mx-4 sm:mx-8 lg:mx-14 mb-16 shadow-2xl border border-stone-800 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-caramel/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4 mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-caramel/20 text-caramel-light border border-caramel/40 text-xs font-bold uppercase tracking-wider">
+            <span>Specialized Tax Practice • Individuals &amp; Businesses</span>
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight text-white">
+            Taxes for Licensed Vocational Nurses (LVN), Registered Nurses (RN), Physicians &amp; Allied Healthcare Workers
+          </h2>
+
+          <p className="text-sm sm:text-base text-stone-300 max-w-2xl mx-auto leading-relaxed">
+            Healthcare professionals handle complex tax situations—travel nurse multi-state stipends, locum tenens 1099 contracts, board certifications, and professional expenses. We specialize in maximizing your legal deductions while keeping your returns 100% compliant.
+          </p>
+        </div>
+
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 space-y-3">
+            <h4 className="font-serif text-xl font-bold text-caramel-light">LVN &amp; RN Nurses</h4>
+            <p className="text-xs text-stone-300 leading-relaxed">
+              Travel nurse tax homes, per diem lodging &amp; meal stipends, scrub allowances, continuing education (CEU), and state board fees.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 space-y-3">
+            <h4 className="font-serif text-xl font-bold text-caramel-light">Physicians &amp; Surgeons</h4>
+            <p className="text-xs text-stone-300 leading-relaxed">
+              Locum tenens 1099 contracts, W-2 hospitalist optimization, professional liability deductions, and medical practice entity planning.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 space-y-3">
+            <h4 className="font-serif text-xl font-bold text-caramel-light">Allied Health Specialists</h4>
+            <p className="text-xs text-stone-300 leading-relaxed">
+              Physical therapists, radiologic technologists, respiratory therapists, occupational therapists, and clinical technicians.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 space-y-3">
+            <h4 className="font-serif text-xl font-bold text-caramel-light">Multi-State Returns</h4>
+            <p className="text-xs text-stone-300 leading-relaxed">
+              Seamless state income tax filings across multiple assignments with zero double taxation and precision state apportionment.
+            </p>
+          </div>
+        </div>
+
+        <div className="relative z-10 pt-10 text-center">
+          <Link
+            href="/booking"
+            className="btn-caramel pl-6 pr-4 py-3 rounded-full text-xs sm:text-sm font-semibold inline-flex items-center gap-3 shadow-lg"
+          >
+            <span>Book Healthcare Worker Tax Consultation</span>
+            <span className="w-6 h-6 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* 5. SERVICES SECTION */}
       <section className="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-[#F6F3EE]">
         <div className="max-w-2xl mb-14 space-y-3">
           <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
             Our Services
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl text-charcoal-900 leading-tight">
-            Expertise Across Every Financial & Tax Need
+            Professional for Individuals &amp; Businesses
           </h2>
           <p className="text-sm text-stone-600">
-            Transparent, reliable services crafted for individuals, families, and growing businesses in Jacksonville and beyond.
+            Transparent, reliable services crafted for individuals, healthcare professionals, and growing businesses in Rusk, East Texas, and nationwide.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Card 1: Refund Checkup */}
+          {/* Card 1: Individual Tax */}
           <div className="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
                 01
               </div>
-              <h3 className="font-serif text-2xl text-charcoal-900">The BNT Refund Checkup</h3>
+              <h3 className="font-serif text-2xl text-charcoal-900">Individual Tax Preparation</h3>
               <p className="text-sm text-stone-600 leading-relaxed">
-                A flat-fee review of your tax documents with a written estimate of your expected refund or balance due, plus a list of anything missing or needing correction.
+                Complete federal and state tax returns for W-2 wage earners, 1099 contractors, families, and professionals with upfront flat pricing.
               </p>
               <ul className="text-xs text-stone-600 space-y-2 pt-2">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Written refund or balance calculation</span>
+                  <span>State &amp; Federal electronic filing confirmation</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Itemized list of missing deductions</span>
+                  <span>Dependent, education &amp; retirement credits</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Zero commission taken from refund</span>
+                  <span>$0 commission taken from your refund</span>
                 </li>
               </ul>
             </div>
 
             <div className="pt-4 border-t border-stone-100">
               <Link 
-                href="/refund-checkup"
+                href="/booking"
                 className="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors"
               >
-                <span>Interactive Tool & Booking</span>
+                <span>Schedule Individual Filing</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
 
-          {/* Card 2: Individual Tax */}
+          {/* Card 2: Business Tax */}
           <div className="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
                 02
               </div>
-              <h3 className="font-serif text-2xl text-charcoal-900">Individual Tax Preparation</h3>
+              <h3 className="font-serif text-2xl text-charcoal-900">Business Tax &amp; Books</h3>
               <p className="text-sm text-stone-600 leading-relaxed">
-                Complete federal and multi-state tax return preparation for W-2 filers, homeowners, families, and self-employed individuals.
+                Small business tax preparation, Schedule C, LLC, S-Corp filings, account reconciliations, and audit-ready bookkeeping records.
               </p>
               <ul className="text-xs text-stone-600 space-y-2 pt-2">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Electronic IRS e-file confirmation</span>
+                  <span>Bank &amp; credit card monthly reconciliations</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Dependent & education credit optimization</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Plain language line-by-line review</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="pt-4 border-t border-stone-100">
-              <Link 
-                href="/services#individual"
-                className="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors"
-              >
-                <span>Schedule Tax Filing</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 3: Business Books */}
-          <div className="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div className="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
-                03
-              </div>
-              <h3 className="font-serif text-2xl text-charcoal-900">Business Books & Notary</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">
-                Bank and credit card reconciliations, financial record cleanups, small business tax filings, and certified Texas notary services.
-              </p>
-              <ul className="text-xs text-stone-600 space-y-2 pt-2">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Account statement matching & audit defense</span>
+                  <span>Deduction maximization &amp; asset depreciation</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
                   <span>Multi-month historical catch-up accounting</span>
                 </li>
+              </ul>
+            </div>
+
+            <div className="pt-4 border-t border-stone-100">
+              <Link 
+                href="/services#business"
+                className="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors"
+              >
+                <span>Explore Business Solutions</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3: Notary Public All Over US */}
+          <div className="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="w-11 h-11 rounded-2xl bg-linen-100 flex items-center justify-center font-serif text-lg font-bold text-charcoal-900">
+                03
+              </div>
+              <h3 className="font-serif text-2xl text-charcoal-900">Notary (All Over US)</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">
+                Certified notarizations nationwide via Remote Online Notarization (RON) and local in-person appointments in Rusk and East Texas.
+              </p>
+              <ul className="text-xs text-stone-600 space-y-2 pt-2">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
-                  <span>Certified notarization of legal documents</span>
+                  <span>Nationwide remote online notarization</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
+                  <span>Wills, deeds, powers of attorney, contracts</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark" />
+                  <span>Saturday &amp; Sunday appointments available</span>
                 </li>
               </ul>
             </div>
 
             <div className="pt-4 border-t border-stone-100">
               <Link 
-                href="/services#reconciliation"
+                href="/services#notary"
                 className="text-xs font-semibold text-charcoal-900 hover:text-caramel flex items-center gap-2 transition-colors"
               >
-                <span>Explore Business Services</span>
+                <span>Schedule Notary Service</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -432,39 +522,50 @@ export default function HomePage() {
             Client Consultation
           </h2>
           <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            Reach out to BNT Professional Services. We provide straightforward answers to your tax and bookkeeping needs.
+            Reach out to BNT Professional Services. Professional guidance for individuals and businesses.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Map Preview */}
+          {/* Map & Office Information Preview */}
           <div className="lg:col-span-6 rounded-3xl overflow-hidden border border-stone-200 bg-linen-100 p-6 flex flex-col justify-between relative min-h-[380px]">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase text-stone-500">Service Coverage Area</span>
                 <span className="px-2.5 py-0.5 rounded-full bg-white text-[11px] font-semibold text-stone-700 shadow-sm border border-stone-200">
-                  Jacksonville, TX
+                  Rusk, TX 75785 &amp; Nationwide
                 </span>
               </div>
               <p className="text-xs text-stone-600">
-                Serving Cherokee County, Smith County, Anderson County, and surrounding communities with in-person appointments and 100% remote encrypted portal access.
+                Serving Rusk, Jacksonville, Cherokee County, Tyler, East Texas, and clients nationwide via secure 256-bit remote portal and online notary.
               </p>
+              
+              <div className="grid grid-cols-2 gap-2 text-xs pt-2">
+                <div className="p-2.5 bg-white rounded-xl border border-stone-200">
+                  <span className="block font-bold text-charcoal-900">Sat &amp; Sun:</span>
+                  <span className="text-stone-500">By Appointment</span>
+                </div>
+                <div className="p-2.5 bg-white rounded-xl border border-stone-200">
+                  <span className="block font-bold text-charcoal-900">Notary:</span>
+                  <span className="text-stone-500">All Over US</span>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-stone-200 shadow-sm space-y-2">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-stone-200 shadow-sm space-y-2 mt-4">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-caramel/20 text-caramel-dark flex items-center justify-center font-bold text-xs">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-charcoal-900">Jacksonville Office & Remote Vault</h4>
-                  <p className="text-[11px] text-stone-500">Jacksonville, TX 75766</p>
+                  <h4 className="text-xs font-bold text-charcoal-900">Rusk Office &amp; Remote Vault</h4>
+                  <p className="text-[11px] text-stone-600 font-medium">133 N Henderson Street, Rusk, TX 75785</p>
                 </div>
               </div>
               <div className="pt-2 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-600">
                 <span>Direct: (903) 555-0192</span>
-                <span className="text-caramel font-semibold">Open Mon-Sat</span>
+                <span className="text-caramel font-semibold">Weekend by Appt</span>
               </div>
             </div>
           </div>
@@ -475,20 +576,23 @@ export default function HomePage() {
             <div className="space-y-2 mb-6">
               <h3 className="font-serif text-2xl text-charcoal-900">Get in Touch with BNT</h3>
               <p className="text-xs text-stone-500">
-                Every great solution starts with a simple conversation. Connect with us to discover how simple tax and books can be.
+                Professional tax preparation for individuals, healthcare workers, businesses, and certified notary services across the US.
               </p>
             </div>
 
             {/* Category Chips */}
             <div className="flex flex-wrap gap-2 mb-6">
-              {["Tax Prep", "Refund Checkup", "Bookkeeping & Notary"].map((chip) => (
+              {["Individual Tax", "Business Tax", "Healthcare Workers Tax", "Notary (All over US)", "Refund Checkup"].map((chip) => (
                 <button
                   key={chip}
                   type="button"
-                  onClick={() => setSelectedServiceChip(chip)}
+                  onClick={() => {
+                    setSelectedServiceChip(chip);
+                    setContactForm({ ...contactForm, service: chip });
+                  }}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                     selectedServiceChip === chip
-                      ? "bg-caramel text-charcoal-900 shadow-sm"
+                      ? "bg-caramel text-charcoal-900 shadow-sm font-bold"
                       : "bg-white border border-stone-200 text-stone-600 hover:border-stone-400"
                   }`}
                 >
@@ -517,18 +621,18 @@ export default function HomePage() {
               <form onSubmit={handleContactSubmit} className="space-y-4 text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-stone-600 font-medium mb-1">Full Name*</label>
+                    <label className="block text-stone-700 font-bold mb-1">Name*</label>
                     <input
                       required
                       type="text"
-                      placeholder="Your name"
+                      placeholder="Your Full Name"
                       value={contactForm.name}
                       onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                       className="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
                     />
                   </div>
                   <div>
-                    <label className="block text-stone-600 font-medium mb-1">Phone Number*</label>
+                    <label className="block text-stone-700 font-bold mb-1">Phone*</label>
                     <input
                       required
                       type="tel"
@@ -542,7 +646,7 @@ export default function HomePage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-stone-600 font-medium mb-1">Email Address*</label>
+                    <label className="block text-stone-700 font-bold mb-1">Email*</label>
                     <input
                       required
                       type="email"
@@ -553,25 +657,26 @@ export default function HomePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-stone-600 font-medium mb-1">Service Type*</label>
+                    <label className="block text-stone-700 font-bold mb-1">What service they are interested*</label>
                     <select
                       value={contactForm.service}
                       onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
-                      className="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel"
+                      className="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 focus:outline-none focus:border-caramel font-medium"
                     >
-                      <option value="The BNT Refund Checkup">The BNT Refund Checkup</option>
-                      <option value="Individual Tax">Individual Tax Preparation</option>
-                      <option value="Bookkeeping">Account Reconciliations</option>
-                      <option value="Notary">Texas Notary Service</option>
+                      <option value="Healthcare Workers Tax">Taxes for Healthcare Workers (LVN, RN, MD, Allied Health)</option>
+                      <option value="Individual Tax">Individual Tax Preparation (State &amp; Federal)</option>
+                      <option value="Business Tax">Business Tax Preparation &amp; Books</option>
+                      <option value="Notary (All over US)">Notary Service (All over US &amp; Texas)</option>
+                      <option value="The BNT Refund Checkup">The BNT Refund Checkup (Flat Fee)</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-stone-600 font-medium mb-1">Your Message</label>
+                  <label className="block text-stone-600 font-medium mb-1">Message (Optional)</label>
                   <textarea
                     rows={3}
-                    placeholder="Tell us about your taxes or bookkeeping records..."
+                    placeholder="Tell us about your tax situation or notary needs..."
                     value={contactForm.message}
                     onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                     className="w-full bg-white border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel resize-none"
@@ -582,7 +687,7 @@ export default function HomePage() {
                   type="submit"
                   className="btn-caramel pl-5 pr-3 py-2.5 rounded-full text-xs font-semibold flex items-center gap-3"
                 >
-                  <span>Send A Message</span>
+                  <span>Submit Inquiry</span>
                   <span className="w-6 h-6 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
                     <ArrowRight className="w-3 h-3" />
                   </span>
