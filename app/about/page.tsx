@@ -4,7 +4,7 @@ import { ArrowRight, Scale, Shield, Award, GraduationCap, Building2, CheckCircle
 
 export const metadata = {
   title: "About Our Practice | BNT Professional Services",
-  description: "Learn about BNT Professional Services, our Principal Consultant with a UTSA MAcc & MBA, Wall St/NY tax firm experience, and our commitment to integrity in Rusk, TX 75785 and nationwide.",
+  description: "Learn about BNT Professional Services, our Principal Consultant with a UTSA MAcc & MBA, Wall St/NY tax firm experience, and our faith-grounded commitment to integrity in Jacksonville, TX.",
 };
 
 export default function AboutPage() {
@@ -107,7 +107,7 @@ export default function AboutPage() {
             Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA). He also holds a bachelor&apos;s degree and a Master of Business Administration (MBA) degree.
           </p>
           <p className="text-sm text-stone-600 leading-relaxed">
-            He brings invaluable experience having worked at a private New York tax firm and for JPMorgan Chase, delivering high-level financial analysis and tax preparation directly to every client in Rusk, Jacksonville, Tyler, East Texas, and healthcare workers nationwide.
+            He brings invaluable experience having worked at a private New York tax firm and for JPMorgan Chase, delivering high-level financial analysis and tax preparation directly to every client in Jacksonville, Tyler, Rusk, and surrounding communities.
           </p>
           <div className="pt-2 flex items-center gap-4">
             <Link
@@ -188,7 +188,7 @@ export default function AboutPage() {
             Ready to experience an honest tax consultation?
           </h3>
           <p className="text-xs sm:text-sm text-stone-500">
-            Schedule a conversation at 133 N Henderson St, Rusk, TX 75785 or remotely via our private client portal. Saturday &amp; Sunday by appointment.
+            Schedule a conversation in Jacksonville, TX or remotely via our private client portal.
           </p>
         </div>
         <Link

@@ -98,32 +98,18 @@ export default function ServicesPage() {
 
   const notaryServices = [
     {
-      id: "healthcare",
-      badge: "Specialized Tax Practice",
-      title: "Taxes for Healthcare Professionals (LVN, RN, MD & Allied Health)",
-      description: "Dedicated tax preparation for Licensed Vocational Nurses (LVN), Registered Nurses (RN), travel nurses, physicians, and allied health professionals.",
-      points: [
-        "Travel nurse tax homes, per-diem lodging, and non-taxable stipends.",
-        "Locum tenens 1099 contracts and multi-state assignment filing with no double taxation.",
-        "Uniforms/scrubs, stethoscopes, CEU continuing education, and board licensing fees.",
-        "Audit-ready IRS compliance with upfront flat-rate pricing ($0 commission on refunds).",
-      ],
-      ctaText: "Schedule Healthcare Tax Review",
-      ctaLink: "/booking?service=Healthcare+Worker+Tax",
-    },
-    {
       id: "notary",
-      badge: "Certified Notary • All Over US",
-      title: "Notary Public Services (Nationwide & Texas)",
-      description: "Certified, reliable notarization for legal, real estate, and business documents all over the US via Remote Online Notary (RON) and in-person at our Rusk, TX office.",
+      badge: "Certified Texas Notary",
+      title: "Official Notary Public Services",
+      description: "Certified, reliable notarization for legal, real estate, and business documents in Jacksonville, TX and surrounding Cherokee County.",
       points: [
         "Warranty deeds, deeds of trust, closing packets, and mortgage notes.",
-        "Statutory durable powers of attorney, wills, and medical directives.",
+        "Statutory durable powers of attorney and medical directives.",
         "Affidavits, sworn oaths, and commercial business contracts.",
-        "Saturday & Sunday appointments available by appointment in Rusk, TX 75785.",
+        "Flexible scheduling in Jacksonville, TX to suit your schedule.",
       ],
       ctaText: "Schedule Notary Appointment",
-      ctaLink: "/booking?service=Notary+Service",
+      ctaLink: "/booking?service=Texas+Notary+Service",
     },
   ];
 
@@ -162,17 +148,16 @@ export default function ServicesPage() {
           Clear answers. Accurate books. Taxes filed with confidence.
         </h1>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
-          Explore our tailored solutions for individuals, healthcare professionals, and growing businesses in Rusk, TX 75785, East Texas, and nationwide. Every service is priced upfront with zero hidden fees.
+          Explore our tailored solutions for individuals, families, and growing businesses in Jacksonville, TX and East Texas. Every service is priced upfront with zero hidden fees.
         </p>
 
         {/* Tab Filters */}
         <div className="pt-4 flex flex-wrap gap-2">
           {[
             { id: "all", label: "All Services" },
-            { id: "healthcare", label: "Taxes for Healthcare (LVN/RN/MD)" },
             { id: "individual", label: "For Individuals & Families" },
             { id: "business", label: "For Businesses" },
-            { id: "notary", label: "Notary (All Over US)" },
+            { id: "notary", label: "Certified Notary" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -296,13 +281,13 @@ export default function ServicesPage() {
           <div className="bg-white rounded-3xl p-8 sm:p-10 border border-stone-200/80 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 space-y-4">
               <span className="text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-linen-200 text-charcoal-900 font-semibold inline-block">
-                133 N Henderson St, Rusk, TX 75785 &amp; Nationwide Remote Notary
+                Jacksonville, TX Appointments
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
-                Reliable, statutory notarization all over the US &amp; Texas.
+                Reliable, statutory notarization in East Texas.
               </h3>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                As a commissioned Texas Notary Public with Remote Online Notarization (RON) capabilities nationwide, we witness signatures, administer affirmations, and certify vital documents. Saturday &amp; Sunday appointments available by request.
+                As a commissioned Texas Notary Public, we witness signatures, administer affirmations, and certify vital documents with total legal diligence.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-stone-600">
                 <div className="flex items-center gap-2">

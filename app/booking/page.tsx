@@ -19,8 +19,8 @@ import {
 export default function BookingPage() {
   const [step, setStep] = useState(1);
   const [booking, setBooking] = useState({
-    service: "Taxes for Healthcare Workers (LVN, RN, MD)",
-    format: "In-Person (Rusk, TX - 133 N Henderson St)",
+    service: "The BNT Refund Checkup",
+    format: "In-Person (Jacksonville, TX)",
     date: "2026-11-02",
     timeSlot: "10:00 AM",
     fullName: "",
@@ -32,17 +32,17 @@ export default function BookingPage() {
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
   const services = [
-    { title: "Taxes for Healthcare Workers (LVN, RN, MD)", desc: "Specialized tax planning & deductions for nurses, doctors & allied health." },
-    { title: "Individual Tax Preparation", desc: "Complete state and federal tax return filing." },
-    { title: "Business Tax & Bookkeeping", desc: "Small business returns, Schedule C, LLC, S-Corp." },
-    { title: "Notary Service (All over US & Texas)", desc: "Nationwide remote online notarization & in-person Rusk office." },
     { title: "The BNT Refund Checkup", desc: "Flat-fee document audit & written estimate." },
+    { title: "Individual & W-2 Tax Return Prep", desc: "Complete federal and state tax filing." },
+    { title: "Account Reconciliations", desc: "Matching bank and card statements to general ledger." },
+    { title: "Bookkeeping Support & Cleanup", desc: "Catch-up accounting and receipt organization." },
+    { title: "Texas Certified Notary", desc: "In-person notarization of legal documents." },
   ];
 
   const formats = [
-    { id: "In-Person (Rusk, TX - 133 N Henderson St)", label: "In-Person Office Visit (Rusk, TX)", icon: MapPin, desc: "Meet at 133 N Henderson Street, Rusk, TX 75785. Sat & Sun by appointment." },
+    { id: "In-Person (Jacksonville, TX)", label: "In-Person Office Visit", icon: MapPin, desc: "Meet at our Jacksonville, TX location by appointment." },
     { id: "Telephone Call", label: "Phone Consultation", icon: Phone, desc: "A focused call directly with our Principal Consultant." },
-    { id: "Secure Video Meeting", label: "Remote Video Screen Share", icon: Video, desc: "Virtual review from anywhere in the US." },
+    { id: "Secure Video Meeting", label: "Remote Video Screen Share", icon: Video, desc: "Virtual review from anywhere in Texas." },
   ];
 
   const timeSlots = [

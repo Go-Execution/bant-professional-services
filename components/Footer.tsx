@@ -31,7 +31,7 @@ export default function Footer() {
           </p>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-stone-200 text-[11px] font-mono text-stone-600">
             <Shield className="w-3.5 h-3.5 text-caramel-dark" />
-            <span>133 N Henderson St, Rusk, TX 75785</span>
+            <span>Jacksonville, TX & East Texas</span>
           </div>
         </div>
 
@@ -51,23 +51,20 @@ export default function Footer() {
         <div className="space-y-3 text-xs">
           <h5 className="font-bold text-charcoal-900 uppercase tracking-wider">Services</h5>
           <ul className="space-y-2 text-stone-600">
-            <li><Link href="/services#healthcare" className="hover:text-caramel transition-colors font-medium text-charcoal-900">Healthcare Worker Taxes (LVN/RN/MD)</Link></li>
+            <li><Link href="/refund-checkup" className="hover:text-caramel transition-colors font-medium text-charcoal-900">The BNT Refund Checkup</Link></li>
             <li><Link href="/services#individual" className="hover:text-caramel transition-colors">Individual Tax Preparation</Link></li>
-            <li><Link href="/services#business" className="hover:text-caramel transition-colors">Business Tax &amp; Books</Link></li>
-            <li><Link href="/services#notary" className="hover:text-caramel transition-colors">Notary (All Over US)</Link></li>
-            <li><Link href="/refund-checkup" className="hover:text-caramel transition-colors">The BNT Refund Checkup</Link></li>
+            <li><Link href="/services#reconciliation" className="hover:text-caramel transition-colors">Account Reconciliations</Link></li>
+            <li><Link href="/services#bookkeeping" className="hover:text-caramel transition-colors">Bookkeeping & Cleanup</Link></li>
+            <li><Link href="/services#notary" className="hover:text-caramel transition-colors">Texas Certified Notary</Link></li>
           </ul>
         </div>
 
         {/* Contacts & Security */}
         <div className="space-y-3 text-xs text-stone-600">
           <h5 className="font-bold text-charcoal-900 uppercase tracking-wider">Direct Contacts</h5>
-          <div className="flex items-start gap-2">
-            <MapPin className="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-medium text-charcoal-900">133 N Henderson Street</p>
-              <p>Rusk, TX 75785</p>
-            </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+            <span>Jacksonville, TX 75766</span>
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-3.5 h-3.5 text-stone-400 shrink-0" />
@@ -76,11 +73,6 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <Mail className="w-3.5 h-3.5 text-stone-400 shrink-0" />
             <span>consulting@bntservices.com</span>
-          </div>
-          <div className="text-[11px] text-stone-500 pt-1 space-y-1">
-            <p><strong>Saturday &amp; Sunday:</strong> By Appointment</p>
-            <p><strong>Notary:</strong> All Over US (Nationwide)</p>
-            <p><strong>Taxes:</strong> State &amp; Federal Returns</p>
           </div>
           <div className="pt-2">
             <Link 
