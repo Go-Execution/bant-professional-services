@@ -22,8 +22,8 @@ export default function Navbar() {
   const serviceSublinks = [
     { name: "All Services Overview", href: "/services" },
     { name: "Individual Tax Preparation", href: "/services#individual-tax" },
-    { name: "Business Tax Preparation", href: "/services#business-tax" },
     { name: "Healthcare Worker Taxes (LVN / RN / MD)", href: "/services#healthcare-tax" },
+    { name: "Business Tax Preparation", href: "/services#business-tax" },
     { name: "The BNT Refund Checkup", href: "/refund-checkup" },
     { name: "Notary Public (All Over US)", href: "/services#notary" },
     { name: "Account Reconciliations & Cleanup", href: "/services#reconciliation" },
@@ -31,28 +31,30 @@ export default function Navbar() {
 
   return (
     <header className="z-30">
-      {/* Top Utility Announcement Bar */}
-      <div className="bg-charcoal-900 text-stone-300 text-[11px] py-2 px-4 sm:px-10 border-b border-charcoal-800">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-1.5 font-medium">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1 text-center md:text-left">
-            <span className="inline-flex items-center gap-1.5 text-stone-200">
-              <MapPin className="w-3.5 h-3.5 text-caramel shrink-0" />
-              <span>133 N Henderson Street, Rusk, TX 75785</span>
+      {/* Top Utility Announcement Bar - Clean, streamlined single row */}
+      <div className="bg-charcoal-900 text-stone-300 text-[11px] py-1.5 px-4 sm:px-10 border-b border-charcoal-800">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 font-medium">
+          <div className="flex items-center gap-2 sm:gap-4 text-[10px] sm:text-[11px] truncate">
+            <span className="inline-flex items-center gap-1 text-stone-200">
+              <MapPin className="w-3 h-3 text-caramel shrink-0" />
+              <span>133 N Henderson St, Rusk, TX</span>
             </span>
-            <span className="hidden sm:inline text-stone-500">•</span>
-            <span className="inline-flex items-center gap-1.5 text-caramel-light font-semibold">
-              <Clock className="w-3.5 h-3.5 text-caramel shrink-0" />
-              <span>Saturday & Sunday: By Appointment</span>
+            <span className="text-stone-600">•</span>
+            <span className="text-caramel-light font-semibold">
+              Sat & Sun By Appt
+            </span>
+            <span className="hidden md:inline text-stone-600">•</span>
+            <span className="hidden md:inline text-stone-300">
+              Notary All Over US
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-stone-300 text-[11px]">
-            <span className="inline-flex items-center gap-1.5 text-stone-200 font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5 text-caramel shrink-0" />
-              <span>Notary All Over US • Taxes State-Focused</span>
+          <div className="flex items-center gap-3 text-[11px] shrink-0">
+            <span className="hidden sm:inline-flex items-center gap-1 text-stone-300 font-medium">
+              <ShieldCheck className="w-3 h-3 text-caramel shrink-0" />
+              <span>Taxes State-Focused</span>
             </span>
-            <span className="text-stone-600 hidden lg:inline">|</span>
-            <a href="tel:9035550192" className="hidden lg:inline-flex items-center gap-1 text-stone-300 hover:text-caramel transition-colors">
+            <a href="tel:9035550192" className="inline-flex items-center gap-1 text-stone-200 hover:text-caramel transition-colors font-mono">
               <Phone className="w-3 h-3 text-caramel" />
               <span>(903) 555-0192</span>
             </a>
@@ -61,17 +63,17 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="relative px-6 sm:px-10 lg:px-14 py-4 sm:py-5 flex items-center justify-between border-b border-stone-200/50 bg-[#F6F3EE]">
+      <nav className="relative px-4 sm:px-10 lg:px-14 py-2.5 sm:py-4 flex items-center justify-between border-b border-stone-200/50 bg-[#F6F3EE]">
         
-        {/* Official Brand Logo */}
-        <Link href="/" className="flex items-center group">
+        {/* Official Brand Logo - 2x size on mobile (h-20 = 80px vs old h-11 = 44px) */}
+        <Link href="/" className="flex items-center group py-0.5">
           <Image
             src="/logo.png"
             alt="BNT Professional Services - Business. Notary. Tax. Made Simple."
             width={1794}
             height={877}
             priority
-            className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            className="h-20 sm:h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
           />
         </Link>
 
