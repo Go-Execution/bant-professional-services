@@ -14,7 +14,7 @@ import { Reveal } from "@/components/Reveal";
 export const metadata = {
   title: "About Our Practice | BNT Professional Services",
   description:
-    "Learn about BNT Professional Services at 133 N Henderson St, Rusk, TX 75785. Grounded in faith and gratitude, backed by JPMorgan Chase and private New York tax practice experience.",
+    "Learn about BNT Professional Services at 133 N Henderson St, Rusk, TX 75785. Led by our Principal Consultant holding a MACY from UTSA, Bachelor's in Accounting, MBA, and DNP, with New York private tax firm and JPMorgan Chase experience.",
 };
 
 export default function AboutPage() {
@@ -33,9 +33,9 @@ export default function AboutPage() {
     },
     {
       icon: Award,
-      title: "Advanced Accounting & MBA Education",
+      title: "MACY, MBA, Accounting & DNP Credentials",
       description:
-        "Graduate-level training in accounting, tax compliance, and small business financial management.",
+        "Specializing in Accounting for Healthcare Organizations and Federal Income Taxation, combining financial management with clinical insight.",
     },
   ];
 
@@ -75,8 +75,8 @@ export default function AboutPage() {
             Honest work, clear answers, and personal stewardship.
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl">
-            Grounded in faith and gratitude, BNT Professional Services helps individuals, healthcare workers, and small businesses in Rusk and East Texas understand their finances, keep clean books, and file taxes with confidence.
+          <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-4xl">
+            Our Principal Consultant holds a Master of Accountancy (MACY) degree from the University of Texas at San Antonio (UTSA), a bachelor&apos;s degree in Accounting, an MBA, and a Doctor of Nursing Practice (DNP). With professional experience at a New York private tax firm and JPMorgan Chase, he brings extensive financial, accounting, and institutional expertise to serving individuals, families and businesses across East Texas. His areas of specialization include Accounting for Healthcare Organizations and Federal Income Taxation, combining a strong foundation in financial management with a unique understanding of the healthcare industry.
           </p>
         </Reveal>
       </section>

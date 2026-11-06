@@ -497,11 +497,11 @@ export default function Home() {
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Honest guidance grounded in faith and integrity.
+              Institutional expertise with personal stewardship.
             </h2>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Grounded in faith and gratitude, we help individuals, healthcare professionals, and small business owners keep accurate records and file taxes with confidence. Drawing on institutional experience at JPMorgan Chase and a private New York tax practice, we deliver clear, plain-language guidance to every client.
+              Our Principal Consultant holds a Master of Accountancy (MACY) degree from the University of Texas at San Antonio (UTSA), a bachelor&apos;s degree in Accounting, an MBA, and a Doctor of Nursing Practice (DNP). With professional experience at a New York private tax firm and JPMorgan Chase, he brings extensive financial, accounting, and institutional expertise to serving individuals, families and businesses across East Texas. His areas of specialization include Accounting for Healthcare Organizations and Federal Income Taxation, combining a strong foundation in financial management with a unique understanding of the healthcare industry.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-1">
