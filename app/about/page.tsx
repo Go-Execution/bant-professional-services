@@ -1,237 +1,191 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Scale, Shield, Award, GraduationCap, Building2, CheckCircle2, MapPin, Globe2, Clock } from "lucide-react";
+import {
+  ArrowRight,
+  Shield,
+  Award,
+  Building2,
+  CheckCircle2,
+  MapPin,
+  Globe2,
+  Clock,
+} from "lucide-react";
 
 export const metadata = {
   title: "About Our Practice | BNT Professional Services",
-  description: "Learn about BNT Professional Services in Rusk, TX 75785. Grounded in faith and gratitude, led by our Principal Consultant with a UTSA MAcc & MBA, Wall St/NY tax firm background, and JPMorgan Chase experience.",
+  description:
+    "Learn about BNT Professional Services at 133 N Henderson St, Rusk, TX 75785. Grounded in faith and gratitude, backed by JPMorgan Chase and private New York tax practice experience.",
 };
 
 export default function AboutPage() {
-  const credentials = [
-    {
-      icon: GraduationCap,
-      title: "Master of Accountancy (MAcc)",
-      institution: "University of Texas at San Antonio (UTSA)",
-      description: "Advanced degree focusing on corporate tax architecture, auditing standards, financial statements, and regulatory compliance.",
-    },
-    {
-      icon: Award,
-      title: "Master of Business Admin (MBA)",
-      institution: "Advanced Finance Degree",
-      description: "Strategic financial analysis, organizational leadership, capital structuring, and cash flow optimization for small enterprises.",
-    },
+  const highlights = [
     {
       icon: Building2,
-      title: "New York Private Tax Practice",
-      institution: "New York Regional Tax Practice",
-      description: "Hands-on experience preparing complex individual returns, multi-state tax allocations, itemized deductions, and high-stakes reviews.",
+      title: "Private New York Tax Practice",
+      description:
+        "Hands-on experience preparing individual returns, multi-state filings, itemized deductions, and small business taxes.",
     },
     {
       icon: Shield,
       title: "JPMorgan Chase Background",
-      institution: "Global Institutional Banking",
-      description: "Rigorous training in financial ledgers, transactional reconciliation, strict security controls, and risk management.",
+      description:
+        "Institutional training in financial ledgers, accurate account reconciliations, strict data security, and attention to detail.",
+    },
+    {
+      icon: Award,
+      title: "Advanced Accounting & MBA Education",
+      description:
+        "Graduate-level training in accounting, tax compliance, and small business financial management.",
     },
   ];
 
   const values = [
     {
       title: "Grounded in Faith & Gratitude",
-      description: "We view our work as a service of trust and stewardship. Every client relationship begins with thankfulness and an earnest desire to help your family and business flourish.",
+      description:
+        "Every client relationship begins with thankfulness, honesty, and genuine care.",
     },
     {
-      title: "Uncompromising Integrity",
-      description: "No questionable gray-area tax schemes, no predatory fees, and no inflated promises. We do honest, diligent work that protects you from IRS scrutiny.",
-    },
-    {
-      title: "Respect for Every Client",
-      description: "Whether you earn $30,000 as an hourly employee or manage a $2,000,000 commercial business, we treat you with equal dignity, attentiveness, and patience.",
+      title: "100% Upfront Flat Pricing",
+      description:
+        "No hidden charges and never a percentage taken from your tax refund.",
     },
     {
       title: "Plain-Language Clarity",
-      description: "You will never leave a meeting feeling confused by tax code jargon. We explain every calculation in simple, conversational terms so you understand your money.",
+      description:
+        "We explain every number in simple, clear terms without confusing tax jargon.",
+    },
+    {
+      title: "Respect for Every Client",
+      description:
+        "Whether you are filing a single W-2 or running a growing business, you receive attentive, patient support.",
     },
   ];
 
   return (
-    <div className="py-12 sm:py-16 px-6 sm:px-10 lg:px-14 space-y-16 lg:space-y-24">
-      
-      {/* 1. Header & Lead Story */}
-      <section className="max-w-4xl space-y-6">
-        <div className="inline-flex items-center gap-2 text-xs font-cinzel font-bold text-stone-700 uppercase tracking-[0.2em]">
-          <span className="w-2 h-2 rounded-full bg-caramel"></span>
-          Our Background & Philosophy
-        </div>
+    <div className="bg-white">
+      {/* 1. Simple Hero Header */}
+      <section className="px-6 sm:px-8 py-16 sm:py-20 max-w-5xl mx-auto space-y-5">
+        <span className="text-sm font-bold uppercase tracking-wider text-caramel-dark block">
+          About Our Practice
+        </span>
 
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-charcoal-900 leading-[1.05] tracking-tight">
-          Institutional caliber financial discipline, dedicated to East Texas.
+        <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight max-w-3xl">
+          Honest work, clear answers, and personal stewardship.
         </h1>
 
-        <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-          Our work is grounded in faith and gratitude. We believe in doing honest work, serving people with integrity, and treating every client with respect. We help individuals, families, healthcare professionals, and small businesses understand their finances, keep accurate records, and file with confidence.
+        <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl">
+          Grounded in faith and gratitude, BNT Professional Services helps individuals, healthcare workers, and small businesses in Rusk and East Texas understand their finances, keep clean books, and file taxes with confidence.
         </p>
       </section>
 
-      {/* 2. Principal Consultant Highlight */}
-      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/80 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        
-        <div className="lg:col-span-5 flex justify-center">
-          <div className="arch-portrait w-64 sm:w-72 h-80 sm:h-96 relative overflow-hidden shadow-md flex items-end justify-center">
-            <div className="relative z-10 w-full flex flex-col items-center">
-              <div className="w-40 h-24 rounded-2xl bg-white/95 shadow-md flex items-center justify-center p-2.5 border-4 border-white/80">
-                <Image
-                  src="/logo.png"
-                  alt="BNT Professional Services Official Logo"
-                  width={1794}
-                  height={877}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-              <div className="w-48 h-36 bg-stone-900 rounded-t-full mt-2 shadow-2xl relative flex flex-col items-center pt-4">
-                <span className="text-xs font-semibold text-stone-200 font-mono">Principal Consultant</span>
-                <span className="text-[10px] text-caramel-light font-medium uppercase tracking-wider">UTSA Macy • MBA</span>
-              </div>
-            </div>
+      {/* 2. Experience Cards */}
+      <section className="px-6 sm:px-8 py-16 sm:py-20 bg-[#F8F7F4] border-y border-slate-200">
+        <div className="max-w-5xl mx-auto space-y-10">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Our Background
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {highlights.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm space-y-3"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-[#F8F7F4] border border-slate-200 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-slate-900" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
+      </section>
 
-        <div className="lg:col-span-7 space-y-6">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-caramel">
-            Founder & Principal
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 leading-tight">
-            Academic rigor meeting real-world institutional experience.
+      {/* 3. Core Commitments */}
+      <section className="px-6 sm:px-8 py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto space-y-10">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Our Commitments to You
           </h2>
-          <p className="text-sm text-stone-600 leading-relaxed">
-            Our Principal Consultant holds a Master of Accountancy (MAcc) degree from the University of Texas at San Antonio (UTSA). He also holds a bachelor&apos;s degree and a Master of Business Administration (MBA) degree.
-          </p>
-          <p className="text-sm text-stone-600 leading-relaxed">
-            He brings invaluable experience having worked at a private New York tax firm and for JPMorgan Chase, delivering high-level financial analysis, business bookkeeping reconciliations, and tax preparation directly to clients in Rusk, Jacksonville, and Cherokee County.
-          </p>
-          <div className="pt-2 flex flex-wrap items-center gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {values.map((v) => (
+              <div
+                key={v.title}
+                className="bg-[#F8F7F4] rounded-2xl p-6 border border-slate-200 space-y-2"
+              >
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
+                  <h3 className="text-lg font-bold text-slate-900">{v.title}</h3>
+                </div>
+                <p className="text-base text-slate-700 leading-relaxed pl-7">
+                  {v.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Office & Coverage Summary */}
+      <section className="px-6 sm:px-8 py-16 sm:py-20 bg-[#F8F7F4] border-t border-slate-200">
+        <div className="max-w-5xl mx-auto space-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-7 border border-slate-200 space-y-2">
+              <MapPin className="w-6 h-6 text-caramel-dark" />
+              <h3 className="text-lg font-bold text-slate-900">Office Location</h3>
+              <p className="text-base text-slate-700">
+                133 N Henderson Street, Rusk, TX 75785. Serving Rusk, Jacksonville, and Cherokee County.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-7 border border-slate-200 space-y-2">
+              <Globe2 className="w-6 h-6 text-caramel-dark" />
+              <h3 className="text-lg font-bold text-slate-900">Notary All Over US</h3>
+              <p className="text-base text-slate-700">
+                Remote Online Notarization (RON) across all 50 states, plus in-person service in Rusk, TX.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-7 border border-slate-200 space-y-2">
+              <Clock className="w-6 h-6 text-caramel-dark" />
+              <h3 className="text-lg font-bold text-slate-900">Hours</h3>
+              <p className="text-base text-slate-700">
+                Monday – Friday: 9:00 AM – 5:00 PM.
+                <span className="block font-bold text-slate-900 mt-1">
+                  Saturday &amp; Sunday Evening: By Appointment Only
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900">
+                Ready to schedule a conversation?
+              </h3>
+              <p className="text-base text-slate-700 mt-1">
+                Meet in person in Rusk, TX or connect remotely.
+              </p>
+            </div>
             <Link
               href="/booking"
-              className="btn-caramel pl-5 pr-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2.5"
+              className="btn-caramel inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-bold shrink-0"
             >
-              <span>Book Consultation with Principal</span>
-              <span className="w-6 h-6 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
-                <ArrowRight className="w-3.5 h-3.5" />
-              </span>
+              <span>Book Consultation</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
-
       </section>
-
-      {/* 3. Credential Matrix */}
-      <section className="space-y-8">
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-widest text-stone-500 block mb-1">
-            Proven Foundation
-          </span>
-          <h3 className="font-serif text-3xl text-charcoal-900">
-            Education & Career Background
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {credentials.map((cred) => {
-            const Icon = cred.icon;
-            return (
-              <div key={cred.title} className="bg-white rounded-2xl p-7 border border-stone-200/80 shadow-sm space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-linen-200 text-charcoal-900 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-caramel-dark" />
-                </div>
-                <h4 className="font-serif text-xl text-charcoal-900">{cred.title}</h4>
-                <p className="text-xs font-mono text-caramel-dark font-medium">{cred.institution}</p>
-                <p className="text-xs text-stone-600 leading-relaxed">{cred.description}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* 4. Core Values & Principles */}
-      <section className="bg-linen-100 rounded-3xl p-8 sm:p-12 border border-stone-200 space-y-8">
-        <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-cinzel font-bold uppercase tracking-widest text-caramel-dark block">
-            The BNT Standard
-          </span>
-          <h3 className="font-serif text-3xl text-charcoal-900">
-            Our Commitments to You
-          </h3>
-          <p className="text-xs sm:text-sm text-stone-600">
-            How we conduct our work every single day, with every single file.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {values.map((v) => (
-            <div key={v.title} className="bg-white rounded-2xl p-6 border border-stone-200/60 shadow-sm space-y-2">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-caramel-dark shrink-0" />
-                <h4 className="font-serif text-lg text-charcoal-900 font-bold">{v.title}</h4>
-              </div>
-              <p className="text-xs text-stone-600 leading-relaxed pl-6">
-                {v.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. Geographic Scope & Office Card */}
-      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/80 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center text-charcoal-900">
-            <MapPin className="w-5 h-5 text-caramel-dark" />
-          </div>
-          <h4 className="font-serif text-xl text-charcoal-900 font-bold">In-Person Office</h4>
-          <p className="text-xs text-stone-600 leading-relaxed">
-            133 N Henderson Street, Rusk, TX 75785. Conveniently located to welcome clients from Rusk, Jacksonville, and Cherokee County.
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center text-charcoal-900">
-            <Globe2 className="w-5 h-5 text-caramel-dark" />
-          </div>
-          <h4 className="font-serif text-xl text-charcoal-900 font-bold">Notary All Over US</h4>
-          <p className="text-xs text-stone-600 leading-relaxed">
-            Commissioned for Remote Online Notarization (RON) serving all 50 states, plus in-person notarizations at our Rusk location.
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center text-charcoal-900">
-            <Clock className="w-5 h-5 text-caramel-dark" />
-          </div>
-          <h4 className="font-serif text-xl text-charcoal-900 font-bold">Hours & Appointments</h4>
-          <p className="text-xs text-stone-600 leading-relaxed">
-            Monday through Friday 9:00 AM to 5:00 PM. Saturday & Sunday available By Appointment to accommodate your schedule.
-          </p>
-        </div>
-      </section>
-
-      {/* 6. Callout Banner */}
-      <section className="bg-linen-100 rounded-3xl p-8 sm:p-12 border border-stone-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-        <div className="space-y-2 text-center md:text-left">
-          <h3 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
-            Ready to experience an honest consultation?
-          </h3>
-          <p className="text-xs sm:text-sm text-stone-500">
-            Visit us in Rusk, TX or meet remotely via our private 256-bit encrypted client portal.
-          </p>
-        </div>
-        <Link
-          href="/booking"
-          className="btn-caramel px-6 py-3 rounded-full text-xs sm:text-sm font-semibold shrink-0"
-        >
-          Schedule Your Consultation
-        </Link>
-      </section>
-
     </div>
   );
 }

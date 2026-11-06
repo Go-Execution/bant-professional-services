@@ -2,72 +2,33 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, ShieldCheck, FileText, AlertCircle, Clock, DollarSign, Stethoscope } from "lucide-react";
+import { ArrowRight, ShieldCheck, FileText, DollarSign } from "lucide-react";
 
 export default function RefundCheckupPage() {
   const [selectedItems, setSelectedItems] = useState<string[]>([
     "w2",
-    "child-credit",
     "healthcare-deductions",
   ]);
-
   const [requested, setRequested] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    notes: "",
   });
 
   const checkupOptions = [
-    {
-      id: "w2",
-      label: "W-2 Wage Statements",
-      desc: "Standard employment income from one or multiple employers.",
-    },
-    {
-      id: "healthcare-deductions",
-      label: "Healthcare Worker Expenses (LVN, RN, MD)",
-      desc: "Scrubs, CEU course fees, board licensing, medical equipment, and travel stipends.",
-    },
-    {
-      id: "1099",
-      label: "1099-NEC / 1099-MISC Income",
-      desc: "Independent contractor, freelancing, or gig economy earnings.",
-    },
-    {
-      id: "child-credit",
-      label: "Dependent & Child Tax Credits",
-      desc: "Qualifying children, daycare expenses, or dependents.",
-    },
-    {
-      id: "mortgage",
-      label: "1098 Mortgage Interest & Property Taxes",
-      desc: "Homeownership deductions and Texas local property tax records.",
-    },
-    {
-      id: "hsa",
-      label: "HSA / Healthcare Forms (1095-A, 5498)",
-      desc: "Health savings account contributions or marketplace insurance.",
-    },
-    {
-      id: "education",
-      label: "1098-T Higher Education Tuition",
-      desc: "College tuition, student loan interest, or educational credits.",
-    },
-    {
-      id: "prior-year",
-      label: "Prior Year Tax Return Review",
-      desc: "Checking last year's filing to see if any deductions were missed.",
-    },
+    { id: "w2", label: "W-2 Wage Statements" },
+    { id: "healthcare-deductions", label: "Healthcare Worker Expenses (LVN, RN, MD)" },
+    { id: "1099", label: "1099 Contractor Income" },
+    { id: "child-credit", label: "Child & Dependent Tax Credits" },
+    { id: "mortgage", label: "Mortgage & Property Taxes" },
+    { id: "prior-year", label: "Prior Year Return Review" },
   ];
 
   const toggleOption = (id: string) => {
-    if (selectedItems.includes(id)) {
-      setSelectedItems(selectedItems.filter((i) => i !== id));
-    } else {
-      setSelectedItems([...selectedItems, id]);
-    }
+    setSelectedItems((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+    );
   };
 
   const handleRequestSubmit = (e: React.FormEvent) => {
@@ -76,236 +37,174 @@ export default function RefundCheckupPage() {
   };
 
   return (
-    <div className="py-12 sm:py-16 px-6 sm:px-10 lg:px-14 space-y-14">
-      
-      {/* Header */}
-      <section className="max-w-3xl space-y-4">
-        <span className="text-xs font-cinzel font-bold uppercase tracking-[0.2em] text-caramel-dark block">
-          Flagship Diagnostic Review
-        </span>
-        <h1 className="font-serif text-5xl sm:text-6xl text-charcoal-900 leading-tight">
-          The BNT Refund Checkup
-        </h1>
-        <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
-          A flat-fee review of your tax documents with a written estimate of your expected refund or balance due, plus a comprehensive list of anything missing or needing correction. Available in-person at 133 N Henderson St, Rusk, TX 75785 or securely online via our private vault.
-        </p>
-      </section>
-
-      {/* 3 Core Guarantees of the Checkup */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-3xl p-7 border border-stone-200/80 shadow-sm space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center font-bold text-charcoal-900">
-            <DollarSign className="w-5 h-5 text-caramel-dark" />
-          </div>
-          <h3 className="font-serif text-xl text-charcoal-900">100% Flat Fee</h3>
-          <p className="text-xs text-stone-600 leading-relaxed">
-            We never take a percentage cut of your refund. Traditional preparers often take 10% to 20%; our fee is fixed and transparent upfront.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-7 border border-stone-200/80 shadow-sm space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center font-bold text-charcoal-900">
-            <FileText className="w-5 h-5 text-caramel-dark" />
-          </div>
-          <h3 className="font-serif text-xl text-charcoal-900">Written Estimate</h3>
-          <p className="text-xs text-stone-600 leading-relaxed">
-            You receive an itemized breakdown of your expected federal refund or balance due before committing to full tax return filing.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-7 border border-stone-200/80 shadow-sm space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-linen-200 flex items-center justify-center font-bold text-charcoal-900">
-            <ShieldCheck className="w-5 h-5 text-caramel-dark" />
-          </div>
-          <h3 className="font-serif text-xl text-charcoal-900">Private Portal Security</h3>
-          <p className="text-xs text-stone-600 leading-relaxed">
-            Never send SSNs or W-2s via regular email or text. Your documents are uploaded directly to our 256-bit encrypted client vault.
-          </p>
-        </div>
-      </section>
-
-      {/* Interactive Tool Area */}
-      <section className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/80 shadow-sm space-y-10">
-        
-        <div className="space-y-2">
-          <span className="text-xs font-cinzel font-bold uppercase tracking-widest text-caramel-dark block">
-            Step 1: Select Your Tax Profile
+    <div className="bg-white px-6 sm:px-8 py-16 sm:py-20">
+      <div className="max-w-5xl mx-auto space-y-14">
+        {/* Header */}
+        <section className="max-w-3xl space-y-4">
+          <span className="text-sm font-bold uppercase tracking-wider text-caramel-dark block">
+            Flat-Fee Review
           </span>
-          <h2 className="font-serif text-2xl sm:text-3xl text-charcoal-900">
-            Customize your Refund Checkup scope
-          </h2>
-          <p className="text-xs sm:text-sm text-stone-500">
-            Click the items that apply to your tax year to calculate your diagnostic review checklist.
+          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">
+            The BNT Refund Checkup
+          </h1>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Get a written estimate of your expected refund or balance due, plus a clear checklist of any missing deductions, for a simple upfront flat fee.
           </p>
-        </div>
+        </section>
 
-        {/* Options Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {checkupOptions.map((opt) => {
-            const isSelected = selectedItems.includes(opt.id);
-            return (
-              <button
-                key={opt.id}
-                type="button"
-                onClick={() => toggleOption(opt.id)}
-                className={`p-5 rounded-2xl text-left border transition-all flex flex-col justify-between space-y-3 ${
-                  isSelected
-                    ? "bg-[#FAF6F0] border-caramel shadow-sm"
-                    : "bg-[#FDFCFB] border-stone-200 hover:border-stone-400"
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                    isSelected ? "bg-caramel text-charcoal-900" : "border border-stone-300 text-transparent"
-                  }`}>
-                    ✓
-                  </span>
-                  <span className="text-[10px] font-mono text-stone-400 uppercase">
-                    {isSelected ? "Included" : "Add"}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-serif text-base text-charcoal-900 font-bold leading-snug">{opt.label}</h4>
-                  <p className="text-[11px] text-stone-500 mt-1 leading-relaxed">{opt.desc}</p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
+        {/* 3 Simple Highlights */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-slate-200 space-y-2">
+            <DollarSign className="w-6 h-6 text-caramel-dark" />
+            <h3 className="text-xl font-bold text-slate-900">100% Flat Fee</h3>
+            <p className="text-base text-slate-700">
+              Fixed upfront quote, with zero percentage cut from your refund.
+            </p>
+          </div>
 
-        {/* Real-Time Scope Summary Box */}
-        <div className="bg-linen-100 rounded-2xl p-6 sm:p-8 border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div className="lg:col-span-8 space-y-3">
-            <span className="text-xs font-cinzel font-bold uppercase text-caramel-dark block">
-              Calculated Review Scope
-            </span>
-            <h3 className="font-serif text-2xl text-charcoal-900">
-              {selectedItems.length} Tax Document Areas Ready for Verification
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-600 pt-1">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
-                <span>Written refund or balance estimate</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
-                <span>Healthcare & W-2 deduction omissions audit</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
-                <span>Turnaround: 24 to 48 hours</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-caramel-dark shrink-0" />
-                <span>Zero refund commission policy</span>
-              </div>
+          <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-slate-200 space-y-2">
+            <FileText className="w-6 h-6 text-caramel-dark" />
+            <h3 className="text-xl font-bold text-slate-900">Written Estimate</h3>
+            <p className="text-base text-slate-700">
+              Clear breakdown of your numbers before you decide to file.
+            </p>
+          </div>
+
+          <div className="bg-[#F8F7F4] rounded-2xl p-6 border border-slate-200 space-y-2">
+            <ShieldCheck className="w-6 h-6 text-caramel-dark" />
+            <h3 className="text-xl font-bold text-slate-900">Secure Upload</h3>
+            <p className="text-base text-slate-700">
+              Upload documents safely through your encrypted client portal.
+            </p>
+          </div>
+        </section>
+
+        {/* Simple Checklist + Request Form */}
+        <section className="bg-[#F8F7F4] rounded-2xl p-7 sm:p-10 border border-slate-200 grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-6 space-y-4">
+            <h2 className="text-2xl font-bold text-slate-900">
+              1. Select What Applies to You
+            </h2>
+            <div className="grid grid-cols-1 gap-3">
+              {checkupOptions.map((opt) => {
+                const isSelected = selectedItems.includes(opt.id);
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => toggleOption(opt.id)}
+                    className={`p-4 rounded-xl text-left border flex items-center gap-3 text-base font-semibold transition-colors ${
+                      isSelected
+                        ? "bg-white border-slate-900 text-slate-900 shadow-sm"
+                        : "bg-white/70 border-slate-200 text-slate-700 hover:border-slate-400"
+                    }`}
+                  >
+                    <span
+                      className={`w-5 h-5 rounded flex items-center justify-center text-xs font-bold shrink-0 ${
+                        isSelected
+                          ? "bg-slate-900 text-white"
+                          : "border border-slate-300 text-transparent"
+                      }`}
+                    >
+                      ✓
+                    </span>
+                    <span>{opt.label}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
-            <span className="text-xs font-mono uppercase text-stone-500">Pricing Model</span>
-            <span className="font-serif text-3xl font-bold text-charcoal-900 mt-0.5">Flat Fee</span>
-            <p className="text-[11px] text-stone-500 text-left lg:text-right mt-1">
-              Upfront quote provided before work starts.
-            </p>
-          </div>
-
-        </div>
-
-        {/* Direct Request Form */}
-        <div className="pt-4 border-t border-stone-200">
-          <div className="max-w-xl space-y-4">
-            <h3 className="font-serif text-2xl text-charcoal-900">
-              Request Your Refund Checkup
-            </h3>
-            <p className="text-xs text-stone-500">
-              Enter your contact details. You will receive private portal login credentials to upload your files securely.
-            </p>
+          <div className="lg:col-span-6 bg-white rounded-2xl p-7 border border-slate-200 shadow-sm space-y-5">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900">
+                2. Request Your Checkup
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 mt-1">
+                {selectedItems.length} item(s) selected • Flat-fee quote sent before work begins.
+              </p>
+            </div>
 
             {requested ? (
-              <div className="bg-linen-100 p-6 rounded-2xl border border-stone-200 text-center space-y-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-lg">
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 text-center space-y-3">
+                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-lg font-bold">
                   ✓
                 </div>
-                <h4 className="font-serif text-xl text-charcoal-900">Request Confirmed!</h4>
-                <p className="text-xs text-stone-600 leading-relaxed">
-                  Thank you, {formData.name}. Our Principal Consultant will send your secure client portal key to {formData.email} within 24 hours.
+                <h3 className="text-xl font-bold text-slate-900">
+                  Request Confirmed
+                </h3>
+                <p className="text-base text-slate-700">
+                  Thank you, {formData.name}. Your secure portal invite will be sent to {formData.email}.
                 </p>
                 <Link
                   href="/portal"
-                  className="btn-caramel px-5 py-2 rounded-full text-xs font-semibold inline-block mt-2"
+                  className="btn-caramel px-5 py-2.5 rounded-lg text-sm font-bold inline-block"
                 >
-                  Visit Client Portal
+                  Open Client Portal
                 </Link>
               </div>
             ) : (
-              <form onSubmit={handleRequestSubmit} className="space-y-4 text-xs">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-stone-600 font-medium mb-1">Name*</label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="Your Full Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-stone-600 font-medium mb-1">Phone*</label>
-                    <input
-                      required
-                      type="tel"
-                      placeholder="(903) 555-0192"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
-                    />
-                  </div>
-                </div>
-
+              <form onSubmit={handleRequestSubmit} className="space-y-4 text-sm sm:text-base">
                 <div>
-                  <label className="block text-stone-600 font-medium mb-1">Email*</label>
+                  <label className="block text-slate-800 font-semibold mb-1">
+                    Full Name *
+                  </label>
                   <input
                     required
-                    type="email"
-                    placeholder="client@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel"
+                    type="text"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-900"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-stone-600 font-medium mb-1">What service or question are you interested in?</label>
-                  <textarea
-                    rows={2}
-                    placeholder="e.g., LVN travel contract W-2, first-time homebuyer credits, or prior year review..."
-                    value={formData.notes}
-                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-caramel resize-none"
-                  ></textarea>
+                  <label className="block text-slate-800 font-semibold mb-1">
+                    Phone Number *
+                  </label>
+                  <input
+                    required
+                    type="tel"
+                    placeholder="(903) 555-0192"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-900"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-slate-800 font-semibold mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    required
+                    type="email"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-900"
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-caramel pl-5 pr-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-3"
+                  className="w-full btn-caramel py-3.5 rounded-xl text-base font-bold flex items-center justify-center gap-2"
                 >
-                  <span>Submit Refund Checkup Request</span>
-                  <span className="w-6 h-6 rounded-full bg-charcoal-900 text-white flex items-center justify-center">
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
+                  <span>Request Refund Checkup</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             )}
-
           </div>
-        </div>
-
-      </section>
-
+        </section>
+      </div>
     </div>
   );
 }

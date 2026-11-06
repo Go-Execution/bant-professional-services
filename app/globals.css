@@ -3,74 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background: #ECE7DF;
-  --foreground: #0B1B36;
+  --background: #FFFFFF;
+  --foreground: #0F172A;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* Outer Container Frame */
-.editorial-wrapper {
-  background-color: #F6F3EE;
-  box-shadow: 0 12px 48px -8px rgba(11, 27, 54, 0.08);
+h1, h2, h3, h4 {
+  font-family: var(--font-dm-sans), var(--font-plus-jakarta), system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
-/* Rotating Circular Badge Keyframe */
-@keyframes rotateBadge {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.rotating-badge {
-  animation: rotateBadge 20s linear infinite;
-}
-
-/* Floating Arrow Keyframe */
-@keyframes floatDoodle {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-5px) rotate(3deg); }
-}
-.floating-doodle {
-  animation: floatDoodle 3.5s ease-in-out infinite;
-}
-
-/* Arch Cutout for Hero Portrait in Metallic Gold */
-.arch-portrait {
-  border-radius: 180px 180px 24px 24px;
-  background: linear-gradient(180deg, #DEAA55 0%, #C9933B 50%, #AB7724 100%);
-}
-
-/* Soft pill button with logo gold */
+/* Clean, flat, high-contrast brand buttons */
 .btn-caramel {
-  background: linear-gradient(180deg, #D9A048 0%, #C9933B 100%);
-  color: #070F1E;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(201, 147, 59, 0.25);
+  background-color: #C9933B;
+  color: #0F172A;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 .btn-caramel:hover {
-  background: linear-gradient(180deg, #E2AA54 0%, #D49A3E 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(201, 147, 59, 0.35);
+  background-color: #B8832D;
 }
 .btn-caramel:active {
-  transform: scale(0.97);
+  transform: scale(0.99);
 }
 
-/* Sovereign Navy Button */
 .btn-dark {
-  background-color: #0B1B36;
+  background-color: #0F172A;
   color: #FFFFFF;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 .btn-dark:hover {
-  background-color: #0F264C;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(11, 27, 54, 0.25);
+  background-color: #1E293B;
 }
 .btn-dark:active {
-  transform: scale(0.97);
+  transform: scale(0.99);
 }

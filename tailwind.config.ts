@@ -9,44 +9,45 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["var(--font-cormorant)", "serif"],
-        cinzel: ["var(--font-cinzel)", "serif"],
-        sans: ["var(--font-plus-jakarta)", "sans-serif"],
+        sans: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+        heading: ["var(--font-dm-sans)", "var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+        // Map legacy classes cleanly so nothing looks decorative or AI-generated
+        serif: ["var(--font-dm-sans)", "var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+        cinzel: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
       },
       colors: {
         linen: {
-          50: '#FAF8F5',
-          100: '#F6F3EE',
-          200: '#EBE5DC',
-          300: '#DFD7CA',
+          50: "#FAF9F6",
+          100: "#F4F2ED",
+          200: "#E6E2D8",
+          300: "#D5CFC2",
         },
-        // Rich Gold extracted directly from the script "N" in logo
         caramel: {
-          DEFAULT: '#C9933B',
-          light: '#DEAA55',
-          dark: '#AB7724',
+          DEFAULT: "#C9933B",
+          light: "#E0AE5C",
+          dark: "#9A6B1E",
         },
         gold: {
-          DEFAULT: '#C9933B',
-          light: '#DEAA55',
-          dark: '#AB7724',
+          DEFAULT: "#C9933B",
+          light: "#E0AE5C",
+          dark: "#9A6B1E",
         },
-        // Deep Sovereign Navy extracted directly from "B", "T" and "PROFESSIONAL SERVICES"
         charcoal: {
-          900: '#0B1B36',
-          800: '#0F264C',
-          700: '#173668',
+          900: "#0F172A",
+          800: "#1E293B",
+          700: "#334155",
         },
         navy: {
-          950: '#070F1E',
-          900: '#0B1B36',
-          850: '#0D2142',
-          800: '#0F264C',
-          700: '#173668',
-        }
-      }
+          950: "#09111E",
+          900: "#0F172A",
+          850: "#162033",
+          800: "#1E293B",
+          700: "#334155",
+        },
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
