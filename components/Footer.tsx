@@ -74,20 +74,20 @@ export default function Footer() {
           <div className="flex items-start gap-2.5">
             <Clock className="w-5 h-5 text-caramel-dark shrink-0 mt-0.5" />
             <div>
-              <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
               <p className="font-semibold text-slate-900">
-                Saturday &amp; Sunday Evening: By Appointment Only
+                Sat, Sun &amp; Mon: 24 Hours
               </p>
+              <p>Tuesday - Friday: 6:00 PM - 9:00 PM CST</p>
             </div>
           </div>
 
           <div className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-caramel-dark shrink-0" />
             <a
-              href="tel:9035550192"
-              className="font-semibold text-slate-900 hover:underline"
+              href="tel:4302441818"
+              className="font-bold text-slate-900 hover:underline"
             >
-              +1 (903) 555-0192
+              +1 (430) 244-1818
             </a>
           </div>
 

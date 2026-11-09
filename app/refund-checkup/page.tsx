@@ -168,7 +168,7 @@ export default function RefundCheckupPage() {
                   <input
                     required
                     type="tel"
-                    placeholder="(903) 555-0192"
+                    placeholder="(430) 244-1818"
                     value={formData.phone}
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })

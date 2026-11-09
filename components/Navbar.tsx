@@ -30,16 +30,16 @@ export default function Navbar() {
             </span>
             <span className="hidden md:inline-flex items-center gap-1.5 text-amber-200 font-medium">
               <Clock className="w-3.5 h-3.5 text-caramel-light shrink-0" />
-              <span>Sat &amp; Sun Evening: By Appointment Only</span>
+              <span>Sat, Sun &amp; Mon: 24 Hours • Tue - Fri: 6:00 PM - 9:00 PM CST</span>
             </span>
           </div>
 
           <a
-            href="tel:9035550192"
+            href="tel:4302441818"
             className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-caramel-light transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-caramel-light" />
-            <span>(903) 555-0192</span>
+            <span>(430) 244-1818</span>
           </a>
         </div>
       </div>
@@ -113,9 +113,10 @@ export default function Navbar() {
       {/* Simple Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-200 bg-white px-6 py-5 space-y-4 shadow-lg">
-          <p className="text-sm font-medium text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">
-            Saturday &amp; Sunday Evening: By Appointment Only
-          </p>
+          <div className="text-sm font-medium text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
+            <p className="font-bold text-slate-900">Weekend (Sat, Sun &amp; Mon): 24 Hours</p>
+            <p className="text-xs text-slate-600">Tuesday - Friday: 6:00 PM - 9:00 PM CST</p>
+          </div>
 
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (

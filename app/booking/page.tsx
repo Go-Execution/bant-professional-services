@@ -51,11 +51,13 @@ function BookingContent() {
   ];
 
   const timeSlots = [
-    "09:00 AM",
-    "11:00 AM",
-    "01:30 PM",
-    "03:30 PM",
-    "Sat/Sun Evening (By Appt)",
+    "06:00 PM CST (Tue - Fri)",
+    "07:00 PM CST (Tue - Fri)",
+    "08:00 PM CST (Tue - Fri)",
+    "Sat/Sun/Mon: Morning Window (24-Hr)",
+    "Sat/Sun/Mon: Afternoon Window (24-Hr)",
+    "Sat/Sun/Mon: Evening Window (24-Hr)",
+    "Sat/Sun/Mon: Night / Off-Shift (24-Hr)",
   ];
 
   const handleFinalSubmit = (e: React.FormEvent) => {
@@ -75,10 +77,8 @@ function BookingContent() {
             Book Your Consultation
           </h1>
           <p className="text-base sm:text-lg text-slate-700">
-            Monday – Friday: 9:00 AM – 5:00 PM •{" "}
-            <strong className="text-slate-900">
-              Saturday &amp; Sunday Evening: By Appointment Only
-            </strong>
+            <strong className="text-slate-900">Sat, Sun &amp; Mon: 24 Hours</strong> •{" "}
+            <span>Tuesday - Friday: 6:00 PM - 9:00 PM CST</span>
           </p>
         </div>
 
@@ -142,17 +142,26 @@ function BookingContent() {
                   }
                   className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3.5 text-base text-slate-900 font-medium focus:outline-none focus:border-slate-900"
                 >
+                  <option value="Healthcare Worker Taxes (LVN, RN, Physicians)">
+                    Healthcare Worker Taxes (LVN, RN, Physicians)
+                  </option>
                   <option value="Individual Tax Preparation">
                     Individual Tax Preparation
-                  </option>
-                  <option value="Taxes for Healthcare Workers">
-                    Healthcare Worker Taxes (LVN, RN, Physicians)
                   </option>
                   <option value="Business Tax Preparation Support">
                     Business Tax &amp; Bookkeeping
                   </option>
-                  <option value="Notary Public (Nationwide or In-Person)">
-                    Notary Public (All Over US or In-Person)
+                  <option value="Remote Online Notarization (RON 50 States)">
+                    Notary: Remote Online Notarization (RON 50 States)
+                  </option>
+                  <option value="Mobile Notary & Loan Signing Agent">
+                    Notary: Mobile Notary &amp; Loan Signing Agent
+                  </option>
+                  <option value="Jurats, Affidavits & Sworn Statements">
+                    Notary: Jurats, Affidavits &amp; Sworn Statements
+                  </option>
+                  <option value="Apostille & Authentication Preparation">
+                    Notary: Apostille &amp; Authentication Preparation
                   </option>
                   <option value="The BNT Refund Checkup">
                     The BNT Refund Checkup
@@ -209,7 +218,7 @@ function BookingContent() {
                 />
                 <p className="text-xs sm:text-sm text-slate-600 mt-2 flex items-center gap-1.5">
                   <Clock className="w-4 h-4 text-caramel-dark shrink-0" />
-                  <span>Sat &amp; Sun Evening available by appointment only.</span>
+                  <span>Sat, Sun &amp; Mon: 24 Hours • Tue - Fri: 6:00 PM - 9:00 PM CST.</span>
                 </p>
               </div>
 
@@ -265,7 +274,7 @@ function BookingContent() {
                   <input
                     required
                     type="tel"
-                    placeholder="(903) 555-0192"
+                    placeholder="(430) 244-1818"
                     value={booking.phone}
                     onChange={(e) =>
                       setBooking({ ...booking, phone: e.target.value })

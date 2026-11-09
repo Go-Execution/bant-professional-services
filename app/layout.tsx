@@ -21,16 +21,22 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "BNT Professional Services | Business. Notary. Tax. Made Simple. | Rusk, TX",
   description:
-    "Simple, honest tax preparation, bookkeeping, and nationwide notary services. Specialized taxes for LVNs, RNs, Physicians & Healthcare Workers. 133 N Henderson Street, Rusk, TX 75785. Saturday & Sunday Evening by Appointment Only.",
+    "Simple, honest tax preparation, bookkeeping, and 10 official notary services including Remote Online Notarization (RON 50 states), Mobile Notary, Loan Signing & Apostille prep. 133 N Henderson St, Rusk, TX 75785. Sat, Sun & Mon 24 Hours | Tue - Fri 6:00 PM - 9:00 PM CST. Call (430) 244-1818.",
   keywords: [
     "BNT Professional Services",
     "Individual Tax Rusk TX",
     "Business Tax Rusk TX",
     "Healthcare Worker Taxes LVN RN",
     "Notary All Over US",
-    "Remote Online Notary",
+    "Remote Online Notarization RON",
+    "Mobile Notary Cherokee County",
+    "Loan Signing Agent",
+    "Apostille Authentication Preparation",
+    "Jurats Affidavits",
     "Taxes State Focused",
     "133 N Henderson Street Rusk TX 75785",
+    "Sat Sun Mon 24 Hours",
+    "430-244-1818",
   ],
   icons: {
     icon: "/logo.png",

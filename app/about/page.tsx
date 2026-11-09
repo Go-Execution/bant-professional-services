@@ -171,11 +171,13 @@ export default function AboutPage() {
             <Reveal delay={200}>
               <div className="card-interactive h-full bg-white rounded-2xl p-7 border border-slate-200 space-y-2">
                 <Clock className="w-6 h-6 text-caramel-dark" />
-                <h3 className="text-lg font-bold text-slate-900">Hours</h3>
+                <h3 className="text-lg font-bold text-slate-900">Operating Hours</h3>
                 <p className="text-base text-slate-700">
-                  Monday – Friday: 9:00 AM – 5:00 PM.
-                  <span className="block font-bold text-slate-900 mt-1">
-                    Saturday &amp; Sunday Evening: By Appointment Only
+                  <span className="block font-bold text-slate-900">
+                    Sat, Sun &amp; Mon: 24 Hours
+                  </span>
+                  <span className="block text-slate-700 mt-1">
+                    Tuesday - Friday: 6:00 PM - 9:00 PM CST
                   </span>
                 </p>
               </div>

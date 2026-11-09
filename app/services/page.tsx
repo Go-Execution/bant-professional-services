@@ -93,7 +93,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
-                  <span>Saturday &amp; Sunday Evening by appointment</span>
+                  <span>Sat, Sun &amp; Mon 24-Hr Weekend Availability</span>
                 </div>
               </div>
 
@@ -231,35 +231,75 @@ export default function ServicesPage() {
                 <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center">
                   <Globe2 className="w-5 h-5 text-slate-900" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                  Notary Public (All Over the US &amp; In-Person in Rusk, TX)
-                </h2>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                    Notary Public (10 Official Services)
+                  </h2>
+                  <p className="text-xs sm:text-sm font-semibold text-caramel-dark mt-0.5">
+                    Remote Online Notarization (RON) Across All 50 US States • Mobile &amp; In-Person in Rusk, TX
+                  </p>
+                </div>
               </div>
 
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
-                Commissioned for Remote Online Notarization (RON) across all 50 US states via secure live video, plus in-person notarizations at 133 N Henderson Street, Rusk, TX 75785.
+                Commissioned for Remote Online Notarization (RON) across all 50 US states via secure live video, traveling mobile notary service across Cherokee County, and in-person notarizations at our Rusk, TX office.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-slate-800">
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
-                  <span>Real estate deeds, titles &amp; loan packets</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
-                  <span>Powers of attorney &amp; medical directives</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
-                  <span>Affidavits &amp; business agreements</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
-                  <span>Saturday &amp; Sunday Evening by appointment</span>
+              {/* 10 Official Services List */}
+              <div className="space-y-3 pt-2">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
+                  Full Scope of Notary Services
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-slate-800">
+                  {[
+                    { num: "01", name: "Jurats (verifications)", desc: "Verifying document statements under oath or affirmation" },
+                    { num: "02", name: "Oaths and affirmations", desc: "Administering verbal oaths for legal proceedings" },
+                    { num: "03", name: "Copy certification", desc: "Official verification of original documents and records" },
+                    { num: "04", name: "Signature witnessing", desc: "Witnessing execution of contracts, deeds, and agreements" },
+                    { num: "05", name: "Affidavits and sworn statements", desc: "Sworn legal statements for courts and government agencies" },
+                    { num: "06", name: "Loan documents and financial forms", desc: "Mortgage, refinance, and commercial lending documentation" },
+                    { num: "07", name: "Mobile notary", desc: "We travel directly to homes, hospitals, nursing facilities, and offices" },
+                    { num: "08", name: "Loan signing agent", desc: "Certified real estate loan closings for lenders, title, and escrow" },
+                    { num: "09", name: "Remote online notarization (RON)", desc: "Legally binding electronic notarization valid in all 50 US states" },
+                    { num: "10", name: "Apostille and authentication preparation", desc: "Document preparation and authentication for international use" },
+                  ].map((service) => (
+                    <div
+                      key={service.num}
+                      className="bg-white rounded-xl p-4 border border-slate-200 flex items-start gap-3 shadow-sm"
+                    >
+                      <span className="w-7 h-7 rounded-lg bg-amber-100 text-amber-900 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        {service.num}
+                      </span>
+                      <div>
+                        <p className="font-bold text-slate-900 text-sm sm:text-base">
+                          {service.name}
+                        </p>
+                        <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
+                          {service.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <div className="pt-2">
+              {/* Hours & Contact Pill */}
+              <div className="bg-white rounded-xl p-4 border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-2.5 text-sm sm:text-base text-slate-800">
+                  <CheckCircle2 className="w-5 h-5 text-caramel-dark shrink-0" />
+                  <span>
+                    <strong>Operating Hours:</strong> Sat, Sun &amp; Mon: 24 Hours • Tue - Fri: 6:00 PM - 9:00 PM CST
+                  </span>
+                </div>
+                <a
+                  href="tel:4302441818"
+                  className="font-bold text-slate-900 hover:text-caramel-dark transition-colors text-sm sm:text-base"
+                >
+                  Call / Text: (430) 244-1818
+                </a>
+              </div>
+
+              <div className="pt-2 flex flex-wrap gap-3">
                 <Link
                   href="/booking?service=Notary+Public+(Nationwide+or+In-Person)"
                   className="group btn-caramel inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base"
@@ -267,6 +307,12 @@ export default function ServicesPage() {
                   <span>Schedule Notary Service</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
+                <a
+                  href="tel:4302441818"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-300 text-sm sm:text-base font-semibold text-slate-800 bg-white hover:bg-slate-50 transition-colors"
+                >
+                  <span>Direct Call (430) 244-1818</span>
+                </a>
               </div>
             </section>
           </Reveal>

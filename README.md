@@ -2,7 +2,7 @@
 
 > **Business. Notary. Tax. Made Simple.**  
 > 133 N Henderson Street, Rusk, TX 75785 • Serving Rusk, Jacksonville, Cherokee County & East Texas.  
-> Notary all over US • Taxes state-focused • Saturday & Sunday By Appointment.
+> Notary all over US (10 Official Services) • Taxes state-focused • Sat, Sun & Mon: 24 Hours • Tue - Fri: 6:00 PM - 9:00 PM CST • Direct: (430) 244-1818.
 
 ---
 
@@ -27,7 +27,7 @@ BNT Professional Services is an executive tax advisory, bookkeeping, and certifi
     - Specialized highlight: Taxes for Licensed Vocational Nurses (LVN), Registered Nurses (RN), Physicians, and Allied Healthcare Workers.
     - Professional for Individuals & Businesses value matrix.
     - Interactive 4-field consultation form: Name, Phone, Email, What service they are interested.
-    - Office location card (133 N Henderson St, Rusk, TX 75785) with Saturday & Sunday By Appointment.
+    - Office location card (133 N Henderson St, Rusk, TX 75785) with Sat, Sun & Mon 24 Hours • Tue - Fri 6:00 PM - 9:00 PM CST.
   - **About Us (`/about`)**: Full consultant credentials, UTSA Macy & MBA background, Wall St/NY tax practice experience, JPMorgan Chase ledgers, faith & gratitude values.
   - **All Services (`/services`)**: Tabbed breakdown of Healthcare Workers Tax, Individual Tax, Business Tax (Account Reconciliations, Bookkeeping Cleanup), Notary (All Over US via Remote Online Notary & Rusk TX in-person), and the 4-step client process.
   - **The BNT Refund Checkup (`/refund-checkup`)**: Real-time interactive diagnostic scope inspector with custom document checklist (including nurse/doctor deductions) and instant flat-fee request.

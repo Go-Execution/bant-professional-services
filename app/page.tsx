@@ -56,11 +56,11 @@ export default function Home() {
     {
       num: "03",
       icon: Globe,
-      title: "Notary Public (All Over US)",
-      desc: "Remote Online Notary across all 50 states, plus in-person service at our Rusk, TX office.",
-      tags: ["All 50 US States", "Deeds & Legal Docs"],
+      title: "Notary Public (10 Official Services)",
+      desc: "Remote Online Notary across all 50 states, mobile notary travel, certified loan signing agent closings, apostille prep, jurats & affidavits.",
+      tags: ["RON Across 50 States", "Mobile & Loan Signing Agent"],
       href: "/services#notary",
-      cta: "Book Notary Service",
+      cta: "Explore Notary Services",
     },
   ];
 
@@ -91,16 +91,16 @@ export default function Home() {
       a: "Never. We quote a clear, upfront flat fee before any work begins so you keep 100% of your refund.",
     },
     {
-      q: "What makes your healthcare worker tax prep specialized?",
-      a: "We handle multi-facility W-2s, PRN shifts, travel contracts, scrubs, CEUs, and licensing deductions, with evening weekend appointments available.",
+      q: "What notary services do you offer?",
+      a: "We provide 10 official notary services: Jurats (verifications), Oaths and affirmations, Copy certification, Signature witnessing, Affidavits and sworn statements, Loan documents and financial forms, Mobile notary travel across Cherokee County, Loan signing agent closings, Remote online notarization (RON) in all 50 states, and Apostille / authentication preparation.",
     },
     {
-      q: "Can you notarize documents outside of Texas?",
-      a: "Yes. Through Remote Online Notarization (RON), we legally notarize documents across all 50 US states, plus in-person service in Rusk, TX.",
+      q: "What makes your healthcare worker tax prep specialized?",
+      a: "We handle multi-facility W-2s, PRN shifts, travel contracts, scrubs, CEUs, and licensing deductions, with 24-hour weekend availability across Saturday, Sunday, and Monday.",
     },
     {
       q: "Where are you located and what are your hours?",
-      a: "Visit us at 133 N Henderson Street, Rusk, TX 75785. Weekday hours are Monday to Friday 9:00 AM to 5:00 PM, and Saturday & Sunday Evening by appointment only.",
+      a: "Visit us at 133 N Henderson Street, Rusk, TX 75785. Our operating hours are Saturday, Sunday & Monday: 24 Hours, and Tuesday through Friday from 6:00 PM to 9:00 PM CST. Call or text (430) 244-1818.",
     },
   ];
 
@@ -140,7 +140,7 @@ export default function Home() {
               Clear answers, accurate books, and honest flat-rate tax filing with zero percentage taken from your refund.
             </p>
 
-            {/* Clear 2-Line Coverage & Evening Appointment Highlight */}
+            {/* Clear 2-Line Coverage & Operating Hours Highlight */}
             <div className="bg-[#F8F7F4] border-l-4 border-l-caramel border border-slate-200 rounded-xl px-5 py-4 max-w-xl space-y-1.5 shadow-sm">
               <p className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
                 <Globe className="w-4 h-4 text-caramel-dark shrink-0" />
@@ -148,18 +148,18 @@ export default function Home() {
               </p>
               <p className="text-sm sm:text-base font-semibold text-slate-800 flex items-center gap-2">
                 <Clock className="w-4 h-4 text-caramel-dark shrink-0" />
-                <span>Saturday &amp; Sunday Evening: By Appointment Only</span>
+                <span>Sat, Sun &amp; Mon: 24 Hours • Tue - Fri: 6:00 PM - 9:00 PM CST</span>
               </p>
             </div>
 
             {/* Primary Actions */}
             <div className="pt-1 flex flex-wrap items-center gap-4">
               <a
-                href="tel:9035550192"
+                href="tel:4302441818"
                 className="btn-dark inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base"
               >
                 <Phone className="w-4 h-4 text-caramel-light" />
-                <span>+1 (903) 555-0192</span>
+                <span>+1 (430) 244-1818</span>
               </a>
 
               <Link
@@ -317,7 +317,7 @@ export default function Home() {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#F8F7F4] border border-slate-200 text-sm font-semibold text-slate-800">
                     <Clock className="w-4 h-4 text-caramel-dark shrink-0" />
-                    Sat &amp; Sun Evening By Appt
+                    Sat, Sun &amp; Mon 24-Hr Availability
                   </span>
                 </div>
               </div>
@@ -563,10 +563,10 @@ export default function Home() {
                 <div>
                   <p className="font-bold text-slate-900">Phone</p>
                   <a
-                    href="tel:9035550192"
+                    href="tel:4302441818"
                     className="font-semibold text-slate-900 hover:underline"
                   >
-                    +1 (903) 555-0192
+                    +1 (430) 244-1818
                   </a>
                 </div>
               </div>
@@ -577,10 +577,10 @@ export default function Home() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-bold text-slate-900">Hours</p>
-                  <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
                   <p className="font-bold text-slate-900">
-                    Saturday &amp; Sunday Evening: By Appointment Only
+                    Sat, Sun &amp; Mon: 24 Hours
                   </p>
+                  <p className="text-slate-700">Tuesday - Friday: 6:00 PM - 9:00 PM CST</p>
                 </div>
               </div>
             </div>
@@ -649,7 +649,7 @@ export default function Home() {
                       <input
                         required
                         type="tel"
-                        placeholder="(903) 000-0000"
+                        placeholder="(430) 244-1818"
                         value={contactForm.phone}
                         onChange={(e) =>
                           setContactForm({
@@ -704,8 +704,17 @@ export default function Home() {
                       <option value="Business Tax & Bookkeeping">
                         Business Tax &amp; Bookkeeping
                       </option>
-                      <option value="Notary Public (All Over US)">
-                        Notary Public (All Over US / In-Person)
+                      <option value="Remote Online Notarization (RON 50 States)">
+                        Notary: Remote Online Notarization (RON 50 States)
+                      </option>
+                      <option value="Mobile Notary & Loan Signing Agent">
+                        Notary: Mobile Notary &amp; Loan Signing Agent
+                      </option>
+                      <option value="Jurats, Affidavits & Verification">
+                        Notary: Jurats, Affidavits &amp; Sworn Statements
+                      </option>
+                      <option value="Apostille & Authentication Preparation">
+                        Notary: Apostille &amp; Authentication Preparation
                       </option>
                       <option value="The BNT Refund Checkup">
                         The BNT Refund Checkup
