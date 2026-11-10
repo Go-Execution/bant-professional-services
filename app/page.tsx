@@ -299,7 +299,7 @@ export default function Home() {
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
-                  Taxes for LVNs, RNs, Physicians &amp; Allied Healthcare Workers
+                  Tax Filings for LVNs, RNs, Physicians &amp; Allied Healthcare Workers
                 </h2>
 
                 <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
